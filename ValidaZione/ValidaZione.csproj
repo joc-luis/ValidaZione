@@ -11,9 +11,11 @@
         <RepositoryType>git</RepositoryType>
         <PackageTags>Validation, Validator, Rules</PackageTags>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageReleaseNotes>The library is in testing mode, is not secure for production mode.</PackageReleaseNotes>
+        <PackageReleaseNotes>The library is in testing mode, is not secure for production mode.
+Added more languages.
+Added more bugs.</PackageReleaseNotes>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
-        <Version>1.1.0</Version>
+        <Version>1.2.0</Version>
         <PackageProjectUrl>https://github.com/joc-luis/ValidaZione</PackageProjectUrl>
     </PropertyGroup>
 
