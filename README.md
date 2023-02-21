@@ -19,6 +19,17 @@ Validazione validazione = new Validazione(Language.En);
 Validazione validazione = new Validazione(Language.Es);
 ```
 
+### Add like scoped
+```csharp
+builder.Services.AddScopped<IValidazion>(v => new Validazione(Language.Fr));
+
+
+public PersonController(IValidazione validazione)
+{
+    _validazione = validazione;
+}
+```
+
 ### Validate string
 ```cs
 validazione.Field("Test", "testing").Min(3).Max(10).Alpha();
