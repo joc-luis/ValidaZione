@@ -10,12 +10,16 @@ using ValidaZione.Objects;
 
 namespace ValidaZione.Rules
 {
+    
+    /// <summary>
+    /// Rules for string values.
+    /// </summary>
     public class RulesStrings : IRule
     {
         private ILang _lang;
         private String FieldName { get; set; }
         private String? Value { get; set; }
-        public Field Field { get; private set; }
+        private Field Field { get; set; }
         private bool Null { get; set; } = false;
 
         
@@ -43,6 +47,17 @@ namespace ValidaZione.Rules
         private void AddError(string error)
         {
             Field.Errors.Add(error);
+        }
+        
+        /// <summary>
+        /// Get errors from the validation
+        /// </summary>
+        /// <returns>
+        /// Field and errors.
+        /// </returns>
+        public Field ErrorsByField()
+        {
+            return Field;
         }
 
         /// <summary>
@@ -208,7 +223,7 @@ namespace ValidaZione.Rules
                 return this;
             }
 
-            if (this.Value.Length < min || max <= this.Value.Length)
+            if (this.Value.Length < min || max < this.Value.Length)
             {
                 this.AddError(_lang.BetweenString(min, max));
             }

@@ -8,10 +8,17 @@ using ValidaZione.Objects;
 
 namespace ValidaZione.Rules
 {
+    
+    /// <summary>
+    /// Rules for lists and arrays
+    /// </summary>
+    /// <typeparam name="TValue">
+    /// Type of the list or array
+    /// </typeparam>
     public class RulesLists<TValue> : IRule
     {
         private ILang _lang;
-        public Field Field { get; private set; }
+        private Field Field { get; set; }
         private List<TValue>? Values { get; set; }
         private String FieldName { get; set; }
         private bool Null { get; set; } = false;
@@ -22,7 +29,7 @@ namespace ValidaZione.Rules
         /// <param name="lang">
         /// Language of errors messages. <see cref="ILang"/>, <see cref="Language"/>
         /// </param>
-        /// <param name="name">
+        /// <param name="fieldName">
         /// Name of the field.
         /// </param>
         /// <param name="values">
@@ -43,7 +50,7 @@ namespace ValidaZione.Rules
         /// <param name="lang">
         /// Language of errors messages. <see cref="ILang"/>, <see cref="Language"/>
         /// </param>
-        /// <param name="name">
+        /// <param name="fieldName">
         /// Name of the field.
         /// </param>
         /// <param name="values">
@@ -61,6 +68,17 @@ namespace ValidaZione.Rules
         private void AddError(string error)
         {
             Field.Errors.Add(error);
+        }
+        
+        /// <summary>
+        /// Get errors from the validation
+        /// </summary>
+        /// <returns>
+        /// Field and errors.
+        /// </returns>
+        public Field ErrorsByField()
+        {
+            return Field;
         }
         
         /// <summary>

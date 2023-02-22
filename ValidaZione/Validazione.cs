@@ -6,7 +6,6 @@ using ValidaZione.Interfaces;
 using ValidaZione.Langs;
 using ValidaZione.Objects;
 using ValidaZione.Rules;
-using ValidaZione.Types;
 
 namespace ValidaZione
 {
@@ -119,9 +118,9 @@ namespace ValidaZione
             List<Field> fields = new List<Field>();
             foreach (IRule rule in Rules)
             {
-                if (rule.Field.Errors.Any())
+                if (rule.ErrorsByField().Errors.Any())
                 {
-                    fields.Add(rule.Field);
+                    fields.Add(rule.ErrorsByField());
                 }
             }
 

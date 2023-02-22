@@ -1,16 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using ValidaZione.Interfaces;
+﻿using ValidaZione.Interfaces;
 using ValidaZione.Objects;
 
-namespace ValidaZione.Types
+namespace ValidaZione.Rules
 {
+    /// <summary>
+    /// Rules for booleans
+    /// </summary>
     public class RulesBooleans: IRule
     {
         private ILang _lang;
-        public Field Field { get; private set; }
+        private Field Field { get; set; }
         private string FieldName { get; set; }
         private bool Value { get; set; }
+        
+        /// <summary>
+        /// Prepare the field and value for the validation.
+        /// </summary>
+        /// <param name="lang">
+        /// Language of errors messages. <see cref="ILang"/>, <see cref="Language"/>
+        /// </param>
+        /// <param name="fieldName">
+        /// Name of the field.
+        /// </param>
+        /// <param name="value">
+        /// Value of the field.
+        /// </param>
         public RulesBooleans(ILang lang, string fieldName, bool value)
         {
             _lang = lang;
@@ -25,7 +39,18 @@ namespace ValidaZione.Types
             Field.Errors.Add(error);
         }
 
-        
+
+        /// <summary>
+        /// Get errors from the validation
+        /// </summary>
+        /// <returns>
+        /// Field and errors.
+        /// </returns>
+        public Field ErrorsByField()
+        {
+            return Field;
+        }
+
         /// <summary>
         /// The field under validation must be true.
         /// This is useful for validating "Terms of Service" acceptance or similar fields.

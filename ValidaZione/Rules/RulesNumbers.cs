@@ -7,10 +7,25 @@ using ValidaZione.Objects;
 
 namespace ValidaZione.Rules
 {
+    /// <summary>
+    /// Rules for numbers
+    /// </summary>
+    /// <typeparam name="TValue">
+    /// Type of the number.
+    /// <see cref="UInt16"/>
+    /// <see cref="UInt32"/>
+    /// <see cref="UInt64"/>
+    /// <see cref="Int16"/>
+    /// <see cref="Int32"/>
+    /// <see cref="Int64"/>
+    /// <see cref="Single"/>
+    /// <see cref="Double"/>
+    /// <see cref="Decimal"/>
+    /// </typeparam>
     public class RulesNumbers<TValue> : IRule
     {
         private ILang _lang;
-        public Field Field { get; private set; }
+        private Field Field { get; set; }
         private string FieldName { get; set; }
         private TValue Value { get; set; }
 
@@ -60,6 +75,17 @@ namespace ValidaZione.Rules
         private void AddError(string error)
         {
             Field.Errors.Add(error);
+        }
+        
+        /// <summary>
+        /// Get errors from the validation
+        /// </summary>
+        /// <returns>
+        /// Field and errors.
+        /// </returns>
+        public Field ErrorsByField()
+        {
+            return Field;
         }
 
         

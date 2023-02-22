@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using ValidaZione.Objects;
 using ValidaZione.Rules;
-using ValidaZione.Types;
 
 namespace ValidaZione.Interfaces
 {

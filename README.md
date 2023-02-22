@@ -1,4 +1,5 @@
 # [ValidaZione](https://github.com/joc-luis/ValidaZione)
+
 ## Status :skull_and_crossbones:
 The library is in testing mode, is not secure for production mode.
 ## Install
@@ -24,9 +25,16 @@ Validazione validazione = new Validazione(Language.Es);
 builder.Services.AddScopped<IValidazion>(v => new Validazione(Language.Fr));
 
 
-public PersonController(IValidazione validazione)
+public PersonController(IValidazione validazione) : ControllerBase
 {
     _validazione = validazione;
+}
+
+
+public async Task<ActionResult> Store(Person person){
+
+    _validazione.Field("name", person.Name).Between(3, 20);
+    _validazione.PassOrException();
 }
 ```
 
@@ -93,6 +101,26 @@ var fields = validazione.ErrorsByField();
 ```cs
 var errors = validazione.Errors();
 ```
+
+## Create your custom error messages
+### Use the interface
+```csharp
+public class MyCustomLang : ILang 
+
+    public string FieldName { get; set; }
+    
+    public string Accepted(){
+  
+        return "Debes aceptar cederme tu alma.";
+    }
+ }
+```
+
+### Set in the constructor
+```csharp
+Validazione validazione = new Validazione(new MyCustomLang())
+```
+
 
 ## License
 [MIT](https://opensource.org/license/mit/)

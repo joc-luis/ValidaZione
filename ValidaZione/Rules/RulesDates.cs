@@ -6,14 +6,31 @@ using ValidaZione.Objects;
 
 namespace ValidaZione.Rules
 {
+    
+    /// <summary>
+    /// Rules for DateTime
+    /// </summary>
     public class RulesDates : IRule
     {
-        public Field Field { get; private set; }
+        private Field Field { get; set; }
         private string FieldName { get; set; }
         private DateTime? Value { get; set; }
         private bool Null { get; set; } = false;
         private ILang _lang;
 
+        
+        /// <summary>
+        /// Prepare the field and value for the validation.
+        /// </summary>
+        /// <param name="lang">
+        /// Language of errors messages. <see cref="ILang"/>, <see cref="Language"/>
+        /// </param>
+        /// <param name="fieldName">
+        /// Name of the field.
+        /// </param>
+        /// <param name="value">
+        /// Value of the field.
+        /// </param>
         public RulesDates(ILang lang, string fieldName, DateTime? value)
         {
             _lang = lang;
@@ -26,6 +43,17 @@ namespace ValidaZione.Rules
         private void AddError(string message)
         {
             Field.Errors.Add(message);
+        }
+        
+        /// <summary>
+        /// Get errors from the validation
+        /// </summary>
+        /// <returns>
+        /// Field and errors.
+        /// </returns>
+        public Field ErrorsByField()
+        {
+            return Field;
         }
 
         /// <summary>
