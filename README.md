@@ -105,7 +105,7 @@ var errors = validazione.Errors();
 ## Create your custom error messages
 ### Use the interface
 ```csharp
-public class MyCustomLang : ILang 
+public class MyCustomLang : ILang {
 
     public string FieldName { get; set; }
     
