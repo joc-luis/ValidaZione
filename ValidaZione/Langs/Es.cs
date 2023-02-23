@@ -125,7 +125,7 @@ namespace ValidaZione.Langs
 
         public string In()
         {
-            return $"The {FieldName} seleccionado no es válido.";
+            return $"El campo {FieldName} seleccionado no es válido.";
         }
 
         public string Integer()

@@ -126,7 +126,7 @@ namespace ValidaZione.Rules
         {
             if (Values == null)
             {
-                if (!this.Null)
+                if (!this.Null && values != Values)
                 {
                     this.AddError(_lang.Confirmed());
                 }
@@ -134,7 +134,7 @@ namespace ValidaZione.Rules
                 return this;
             }
 
-            if (!Enumerable.SequenceEqual(Values, values))
+            if (JsonConvert.SerializeObject(Values) != JsonConvert.SerializeObject(values))
             {
                 AddError(_lang.Confirmed());
             }
@@ -158,7 +158,7 @@ namespace ValidaZione.Rules
         {
             if (Values == null)
             {
-                if (!this.Null)
+                if (!this.Null || Values == values)
                 {
                     this.AddError(_lang.Different(name));
                 }
@@ -166,7 +166,7 @@ namespace ValidaZione.Rules
                 return this;
             }
 
-            if (Enumerable.SequenceEqual(this.Values, values))
+            if (JsonConvert.SerializeObject(Values) == JsonConvert.SerializeObject(values))
             {
                 this.AddError(_lang.Different(name));
             }
