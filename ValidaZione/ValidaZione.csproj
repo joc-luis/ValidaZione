@@ -12,9 +12,12 @@
         <PackageTags>Validation, Validator, Rules</PackageTags>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageReleaseNotes>The library is in testing mode, is not secure for production mode.
-Field property change fot ErrorsByField in Rules classes</PackageReleaseNotes>
+Fixed error in confirmed rule for lists.
+Fixed error in different rule for lists.
+Fixed error message in rule 'in'.
+Add bugs to fix later.</PackageReleaseNotes>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
-        <Version>2.0.0</Version>
+        <Version>2.0.3</Version>
         <PackageProjectUrl>https://github.com/joc-luis/ValidaZione</PackageProjectUrl>
     </PropertyGroup>
 

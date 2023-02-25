@@ -15,7 +15,7 @@ public class LitstsTest
         };
 
         List<int> nullable = null;
-        
+
         RulesLists<int> right = new RulesLists<int>(Language.Af, "Test", values);
         right.Between(0, 20);
         Assert.IsFalse(right.ErrorsByField().Errors.Any(), "Deberia estar dentro del rango");
@@ -27,7 +27,7 @@ public class LitstsTest
         right = new RulesLists<int>(Language.Af, "Test", new int[] { });
         right.Between(0, 20);
         Assert.IsFalse(right.ErrorsByField().Errors.Any(), "Se admite 0, debio pasar.");
-        
+
         right = new RulesLists<int>(Language.Af, "Test", nullable);
         right.Nullable().Between(0, 20);
         Assert.IsFalse(right.ErrorsByField().Errors.Any(), "Se admite null, debio pasar.");
@@ -40,7 +40,7 @@ public class LitstsTest
         RulesLists<int> higer = new RulesLists<int>(Language.Af, "Test", values);
         higer.Between(1, 5);
         Assert.IsTrue(higer.ErrorsByField().Errors.Any(), "Como 5 va a ser mayor que 10");
-        
+
         RulesLists<int> wrong = new RulesLists<int>(Language.Af, "Test", nullable);
         wrong.Between(1, 5);
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any(), "Como 5 va a entrar si es nulo");
@@ -59,29 +59,29 @@ public class LitstsTest
             1, 2, 3, 4, 5, 6, 7, 8, 9, 10
         };
 
-        List<int> nullable = null, anotherNull = null; 
+        List<int> nullable = null, anotherNull = null;
 
         RulesLists<int> right = new RulesLists<int>(Language.Af, "Test", values);
         right.Confirmed(confirmed);
         Assert.IsFalse(right.ErrorsByField().Errors.Any(), "Son exactamente iguales");
-        
-        right = new RulesLists<int>(Language.Af, "Test",  nullable);
+
+        right = new RulesLists<int>(Language.Af, "Test", nullable);
         right.Nullable().Confirmed(confirmed);
         Assert.IsFalse(right.ErrorsByField().Errors.Any(), "Es nulo pero esta permitido");
-        
-        right = new RulesLists<int>(Language.Af, "Test",  nullable);
+
+        right = new RulesLists<int>(Language.Af, "Test", nullable);
         right.Confirmed(anotherNull);
         Assert.IsFalse(right.ErrorsByField().Errors.Any(), "Ambos son nulos debio pasar la prueba");
-        
+
         RulesLists<int> wrong = new RulesLists<int>(Language.Af, "Test", values);
         wrong.Confirmed(new List<int>() { 1, 2, 3, 4 });
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any(), "Deberia estar dentro del rango");
-        
+
         wrong = new RulesLists<int>(Language.Af, "Test", nullable);
         wrong.Confirmed(new List<int>() { 1, 2, 3, 4 });
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any(), "El valor es nulo, debio fallar");
     }
-    
+
     [Test]
     public void ConfirmedWithObject()
     {
@@ -101,28 +101,34 @@ public class LitstsTest
             new Person("Bob", "fet"),
         };
 
-        List<Person> nullable = null, anotherNull = null; 
+        List<Person> nullable = null, anotherNull = null;
 
         RulesLists<Person> right = new RulesLists<Person>(Language.Af, "Test", values);
         right.Confirmed(confirmed);
         Assert.IsFalse(right.ErrorsByField().Errors.Any(), "Son exactamente iguales");
-        
-        right = new RulesLists<Person>(Language.Af, "Test",  nullable);
+
+        right = new RulesLists<Person>(Language.Af, "Test", nullable);
         right.Nullable().Confirmed(confirmed);
         Assert.IsFalse(right.ErrorsByField().Errors.Any(), "Es nulo pero esta permitido");
-        
-        right = new RulesLists<Person>(Language.Af, "Test",  nullable);
+
+        right = new RulesLists<Person>(Language.Af, "Test", nullable);
         right.Confirmed(anotherNull);
         Assert.IsFalse(right.ErrorsByField().Errors.Any(), "Ambos son nulos debio pasar la prueba");
-        
+
         RulesLists<Person> wrong = new RulesLists<Person>(Language.Af, "Test", values);
-        wrong.Confirmed(new List<Person>() {   new Person("Bob", "Cat"),
-            new Person("Sarah", "Connor"),});
+        wrong.Confirmed(new List<Person>()
+        {
+            new Person("Bob", "Cat"),
+            new Person("Sarah", "Connor"),
+        });
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any(), "Deberia estar dentro del rango");
-        
+
         wrong = new RulesLists<Person>(Language.Af, "Test", nullable);
-        wrong.Confirmed(new List<Person>() {   new Person("Bob", "Cat"),
-            new Person("Sarah", "Connor"),});
+        wrong.Confirmed(new List<Person>()
+        {
+            new Person("Bob", "Cat"),
+            new Person("Sarah", "Connor"),
+        });
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any(), "El valor es nulo, debio fallar");
     }
 
@@ -139,34 +145,34 @@ public class LitstsTest
             1, 2, 3, 4, 5, 6, 7, 8, 9
         };
 
-        List<int> nullable = null, anotherNull = null; 
-        
+        List<int> nullable = null, anotherNull = null;
+
         RulesLists<int> right = new RulesLists<int>(Language.En, "test", values);
         right.Different("test2", different);
         Assert.IsFalse(right.ErrorsByField().Errors.Any());
-        
+
         right = new RulesLists<int>(Language.En, "test", values);
         right.Different("test2", nullable);
         Assert.IsFalse(right.ErrorsByField().Errors.Any());
-        
+
         right = new RulesLists<int>(Language.En, "test", nullable);
         right.Nullable().Different("test2", different);
         Assert.IsFalse(right.ErrorsByField().Errors.Any());
-        
+
         different.Add(10);
         RulesLists<int> wrong = new RulesLists<int>(Language.En, "test", values);
         wrong.Different("test2", different);
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
-        
+
         wrong = new RulesLists<int>(Language.En, "test", anotherNull);
         wrong.Different("test2", nullable);
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
-        
+
         wrong = new RulesLists<int>(Language.En, "test", nullable);
         wrong.Nullable().Different("test2", anotherNull);
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
     }
-    
+
     [Test]
     public void DifferentWithObject()
     {
@@ -180,29 +186,29 @@ public class LitstsTest
             1, 2, 3, 4, 5, 6, 7, 8, 9
         };
 
-        List<int> nullable = null, anotherNull = null; 
-        
+        List<int> nullable = null, anotherNull = null;
+
         RulesLists<int> right = new RulesLists<int>(Language.En, "test", values);
         right.Different("test2", different);
         Assert.IsFalse(right.ErrorsByField().Errors.Any());
-        
+
         right = new RulesLists<int>(Language.En, "test", values);
         right.Different("test2", nullable);
         Assert.IsFalse(right.ErrorsByField().Errors.Any());
-        
+
         right = new RulesLists<int>(Language.En, "test", nullable);
         right.Nullable().Different("test2", different);
         Assert.IsFalse(right.ErrorsByField().Errors.Any());
-        
+
         different.Add(10);
         RulesLists<int> wrong = new RulesLists<int>(Language.En, "test", values);
         wrong.Different("test2", different);
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
-        
+
         wrong = new RulesLists<int>(Language.En, "test", anotherNull);
         wrong.Different("test2", nullable);
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
-        
+
         wrong = new RulesLists<int>(Language.En, "test", nullable);
         wrong.Nullable().Different("test2", anotherNull);
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
@@ -212,14 +218,58 @@ public class LitstsTest
     [Test]
     public void DistinctTest()
     {
-        Validazione validazione = new Validazione(new Es());
-        validazione.Field("test", new List<Person>()
-        {
-            new Person("Terry", "Bogard"),
-            new Person("Terry", "Bogards")
-        }).Distinct();
-        validazione.Field("test", new int[] { 1, 2, 3, 4, 5 });
-        Assert.That(validazione.Errors().Count, Is.EqualTo(0));
+        List<Double> values = new List<Double> { 10, 45.6, 57.8, 90, 67 };
+        List<double> nullable = null;
+
+        RulesLists<Double> right = new RulesLists<double>(Language.De, "Test", values);
+        right.Distinct();
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+        
+        right = new RulesLists<double>(Language.De, "Test", nullable);
+        right.Nullable().Distinct();
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+        
+        values.Add(45.6);
+        
+        RulesLists<Double> wrong = new RulesLists<double>(Language.De, "Test", values);
+        wrong.Distinct();
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+        
+        wrong = new RulesLists<double>(Language.De, "Test", nullable);
+        wrong.Distinct();
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+        
+    }
+    
+    [Test]
+    public void DistinctObjectTest()
+    {
+        List<Person> values = new List<Person> {           
+            new Person("Bob", "Cat"),
+            new Person("Sarah", "Connor"),
+            new Person("Person", "Cat"),
+            new Person("Bob", "fet"), };
+        
+        List<Person> nullable = null;
+
+        RulesLists<Person> right = new RulesLists<Person>(Language.De, "Test", values);
+        right.Distinct();
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+        
+        right = new RulesLists<Person>(Language.De, "Test", nullable);
+        right.Nullable().Distinct();
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+        
+        values.Add(new Person("Bob", "fet"));
+        
+        RulesLists<Person> wrong = new RulesLists<Person>(Language.De, "Test", values);
+        wrong.Distinct();
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+        
+        wrong = new RulesLists<Person>(Language.De, "Test", nullable);
+        wrong.Distinct();
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+        
     }
 
     public class Person

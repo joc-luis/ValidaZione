@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Net.Sockets;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json.Linq;
 using ValidaZione.Interfaces;
@@ -10,7 +11,6 @@ using ValidaZione.Objects;
 
 namespace ValidaZione.Rules
 {
-    
     /// <summary>
     /// Rules for string values.
     /// </summary>
@@ -22,7 +22,7 @@ namespace ValidaZione.Rules
         private Field Field { get; set; }
         private bool Null { get; set; } = false;
 
-        
+
         /// <summary>
         /// Prepare the field and value for the validations.
         /// </summary>
@@ -48,7 +48,7 @@ namespace ValidaZione.Rules
         {
             Field.Errors.Add(error);
         }
-        
+
         /// <summary>
         /// Get errors from the validation
         /// </summary>
@@ -69,6 +69,7 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesStrings Accepted()
         {
+            string[] allowed = new[] { "yes", "on", "true", "1" };
             if (this.Value == null)
             {
                 if (!this.Null)
@@ -79,8 +80,7 @@ namespace ValidaZione.Rules
                 return this;
             }
 
-            if (!this.Value.ToLower().Contains("yes") && !this.Value.ToLower().Contains("on") &&
-                !this.Value.ToLower().Contains("true") && !this.Value.ToLower().Contains("1"))
+            if (allowed.All(a => a != Value))
             {
                 this.AddError(_lang.Accepted());
             }
@@ -106,20 +106,33 @@ namespace ValidaZione.Rules
                 return this;
             }
 
-            WebRequest? request = WebRequest.Create(this.Value) as HttpWebRequest;
-            request.Method = "HEAD";
-            using (var response = (HttpWebResponse)request.GetResponse())
+            try
             {
-                if (response.StatusCode != HttpStatusCode.OK)
+                if (!Uri.IsWellFormedUriString(this.Value, UriKind.RelativeOrAbsolute))
                 {
-                    AddError(_lang.ActiveUrl());        
+                    AddError(_lang.Url());
+                    return this;
                 }
+
+                WebRequest? request = WebRequest.Create(this.Value) as HttpWebRequest;
+                request.Method = "HEAD";
+                using (var response = (HttpWebResponse)request.GetResponse())
+                {
+                    if (response.StatusCode != HttpStatusCode.OK)
+                    {
+                        AddError(_lang.ActiveUrl());
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                AddError(_lang.ActiveUrl());
             }
 
             return this;
         }
 
-        
+
         /// <summary>
         /// The field under validation must be entirely Unicode alphabetic characters.
         /// </summary>
@@ -146,7 +159,7 @@ namespace ValidaZione.Rules
             return this;
         }
 
-        
+
         /// <summary>
         /// The field under validation must be entirely Unicode alpha-numeric characters.
         /// </summary>
@@ -231,7 +244,7 @@ namespace ValidaZione.Rules
             return this;
         }
 
-        
+
         /// <summary>
         /// The field under validation must be able to be cast as a boolean.
         /// Accepted input are true, false, "1", and "0"
@@ -241,6 +254,8 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesStrings Boolean()
         {
+            string[] allowed = new[] { "true", "false", "0", "1" };
+
             if (this.Value == null)
             {
                 if (!this.Null)
@@ -252,9 +267,7 @@ namespace ValidaZione.Rules
             }
 
 
-            if (!this.Value.ToLower().Contains("true") && !this.Value.ToLower().Contains("false")
-                                                       && !this.Value.ToLower().Contains("1") &&
-                                                       !this.Value.ToLower().Contains("0"))
+            if (allowed.All(a => a != Value))
             {
                 this.AddError(_lang.Boolean());
             }
@@ -273,10 +286,9 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesStrings Confirmed(string value)
         {
-            
             if (this.Value == null)
             {
-                if (!this.Null)
+                if (!this.Null && this.Value != value)
                 {
                     this.AddError(_lang.Confirmed());
                 }
@@ -300,6 +312,7 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesStrings Declined()
         {
+            string[] allowed = new[] { "false", "no", "off", "0" };
             if (this.Value == null)
             {
                 if (!this.Null)
@@ -311,9 +324,7 @@ namespace ValidaZione.Rules
             }
 
 
-            if (!this.Value.ToLower().Contains("false") && !this.Value.ToLower().Contains("no")
-                                                        && !this.Value.ToLower().Contains("off") &&
-                                                        !this.Value.ToLower().Contains("0"))
+            if (allowed.All(a => a != Value))
             {
                 this.AddError(_lang.Declined());
             }
@@ -321,7 +332,7 @@ namespace ValidaZione.Rules
             return this;
         }
 
-        
+
         /// <summary>
         /// The field under validation must have a different value than field
         /// </summary>
@@ -336,13 +347,9 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesStrings Different(String name, String value)
         {
-            if (this.Value == null)
+            if (this.Value == null && !this.Null)
             {
-                if (!this.Null)
-                {
-                    this.AddError(_lang.Different(name));
-                }
-
+                this.AddError(_lang.Different(name));
                 return this;
             }
 
@@ -355,7 +362,7 @@ namespace ValidaZione.Rules
             return this;
         }
 
-        
+
         /// <summary>
         /// The field under validation must be formatted as an email address.
         /// </summary>
@@ -386,7 +393,7 @@ namespace ValidaZione.Rules
             return this;
         }
 
-        
+
         /// <summary>
         /// The field under validation must end with one of the given values.
         /// </summary>
@@ -417,7 +424,7 @@ namespace ValidaZione.Rules
             return this;
         }
 
-        
+
         /// <summary>
         /// The field under validation must end with one of the given values.
         /// </summary>
@@ -447,60 +454,67 @@ namespace ValidaZione.Rules
             return this;
         }
 
-        
+
         /// <summary>
-        /// The field under validation must be greater than the given field
+        /// The field under validation must be greater than the given field.
         /// </summary>
         /// <param name="value">
-        /// Value to compare
+        /// Value to compare. If is null the length must be 0.
         /// </param>
         /// <returns>
         /// This instance of the object.
         /// </returns>
         public RulesStrings GreaterThan(string value)
         {
+            int length = String.IsNullOrEmpty(value) ? 0 : value.Length;
             if (this.Value == null)
             {
-                if (!this.Null)
+                if (!this.Null || length > 0)
                 {
-                    AddError(_lang.GreaterThanString(value.Length));
+                    AddError(_lang.GreaterThanString(length));
                 }
 
                 return this;
             }
 
-            if (this.Value.Length <= value.Length)
+            if (length == 0 && String.IsNullOrEmpty(Value))
             {
-                AddError(_lang.GreaterThanString(value.Length));
+                AddError(_lang.GreaterThanString(length));
+            }
+            else if (length >= Value.Length)
+            {
+                AddError(_lang.GreaterThanString(length));
             }
 
             return this;
         }
-        
+
         /// <summary>
         /// The field under validation must be greater than or equal to the given field.
         /// </summary>
         /// <param name="value">
-        /// Value to compare
+        /// Value to compare. If is null the length must be 0.
         /// </param>
         /// <returns>
         /// This instance of the object.
         /// </returns>
         public RulesStrings GreaterThanOrEqual(string value)
         {
+            int length = String.IsNullOrEmpty(value) ? 0 : value.Length;
+
             if (this.Value == null)
             {
-                if (!this.Null)
+                if (!this.Null || length > 0)
                 {
-                    AddError(_lang.GreaterThanOrEqualString(value.Length));
+                    AddError(_lang.GreaterThanString(length));
                 }
 
                 return this;
             }
 
-            if (this.Value.Length < value.Length)
+            if (length > Value.Length)
             {
-                AddError(_lang.GreaterThanOrEqualString(value.Length));
+                AddError(_lang.GreaterThanString(length));
             }
 
             return this;
@@ -517,16 +531,6 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesStrings In(List<String> values)
         {
-            if (this.Value == null)
-            {
-                if (!this.Null)
-                {
-                    AddError(_lang.In());
-                }
-
-                return this;
-            }
-
             if (values.All(v => this.Value != v))
             {
                 AddError(_lang.In());
@@ -535,7 +539,7 @@ namespace ValidaZione.Rules
             return this;
         }
 
-        
+
         /// <summary>
         /// The field under validation must be included in the given array of values.
         /// </summary>
@@ -547,16 +551,6 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesStrings In(String[] values)
         {
-            if (this.Value == null)
-            {
-                if (!this.Null)
-                {
-                    AddError(_lang.In());
-                }
-
-                return this;
-            }
-
             if (values.All(v => this.Value != v))
             {
                 AddError(_lang.In());
@@ -583,7 +577,7 @@ namespace ValidaZione.Rules
                 return this;
             }
 
-            if (!this.Value.All(Char.IsNumber))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(Value, "(^[\\-][0-9]+$)|(^[0-9]+$)"))
             {
                 this.AddError(_lang.Integer());
             }
@@ -591,9 +585,10 @@ namespace ValidaZione.Rules
             return this;
         }
 
-        
+
         /// <summary>
-        /// The field under validation must be an IP address.
+        /// The field under validation must be an IP address IPv4 or IPv6.
+        /// The validation use IPAddress.Parse <see cref="IPAddress"/>
         /// </summary>
         /// <returns>
         /// This instance of the object.
@@ -612,7 +607,13 @@ namespace ValidaZione.Rules
 
             try
             {
-                IPAddress.Parse(this.Value);
+                var ip = IPAddress.Parse(this.Value);
+
+                if (ip.AddressFamily != AddressFamily.InterNetwork 
+                    && ip.AddressFamily != AddressFamily.InterNetworkV6)
+                {
+                    AddError(_lang.Ip());
+                }
             }
             catch (Exception)
             {
@@ -644,7 +645,7 @@ namespace ValidaZione.Rules
             {
                 IPAddress ip = IPAddress.Parse(this.Value);
 
-                if (ip.AddressFamily != System.Net.Sockets.AddressFamily.InterNetwork)
+                if (ip.AddressFamily != AddressFamily.InterNetwork)
                 {
                     this.AddError(_lang.Ipv4());
                 }
@@ -679,7 +680,7 @@ namespace ValidaZione.Rules
             {
                 IPAddress ip = IPAddress.Parse(this.Value);
 
-                if (ip.AddressFamily != System.Net.Sockets.AddressFamily.InterNetworkV6)
+                if (ip.AddressFamily != AddressFamily.InterNetworkV6)
                 {
                     AddError(_lang.Ipv6());
                 }
@@ -747,7 +748,7 @@ namespace ValidaZione.Rules
 
             return this;
         }
-        
+
         /// <summary>
         /// The field under validation must be less than the given field
         /// </summary>
@@ -776,8 +777,8 @@ namespace ValidaZione.Rules
 
             return this;
         }
-        
-        
+
+
         /// <summary>
         /// The field under validation must be less than or equal to the given field
         /// </summary>
@@ -987,7 +988,7 @@ namespace ValidaZione.Rules
 
             return this;
         }
-        
+
         /// <summary>
         /// The field under validation must not match the given regular expression.
         /// </summary>
@@ -1017,7 +1018,7 @@ namespace ValidaZione.Rules
 
             return this;
         }
-        
+
         /// <summary>
         /// The field under validation may be null.
         /// </summary>
@@ -1031,7 +1032,7 @@ namespace ValidaZione.Rules
             return this;
         }
 
-        
+
         /// <summary>
         /// The field under validation must be numeric.
         /// </summary>
@@ -1062,7 +1063,7 @@ namespace ValidaZione.Rules
             return this;
         }
 
-        
+
         /// <summary>
         /// The field under validation must match the given regular expression.
         /// </summary>
@@ -1124,7 +1125,7 @@ namespace ValidaZione.Rules
             return this;
         }
 
-        
+
         /// <summary>
         /// The field under validation must be present in the input data and not empty
         /// </summary>
@@ -1143,7 +1144,7 @@ namespace ValidaZione.Rules
             return this;
         }
 
-        
+
         /// <summary>
         /// The given field must match the field under validation.
         /// </summary>
@@ -1166,7 +1167,7 @@ namespace ValidaZione.Rules
             return this;
         }
 
-        
+
         /// <summary>
         /// The field under validation must have a size matching the given value
         /// </summary>
@@ -1196,7 +1197,7 @@ namespace ValidaZione.Rules
             return this;
         }
 
-        
+
         /// <summary>
         /// The field under validation must start with one of the given values.
         /// </summary>
@@ -1226,7 +1227,7 @@ namespace ValidaZione.Rules
             return this;
         }
 
-        
+
         /// <summary>
         /// The field under validation must start with one of the given values.
         /// </summary>
@@ -1282,7 +1283,7 @@ namespace ValidaZione.Rules
             return this;
         }
 
-        
+
         /// <summary>
         /// The field under validation must be a valid URL.
         /// </summary>
