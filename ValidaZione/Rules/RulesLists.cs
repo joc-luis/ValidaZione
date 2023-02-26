@@ -124,22 +124,33 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesLists<TValue> Confirmed(List<TValue> values)
         {
-            if (Values == null)
-            {
-                if (!this.Null && values != Values)
-                {
-                    this.AddError(_lang.Confirmed());
-                }
-
-                return this;
-            }
-
-            if (JsonConvert.SerializeObject(Values) != JsonConvert.SerializeObject(values))
+            if ((Values != values) && JsonConvert.SerializeObject(Values) != JsonConvert.SerializeObject(values))
             {
                 AddError(_lang.Confirmed());
             }
 
             return this;
+        }
+        
+        
+        /// <summary>
+        /// The field under validation must be a value equal to the given value.
+        /// </summary>
+        /// <param name="values">
+        /// Value to confirmed.
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesLists<TValue> Confirmed(TValue[]? values)
+        {
+            if (values == null)
+            {
+                List<TValue> nullable = null;
+                return Confirmed(nullable);
+            }
+
+            return Confirmed(values.ToList());
         }
 
         /// <summary>
@@ -156,22 +167,36 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesLists<TValue>Different(String name, List<TValue> values)
         {
-            if (Values == null)
-            {
-                if (!this.Null || Values == values)
-                {
-                    this.AddError(_lang.Different(name));
-                }
-
-                return this;
-            }
-
             if (JsonConvert.SerializeObject(Values) == JsonConvert.SerializeObject(values))
             {
                 this.AddError(_lang.Different(name));
             }
 
             return this;
+        }
+        
+        
+        /// <summary>
+        /// The field under validation must have a different value than field
+        /// </summary>
+        /// <param name="name">
+        /// Name of the field.
+        /// </param>
+        /// <param name="values">
+        /// Date of the field.
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesLists<TValue>Different(String name, TValue[]? values)
+        {
+            if (values == null)
+            {
+                List<TValue> nullable = null;
+                return Different(name, nullable);
+            }
+
+            return Different(name, values.ToList());
         }
         
         
@@ -209,29 +234,51 @@ namespace ValidaZione.Rules
         /// The field under validation must be greater than the given field
         /// </summary>
         /// <param name="values">
-        /// Value to compare
+        /// Value to compare. If the value is null the length be 0.
         /// </param>
         /// <returns>
         /// This instance of the object.
         /// </returns>
         public RulesLists<TValue> GreaterThan(List<TValue> values)
         {
+            long length = values == null ? 0 : values.LongCount();
+            
             if (Values == null)
             {
                 if (!this.Null)
                 {
-                    this.AddError(_lang.GreaterThanArray(values.LongCount()));
+                    this.AddError(_lang.GreaterThanArray(length));
                 }
 
                 return this;
             }
 
-            if (this.Values.Count <= values.Count)
+            if (this.Values.LongCount() <= length)
             {
-                this.AddError(_lang.GreaterThanArray(values.LongCount()));
+                this.AddError(_lang.GreaterThanArray(length));
             }
 
             return this;
+        }
+        
+        /// <summary>
+        /// The field under validation must be greater than the given field
+        /// </summary>
+        /// <param name="values">
+        /// Value to compare. If the value is null the length be 0.
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesLists<TValue> GreaterThan(TValue[]? values)
+        {
+            if (values == null)
+            {
+                List<TValue> nullable = null;
+                return GreaterThan(nullable);
+            }
+
+            return GreaterThan(values.ToList());
         }
         
         /// <summary>
@@ -245,19 +292,73 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesLists<TValue> GreaterThanOrEqual(List<TValue> values)
         {
+            long length = values == null ? 0 : values.LongCount();
+            
             if (Values == null)
             {
                 if (!this.Null)
                 {
-                    this.AddError(_lang.GreaterThanOrEqualArray(values.LongCount()));
+                    this.AddError(_lang.GreaterThanArray(length));
                 }
 
                 return this;
             }
 
-            if (this.Values.Count < values.Count)
+            if (this.Values.LongCount() < length)
             {
-                this.AddError(_lang.GreaterThanOrEqualArray(values.LongCount()));
+                this.AddError(_lang.GreaterThanArray(length));
+            }
+
+            return this;
+        }
+        
+        
+        /// <summary>
+        /// The field under validation must be greater than or equal to the given field.
+        /// </summary>
+        /// <param name="values">
+        /// Value to compare
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesLists<TValue> GreaterThanOrEqual(TValue[]? values)
+        {
+            if (values == null)
+            {
+                List<TValue> nullable = null;
+                return GreaterThanOrEqual(nullable);
+            }
+
+            return GreaterThanOrEqual(values.ToList());
+        }
+        
+        
+        /// <summary>
+        /// The field under validation must be less than the given field
+        /// </summary>
+        /// <param name="values">
+        /// Value to comapre. If the value is null the length be 0.
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesLists<TValue> LessThan(List<TValue> values)
+        {
+            long length = values == null ? 0 : values.LongCount();
+            if (Values == null)
+            {
+                if (!this.Null)
+                {
+                    this.AddError(_lang.LessThanArray(length));
+                }
+
+                return this;
+            }
+
+            if (this.Values.LongCount() >= length)
+            {
+                this.AddError(_lang.LessThanArray(length));
             }
 
             return this;
@@ -268,26 +369,49 @@ namespace ValidaZione.Rules
         /// The field under validation must be less than the given field
         /// </summary>
         /// <param name="values">
-        /// Value to comapre
+        /// Value to comapre. If the value is null the length be 0.
         /// </param>
         /// <returns>
         /// This instance of the object.
         /// </returns>
-        public RulesLists<TValue> LessThan(List<TValue> values)
+        public RulesLists<TValue> LessThan(TValue[] values)
         {
+            if (values == null)
+            {
+                List<TValue> nullable = null;
+
+                return LessThan(nullable);
+            }
+
+            return LessThan(values.ToList());
+        }
+        
+        
+        /// <summary>
+        /// The field under validation must be less than or equal to the given field
+        /// </summary>
+        /// <param name="values">
+        /// Value to comapre. If the value is null the length be 0.
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesLists<TValue> LessThanOrEqual(List<TValue> values)
+        {
+            long length = values == null ? 0 : values.LongCount();
             if (Values == null)
             {
                 if (!this.Null)
                 {
-                    this.AddError(_lang.LessThanArray(values.LongCount()));
+                    this.AddError(_lang.LessThanOrEqualArray(length));
                 }
 
                 return this;
             }
 
-            if (this.Values.Count >= values.Count)
+            if (this.Values.LongCount() > length)
             {
-                this.AddError(_lang.LessThanArray(values.LongCount()));
+                this.AddError(_lang.LessThanOrEqualArray(length));
             }
 
             return this;
@@ -298,29 +422,21 @@ namespace ValidaZione.Rules
         /// The field under validation must be less than or equal to the given field
         /// </summary>
         /// <param name="values">
-        /// Value to comapre
+        /// Value to comapre. If the value is null the length be 0.
         /// </param>
         /// <returns>
         /// This instance of the object.
         /// </returns>
-        public RulesLists<TValue> LessThanOrEqual(List<TValue> values)
+        public RulesLists<TValue> LessThanOrEqual(TValue[]? values)
         {
-            if (Values == null)
+            if (values == null)
             {
-                if (!this.Null)
-                {
-                    this.AddError(_lang.LessThanOrEqualArray(values.LongCount()));
-                }
+                List<TValue> nullable = null;
 
-                return this;
+                return LessThanOrEqual(nullable);
             }
 
-            if (this.Values.Count > values.Count)
-            {
-                this.AddError(_lang.LessThanOrEqualArray(values.LongCount()));
-            }
-
-            return this;
+            return LessThanOrEqual(values.ToList());
         }
 
         /// <summary>
@@ -426,22 +542,35 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesLists<TValue> Same(String name, List<TValue> values)
         {
-            if (Values == null)
-            {
-                if (!this.Null)
-                {
-                    this.AddError(_lang.Same(name));
-                }
-
-                return this;
-            }
-
-            if (!Enumerable.SequenceEqual(this.Values, values))
+            if ((Values != values) && (JsonConvert.SerializeObject(Values) != JsonConvert.SerializeObject(values)))
             {
                 this.AddError(_lang.Same(name));
             }
 
             return this;
+        }
+        
+        /// <summary>
+        /// The given field must match the field under validation.
+        /// </summary>
+        /// <param name="name">
+        /// Name of the field.
+        /// </param>
+        /// <param name="values">
+        /// Value of the field.
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesLists<TValue> Same(String name, TValue[]? values)
+        {
+            if (values == null)
+            {
+                List<TValue> nullable = null;
+                return Same(name, nullable);
+            }
+
+            return Same(name, values.ToList());
         }
         
         

@@ -327,8 +327,8 @@ public class StringsTest
         Assert.IsFalse(right.ErrorsByField().Errors.Any());
 
         right = new RulesStrings(Language.Et, "Test", null);
-        right.Nullable().Confirmed(another);
-        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+        right.Confirmed(another);
+        Assert.IsTrue(right.ErrorsByField().Errors.Any());
 
 
         RulesStrings wrong = new RulesStrings(Language.Et, "Test", value);
@@ -947,6 +947,7 @@ public class StringsTest
     [TestCase("", "", ExpectedResult = false)]
     [TestCase("DTE", "dte", ExpectedResult = true)]
     [TestCase("anyway", "como sea", ExpectedResult = true)]
+    [TestCase(null, null, ExpectedResult = false)]
     public bool Same(string value, string another)
     {
         RulesStrings rules = new RulesStrings(Language.Sw, "Test", value);

@@ -1,4 +1,5 @@
-﻿using ValidaZione;
+﻿using Microsoft.VisualStudio.TestPlatform.ObjectModel;
+using ValidaZione;
 using ValidaZione.Langs;
 using ValidaZione.Rules;
 
@@ -67,7 +68,7 @@ public class LitstsTest
 
         right = new RulesLists<int>(Language.Af, "Test", nullable);
         right.Nullable().Confirmed(confirmed);
-        Assert.IsFalse(right.ErrorsByField().Errors.Any(), "Es nulo pero esta permitido");
+        Assert.IsTrue(right.ErrorsByField().Errors.Any(), "Es nulo pero esta permitido");
 
         right = new RulesLists<int>(Language.Af, "Test", nullable);
         right.Confirmed(anotherNull);
@@ -108,8 +109,8 @@ public class LitstsTest
         Assert.IsFalse(right.ErrorsByField().Errors.Any(), "Son exactamente iguales");
 
         right = new RulesLists<Person>(Language.Af, "Test", nullable);
-        right.Nullable().Confirmed(confirmed);
-        Assert.IsFalse(right.ErrorsByField().Errors.Any(), "Es nulo pero esta permitido");
+        right.Confirmed(confirmed);
+        Assert.IsTrue(right.ErrorsByField().Errors.Any(), "Es nulo pero esta permitido");
 
         right = new RulesLists<Person>(Language.Af, "Test", nullable);
         right.Confirmed(anotherNull);
@@ -224,63 +225,283 @@ public class LitstsTest
         RulesLists<Double> right = new RulesLists<double>(Language.De, "Test", values);
         right.Distinct();
         Assert.IsFalse(right.ErrorsByField().Errors.Any());
-        
+
         right = new RulesLists<double>(Language.De, "Test", nullable);
         right.Nullable().Distinct();
         Assert.IsFalse(right.ErrorsByField().Errors.Any());
-        
+
         values.Add(45.6);
-        
+
         RulesLists<Double> wrong = new RulesLists<double>(Language.De, "Test", values);
         wrong.Distinct();
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
-        
+
         wrong = new RulesLists<double>(Language.De, "Test", nullable);
         wrong.Distinct();
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
-        
     }
-    
+
     [Test]
     public void DistinctObject()
     {
-        List<Person> values = new List<Person> {           
+        List<Person> values = new List<Person>
+        {
             new Person("Bob", "Cat"),
             new Person("Sarah", "Connor"),
             new Person("Person", "Cat"),
-            new Person("Bob", "fet"), };
-        
+            new Person("Bob", "fet"),
+        };
+
         List<Person> nullable = null;
 
         RulesLists<Person> right = new RulesLists<Person>(Language.De, "Test", values);
         right.Distinct();
         Assert.IsFalse(right.ErrorsByField().Errors.Any());
-        
+
         right = new RulesLists<Person>(Language.De, "Test", nullable);
         right.Nullable().Distinct();
         Assert.IsFalse(right.ErrorsByField().Errors.Any());
-        
+
         values.Add(new Person("Bob", "fet"));
-        
+
         RulesLists<Person> wrong = new RulesLists<Person>(Language.De, "Test", values);
         wrong.Distinct();
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
-        
+
         wrong = new RulesLists<Person>(Language.De, "Test", nullable);
         wrong.Distinct();
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
-        
     }
 
-    public class Person
+    [Test]
+    public void GreaterThan()
     {
-        public String Name { get; set; }
-        public String LastName { get; set; }
-
-        public Person(string name, string lastName)
+        List<int> values = new List<int>
         {
-            Name = name;
-            LastName = lastName;
-        }
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+        };
+
+        List<int> another = new List<int>()
+        {
+            1, 2, 3, 4, 5, 6, 7, 8, 9
+        };
+
+        List<int> nulllable = null;
+
+        RulesLists<int> right = new RulesLists<int>(Language.Tg, "Test", values);
+        right.GreaterThan(another);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+
+        right = new RulesLists<int>(Language.Tg, "Test", nulllable);
+        right.Nullable().GreaterThan(another);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+
+
+        RulesLists<int> wrong = new RulesLists<int>(Language.Tg, "Test", another);
+        wrong.GreaterThan(another);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+
+        wrong = new RulesLists<int>(Language.Tg, "Test", another);
+        wrong.GreaterThan(values);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+
+        wrong = new RulesLists<int>(Language.Tg, "Test", nulllable);
+        wrong.GreaterThan(values);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+
+        wrong = new RulesLists<int>(Language.Tg, "Test", nulllable);
+        wrong.GreaterThan(nulllable);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+    }
+
+    [Test]
+    public void GreaterThanOrEqual()
+    {
+        List<int> values = new List<int>
+        {
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+        };
+
+        List<int> another = new List<int>()
+        {
+            1, 2, 3, 4, 5, 6, 7, 8, 9
+        };
+
+        List<int> nulllable = null;
+
+        RulesLists<int> right = new RulesLists<int>(Language.Tg, "Test", values);
+        right.GreaterThanOrEqual(another);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+
+        right = new RulesLists<int>(Language.Tg, "Test", values);
+        right.GreaterThanOrEqual(values);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+
+        right = new RulesLists<int>(Language.Tg, "Test", nulllable);
+        right.Nullable().GreaterThanOrEqual(another);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+
+
+        RulesLists<int> wrong = new RulesLists<int>(Language.Tg, "Test", another);
+        wrong.GreaterThanOrEqual(values);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+
+        wrong = new RulesLists<int>(Language.Tg, "Test", nulllable);
+        wrong.GreaterThanOrEqual(values);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+
+        wrong = new RulesLists<int>(Language.Tg, "Test", nulllable);
+        wrong.GreaterThanOrEqual(nulllable);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+    }
+
+    [Test]
+    public void LessThan()
+    {
+        List<int> values = new List<int>
+        {
+            1, 2, 3, 4, 5, 6, 7, 8, 9
+        };
+
+        List<int> another = new List<int>()
+        {
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+        };
+
+        List<int> nulllable = null;
+
+        RulesLists<int> right = new RulesLists<int>(Language.Tg, "Test", values);
+        right.LessThan(another);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+
+        right = new RulesLists<int>(Language.Tg, "Test", nulllable);
+        right.Nullable().LessThan(another);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+
+
+        RulesLists<int> wrong = new RulesLists<int>(Language.Tg, "Test", another);
+        wrong.LessThan(another);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+
+        wrong = new RulesLists<int>(Language.Tg, "Test", another);
+        wrong.LessThan(values);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+
+        wrong = new RulesLists<int>(Language.Tg, "Test", nulllable);
+        wrong.LessThan(values);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+
+        wrong = new RulesLists<int>(Language.Tg, "Test", nulllable);
+        wrong.LessThan(nulllable);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+    }
+
+    [Test]
+    public void LessThanOrEqual()
+    {
+        List<int> values = new List<int>
+        {
+            1, 2, 3, 4, 5, 6, 7, 8, 9
+        };
+
+        List<int> another = new List<int>()
+        {
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+        };
+
+        List<int> nulllable = null;
+
+        RulesLists<int> right = new RulesLists<int>(Language.Tg, "Test", values);
+        right.LessThanOrEqual(another);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+
+        right = new RulesLists<int>(Language.Tg, "Test", values);
+        right.LessThanOrEqual(values);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+
+        right = new RulesLists<int>(Language.Tg, "Test", nulllable);
+        right.Nullable().LessThanOrEqual(another);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+
+
+        RulesLists<int> wrong = new RulesLists<int>(Language.Tg, "Test", another);
+        wrong.LessThanOrEqual(values);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+
+        wrong = new RulesLists<int>(Language.Tg, "Test", nulllable);
+        wrong.LessThanOrEqual(values);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+
+        wrong = new RulesLists<int>(Language.Tg, "Test", nulllable);
+        wrong.LessThanOrEqual(nulllable);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+    }
+
+    [Test]
+    [TestCase(0, ExpectedResult = true)]
+    [TestCase(4, ExpectedResult = true)]
+    [TestCase(5, ExpectedResult = false)]
+    [TestCase(10, ExpectedResult = false)]
+    [TestCase(14, ExpectedResult = false)]
+    [TestCase(50, ExpectedResult = false)]
+    public bool Max(long max)
+    {
+        RulesLists<int> rules = new RulesLists<int>(Language.Cy, "Test", new[] { 1, 2, 3, 4, 5 });
+        rules.Max(max);
+        return rules.ErrorsByField().Errors.Any();
+    }
+
+    [Test]
+    [TestCase(0, ExpectedResult = false)]
+    [TestCase(4, ExpectedResult = false)]
+    [TestCase(5, ExpectedResult = false)]
+    [TestCase(10, ExpectedResult = true)]
+    [TestCase(14, ExpectedResult = true)]
+    [TestCase(50, ExpectedResult = true)]
+    public bool Min(long min)
+    {
+        RulesLists<int> rules = new RulesLists<int>(Language.Cy, "Test", new[] { 1, 2, 3, 4, 5 });
+        rules.Min(min);
+        return rules.ErrorsByField().Errors.Any();
+    }
+
+    [Test]
+    [TestCase(new[] { 1, 2, 3, 4, 5 }, new[] { 1, 2, 3, 4, 5 }, ExpectedResult = false)]
+    [TestCase(new[] { 1, 2, 3, 4 }, new[] { 1, 2, 3, 4, 5 }, ExpectedResult = true)]
+    [TestCase(new[] { 1, 2, 3, 4, 5 }, new[] { 1, 2, 3, 4, 5, 6 }, ExpectedResult = true)]
+    [TestCase(new int[] { }, new int[] { }, ExpectedResult = false)]
+    [TestCase(null, new[] { 1, 2, 3, 4, 5 }, ExpectedResult = true)]
+    [TestCase(null, null, ExpectedResult = false)]
+    public bool Same(int[] values, int[] another)
+    {
+        RulesLists<int> rules = new RulesLists<int>(Language.Id, "Test", values);
+        rules.Same("Another", another);
+        return rules.ErrorsByField().Errors.Any();
+    }
+
+    [Test]
+    [TestCase(new[] { 1, 2 }, 2, ExpectedResult = false)]
+    [TestCase(new[] { 1, 2 }, 2, ExpectedResult = false)]
+    [TestCase(new int[] { }, 0, ExpectedResult = false)]
+    [TestCase(new[] { 1, 2, 4, 3 }, 4, ExpectedResult = false)]
+    [TestCase(new[] { 1, 2 }, 0, ExpectedResult = true)]
+    [TestCase(null, 2, ExpectedResult = true)]
+    public bool Size(int[] values, long size)
+    {
+        RulesLists<int> rules = new RulesLists<int>(Language.Oc, "Test", values);
+        rules.Size(size);
+        return rules.ErrorsByField().Errors.Any();
+    }
+}
+
+public class Person
+{
+    public String Name { get; set; }
+    public String LastName { get; set; }
+
+    public Person(string name, string lastName)
+    {
+        Name = name;
+        LastName = lastName;
     }
 }
