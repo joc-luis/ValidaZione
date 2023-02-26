@@ -12,10 +12,18 @@
         <PackageTags>Validation, Validator, Rules</PackageTags>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageReleaseNotes>The library is in testing mode, is not secure for production mode.
-Fix bug in MacAddress rule
+Fixed bugs in RulesLists
+Fixed bug in Confirmed rule.
+Fixed bug in Different rule.
+Fixed bug in GreaterThan rule.
+Fixed bug in GreaterThanOrEqaul rule.
+Fixed bug in LessThan rule.
+Fixed bug in LessThanOrEqual rule.
+Fixed bug in Same rule.
+Support for arrays in rules.
 Add bugs to fix later.</PackageReleaseNotes>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
-        <Version>2.0.22</Version>
+        <Version>2.7.29</Version>
         <PackageProjectUrl>https://github.com/joc-luis/ValidaZione</PackageProjectUrl>
     </PropertyGroup>
 
