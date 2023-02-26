@@ -830,7 +830,7 @@ namespace ValidaZione.Rules
                 .Replace(":", "")
                 .Replace("-", "");
 
-            Regex regex = new Regex("^[a-zA-Z0-9]{12}$");
+            Regex regex = new Regex("^[a-fA-F0-9]{12}$");
 
 
             if (!regex.IsMatch(mac))

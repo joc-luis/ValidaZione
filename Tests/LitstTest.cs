@@ -216,7 +216,7 @@ public class LitstsTest
 
 
     [Test]
-    public void DistinctTest()
+    public void Distinct()
     {
         List<Double> values = new List<Double> { 10, 45.6, 57.8, 90, 67 };
         List<double> nullable = null;
@@ -242,7 +242,7 @@ public class LitstsTest
     }
     
     [Test]
-    public void DistinctObjectTest()
+    public void DistinctObject()
     {
         List<Person> values = new List<Person> {           
             new Person("Bob", "Cat"),
