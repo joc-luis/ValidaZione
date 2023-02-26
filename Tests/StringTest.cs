@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using ValidaZione;
 using ValidaZione.Langs;
 using ValidaZione.Rules;
@@ -481,6 +482,10 @@ public class StringsTest
         right = new RulesStrings(Language.Lt, "Test", null);
         right.Nullable().GreaterThan(null);
         Assert.IsFalse(right.ErrorsByField().Errors.Any());
+        
+        right = new RulesStrings(Language.Lt, "Test", null);
+        right.Nullable().GreaterThan(null);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
 
 
         RulesStrings wrong = new RulesStrings(Language.Lt, "Test", another);
@@ -498,6 +503,7 @@ public class StringsTest
         wrong = new RulesStrings(Language.Lt, "Test", null);
         wrong.GreaterThan("Fail");
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+        
     }
 
 
@@ -644,6 +650,10 @@ public class StringsTest
         right.Ip();
         Assert.IsFalse(right.ErrorsByField().Errors.Any());
         
+        right = new RulesStrings(Language.De, "Test", null);
+        right.Nullable().Ip();
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+        
         
         RulesStrings wrong = new RulesStrings(Language.De, "Test", "127.0.0.852");
         wrong.Ip();
@@ -652,5 +662,364 @@ public class StringsTest
         wrong = new RulesStrings(Language.De, "Test", another.Substring(0,4));
         wrong.Ip();
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+        
+        wrong = new RulesStrings(Language.De, "Test", null);
+        wrong.Ip();
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+    }
+    
+    [Test]
+    public void Ipv4()
+    {
+        string value = "127.0.0.1", another = "fe80::979f:6646:44ce:52ec%11";
+
+        RulesStrings right = new RulesStrings(Language.De, "Test", value);
+        right.Ipv4();
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+        
+        RulesStrings wrong = new RulesStrings(Language.De, "Test", "127.0.0.852");
+        wrong.Ipv4();
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+        
+        right = new RulesStrings(Language.De, "Test", null);
+        right.Nullable().Ipv4();
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+        
+        wrong = new RulesStrings(Language.De, "Test", another);
+        wrong.Ipv4();
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+        
+        wrong = new RulesStrings(Language.De, "Test", null);
+        wrong.Ipv4();
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+    }
+    
+    [Test]
+    public void Ipv6()
+    {
+        string value = "fe80::979f:6646:44ce:52ec%11", another = "127.0.0.1";
+
+        RulesStrings right = new RulesStrings(Language.De, "Test", value);
+        right.Ipv6();
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+        
+        RulesStrings wrong = new RulesStrings(Language.De, "Test", "127.0.0.852");
+        wrong.Ipv6();
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+        
+        right = new RulesStrings(Language.De, "Test", null);
+        right.Nullable().Ipv6();
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+
+        
+        wrong = new RulesStrings(Language.De, "Test", another);
+        wrong.Ipv6();
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+        
+        wrong = new RulesStrings(Language.De, "Test", null);
+        wrong.Ipv6();
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+    }
+
+    [Test]
+    public void Json()
+    {
+        string json = JsonConvert.SerializeObject(new Thing("keyboard"));
+
+        RulesStrings right = new RulesStrings(Language.Cs, "Test", json);
+        right.Json();
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+        
+        right = new RulesStrings(Language.Cs, "Test", null);
+        right.Nullable().Json();
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+    }
+
+
+    [Test]
+    public void Lowercase()
+    {
+        string value = "ajkshfkjlhdsajklfhuioslwhfeufiweuohuiohvnksdbn";
+
+        RulesStrings right = new RulesStrings(Language.Vi, "Test", value);
+        right.Lowercase();
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+
+        value = "djasdAAASDAssadafsd";
+        RulesStrings wrong = new RulesStrings(Language.Vi, "Test", value);
+        wrong.Lowercase();
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+        
+        wrong = new RulesStrings(Language.Vi, "Test", "213");
+        wrong.Lowercase();
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+    }
+
+    [Test]
+    public void LessThan()
+    {
+        string value = "testing", another = "other";
+
+        RulesStrings right = new RulesStrings(Language.Lt, "Test", another);
+        right.LessThan(value);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+
+        right = new RulesStrings(Language.Lt, "Test", value);
+        right.LessThan("123456789");
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+
+        right = new RulesStrings(Language.Lt, "Test", null);
+        right.Nullable().LessThan(another);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+        
+        right = new RulesStrings(Language.Lt, "Test", "");
+        right.Nullable().LessThan(another);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+
+
+        RulesStrings wrong = new RulesStrings(Language.Lt, "Test", another);
+        wrong.LessThan(another);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+
+        wrong = new RulesStrings(Language.Lt, "Test", value);
+        wrong.LessThan(another);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+
+        wrong = new RulesStrings(Language.Lt, "Test", null);
+        wrong.LessThan(null);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+        
+        wrong = new RulesStrings(Language.Lt, "Test", null);
+        wrong.LessThan(null);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+    }
+
+
+    [Test]
+    public void LessThanOrEqual()
+    {
+        string value = "testing", another = "other";
+        
+        RulesStrings right = new RulesStrings(Language.Lt, "Test", another);
+        right.LessThanOrEqual(value);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+        
+        right = new RulesStrings(Language.Lt, "Test", another);
+        right.LessThanOrEqual(another);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+
+        right = new RulesStrings(Language.Lt, "Test", null);
+        right.Nullable().LessThanOrEqual(value);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+
+        right = new RulesStrings(Language.Lt, "Test", "");
+        right.LessThanOrEqual("");
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+        
+        
+        
+        RulesStrings wrong = new RulesStrings(Language.Lt, "Test", value);
+        wrong.LessThanOrEqual(another);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+
+        wrong = new RulesStrings(Language.Lt, "Test", value);
+        wrong.LessThanOrEqual("1234");
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+
+        wrong = new RulesStrings(Language.Lt, "Test", value);
+        wrong.LessThanOrEqual(null);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+    }
+    
+    
+    [Test]
+    [TestCase("46:fe:c6:8d:4d:ed")]
+    [TestCase("fa:85:61:a5:58:6c")]
+    [TestCase("b1:b3:7a:00:a2:90")]
+    [TestCase("ec:5a:58:0b:dd:82")]
+    [TestCase("7d:31:cb:96:b0:ea")]
+    [TestCase("25:aa:65:92:09:be")]
+    [TestCase("85:01:cc:a2:b6:d1")]
+    [TestCase("dd:97:6e:a2:b2:37")]
+    [TestCase("74:d8:f1:c7:33:57")]
+    [TestCase("e6:21:ec:9b:6b:bc")]
+    public void MacAddress(string mac)
+    {
+        RulesStrings rules = new RulesStrings(Language.He, "Test", mac);
+        rules.MacAddress();
+        Assert.IsFalse(rules.ErrorsByField().Errors.Any());
+    }
+
+    
+    [Test]
+    public void Max()
+    {
+        RulesStrings right = new RulesStrings(Language.Ka, "Test", "Less");
+        right.Max(4);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+        
+        right = new RulesStrings(Language.Ka, "Test", "Less");
+        right.Max(6);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+        
+        right = new RulesStrings(Language.Ka, "Test", "");
+        right.Max(0);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+        
+        right = new RulesStrings(Language.Ka, "Test", null);
+        right.Nullable().Max(0);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+        
+        
+        
+        RulesStrings wrong = new RulesStrings(Language.Ka, "Test", "Less than or equal");
+        wrong.Max(4);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+        
+        wrong = new RulesStrings(Language.Ka, "Test", null);
+        wrong.Max(4);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+    }
+
+    [Test]
+    public void Min()
+    {
+        RulesStrings rules = new RulesStrings(Language.Mk, "Test", "Testing");
+        rules.Min(0);
+        rules.Min(7);
+        Assert.IsFalse(rules.ErrorsByField().Errors.Any());
+        rules.Min(10);
+        Assert.IsTrue(rules.ErrorsByField().Errors.Any());
+    }
+
+    [Test]
+    public void NotIn()
+    {
+        List<String> values = new List<string>()
+        {
+            "one",
+            "two",
+            "three",
+            "four"
+        };
+
+        RulesStrings rules = new RulesStrings(Language.Sq, "Test", "five");
+        rules.NotIn(values);
+        Assert.IsFalse(rules.ErrorsByField().Errors.Any());
+        
+        
+        values.Add("five");
+        rules.NotIn(values.ToArray());
+        Assert.IsTrue(rules.ErrorsByField().Errors.Any());
+    }
+
+    [Test]
+    [TestCase("1", ExpectedResult = false)]
+    [TestCase("1.5", ExpectedResult = false)]
+    [TestCase("1337e0", ExpectedResult = false)]
+    [TestCase("02471", ExpectedResult = false)]
+    [TestCase("0x539", ExpectedResult = true)]
+    [TestCase("not numeric", ExpectedResult = true)]
+    [TestCase("0x539", ExpectedResult = true)]
+    [TestCase("0b10100111001", ExpectedResult = true)]
+    public bool Numeric(string value)
+    {
+        RulesStrings rules = new RulesStrings(Language.Lt, "Test", value);
+        rules.Numeric();
+        return rules.ErrorsByField().Errors.Any();
+    }
+
+    [Test]
+    [TestCase(null, ExpectedResult = true)]
+    [TestCase("", ExpectedResult = true)]
+    [TestCase("s", ExpectedResult = false)]
+    public bool Required(string value)
+    {
+        RulesStrings rules = new RulesStrings(Language.Cs, "Test", value);
+        rules.Required();
+        return rules.ErrorsByField().Errors.Any();
+    }
+
+    [Test]
+    [TestCase("same", "same", ExpectedResult = false)]
+    [TestCase("different", "differentt", ExpectedResult = true)]
+    [TestCase(null, "", ExpectedResult = true)]
+    [TestCase("", "", ExpectedResult = false)]
+    [TestCase("DTE", "dte", ExpectedResult = true)]
+    [TestCase("anyway", "como sea", ExpectedResult = true)]
+    public bool Same(string value, string another)
+    {
+        RulesStrings rules = new RulesStrings(Language.Sw, "Test", value);
+        rules.Same("another", another);
+        return rules.ErrorsByField().Errors.Any();
+    }
+
+    [Test]
+    [TestCase("", 0, ExpectedResult = false)]
+    [TestCase("Four", 4, ExpectedResult = false)]
+    [TestCase("five", 5, ExpectedResult = true)]
+    [TestCase("", 4, ExpectedResult = true)]
+    [TestCase(null, 0, ExpectedResult = true)]
+    public bool Size(string value, int size)
+    {
+        RulesStrings rules = new RulesStrings(Language.Et, "Test", value);
+        rules.Size(size);
+        return rules.ErrorsByField().Errors.Any();
+    }
+
+
+    [Test]
+    [TestCase("End", ExpectedResult = false)]
+    [TestCase("Fin", ExpectedResult = false)]
+    [TestCase("Test", ExpectedResult = false)]
+    [TestCase("Prueba", ExpectedResult = false)]
+    [TestCase("Ninguna de las anteriores", ExpectedResult = true)]
+    public bool StartsWith(string value)
+    {
+        RulesStrings rules = new RulesStrings(Language.Ro, "Test", value);
+        rules.StartsWith(new[] { "En", "Fi", "Te", "Pr" });
+
+        return rules.ErrorsByField().Errors.Any();
+    }
+
+    [Test]
+    [TestCase("TODOBIEN", ExpectedResult = false)]
+    [TestCase("CASI PERO no", ExpectedResult = true)]
+    [TestCase("dlknjaskdljlask;jdlksa", ExpectedResult = true)]
+    [TestCase("empezo mal y termino BIEN", ExpectedResult = true)]
+    [TestCase("1", ExpectedResult = true)]
+    [TestCase("A", ExpectedResult = false)]
+    [TestCase(null, ExpectedResult = true)]
+    public bool Uppercase(string value)
+    {
+        RulesStrings rules = new RulesStrings(Language.Ro, "Test", value);
+        rules.Uppercase();
+
+        return rules.ErrorsByField().Errors.Any();
+    }
+
+    [Test]
+    [TestCase("https://github.com/Laravel-Lang/lang/blob/main/locales/en/php.json", ExpectedResult = false)]
+    [TestCase("https://github.com/Laravel-Lang/lang/tree/main/locales", ExpectedResult = false)]
+    [TestCase("https://github.com/Laravel-Lang", ExpectedResult = false)]
+    [TestCase("https://github.com/", ExpectedResult = false)]
+    [TestCase("https://github.com/joc-luis/ValidaZione", ExpectedResult = false)]
+    [TestCase("https:github", ExpectedResult = true)]
+    [TestCase("https://www.github.com/", ExpectedResult = false)]
+    public bool Url(string value)
+    {
+        RulesStrings rules = new RulesStrings(Language.Ro, "Test", value);
+        rules.Url();
+        return rules.ErrorsByField().Errors.Any();
+    }
+}
+
+public class Thing
+{
+    public string Name { get; set; }
+
+    public Thing(string name)
+    {
+        this.Name = name;
     }
 }

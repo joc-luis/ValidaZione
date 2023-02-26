@@ -459,7 +459,7 @@ namespace ValidaZione.Rules
         /// The field under validation must be greater than the given field.
         /// </summary>
         /// <param name="value">
-        /// Value to compare. If is null the length must be 0.
+        /// Value to compare. If is null the length be 0.
         /// </param>
         /// <returns>
         /// This instance of the object.
@@ -469,7 +469,7 @@ namespace ValidaZione.Rules
             int length = String.IsNullOrEmpty(value) ? 0 : value.Length;
             if (this.Value == null)
             {
-                if (!this.Null || length > 0)
+                if (!this.Null)
                 {
                     AddError(_lang.GreaterThanString(length));
                 }
@@ -477,11 +477,7 @@ namespace ValidaZione.Rules
                 return this;
             }
 
-            if (length == 0 && String.IsNullOrEmpty(Value))
-            {
-                AddError(_lang.GreaterThanString(length));
-            }
-            else if (length >= Value.Length)
+            if (length >= Value.Length)
             {
                 AddError(_lang.GreaterThanString(length));
             }
@@ -493,7 +489,7 @@ namespace ValidaZione.Rules
         /// The field under validation must be greater than or equal to the given field.
         /// </summary>
         /// <param name="value">
-        /// Value to compare. If is null the length must be 0.
+        /// Value to compare. If is null the length be 0.
         /// </param>
         /// <returns>
         /// This instance of the object.
@@ -504,7 +500,7 @@ namespace ValidaZione.Rules
 
             if (this.Value == null)
             {
-                if (!this.Null || length > 0)
+                if (!this.Null)
                 {
                     AddError(_lang.GreaterThanString(length));
                 }
@@ -609,7 +605,7 @@ namespace ValidaZione.Rules
             {
                 var ip = IPAddress.Parse(this.Value);
 
-                if (ip.AddressFamily != AddressFamily.InterNetwork 
+                if (ip.AddressFamily != AddressFamily.InterNetwork
                     && ip.AddressFamily != AddressFamily.InterNetworkV6)
                 {
                     AddError(_lang.Ip());
@@ -753,26 +749,28 @@ namespace ValidaZione.Rules
         /// The field under validation must be less than the given field
         /// </summary>
         /// <param name="value">
-        /// Value to comapre
+        /// Value to comapre. If the value is null the lenght be 0.
         /// </param>
         /// <returns>
         /// This instance of the object.
         /// </returns>
         public RulesStrings LessThan(string value)
         {
+            int length = String.IsNullOrEmpty(value) ? 0 : value.Length;
+
             if (this.Value == null)
             {
                 if (!this.Null)
                 {
-                    AddError(_lang.LessThanString(value.Length));
+                    AddError(_lang.LessThanString(length));
                 }
 
                 return this;
             }
 
-            if (this.Value.Length >= value.Length)
+            if (length <= Value.Length)
             {
-                AddError(_lang.LessThanString(value.Length));
+                AddError(_lang.LessThanString(length));
             }
 
             return this;
@@ -783,13 +781,15 @@ namespace ValidaZione.Rules
         /// The field under validation must be less than or equal to the given field
         /// </summary>
         /// <param name="value">
-        /// Value to comapre
+        /// Value to comapre. If the value is null the length be 0.
         /// </param>
         /// <returns>
         /// This instance of the object.
         /// </returns>
         public RulesStrings LessThanOrEqual(string value)
         {
+            int length = String.IsNullOrEmpty(value) ? 0 : value.Length;
+            
             if (this.Value == null)
             {
                 if (!this.Null)
@@ -800,9 +800,9 @@ namespace ValidaZione.Rules
                 return this;
             }
 
-            if (this.Value.Length > value.Length)
+            if (this.Value.Length > length)
             {
-                AddError(_lang.LessThanOrEqualString(value.Length));
+                AddError(_lang.LessThanOrEqualString(length));
             }
 
             return this;
@@ -830,7 +830,7 @@ namespace ValidaZione.Rules
                 .Replace(":", "")
                 .Replace("-", "");
 
-            Regex regex = new Regex("^([:xdigit:]){12}$");
+            Regex regex = new Regex("^[a-zA-Z0-9]{12}$");
 
 
             if (!regex.IsMatch(mac))
@@ -910,16 +910,6 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesStrings NotIn(List<String> values)
         {
-            if (this.Value == null)
-            {
-                if (!this.Null)
-                {
-                    AddError(_lang.NotIn());
-                }
-
-                return this;
-            }
-
             if (values.Any(v => this.Value == v))
             {
                 AddError(_lang.NotIn());
@@ -939,16 +929,6 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesStrings NotIn(String[] values)
         {
-            if (this.Value == null)
-            {
-                if (!this.Null)
-                {
-                    AddError(_lang.NotIn());
-                }
-
-                return this;
-            }
-
             if (values.Any(v => this.Value == v))
             {
                 AddError(_lang.NotIn());
@@ -1249,7 +1229,7 @@ namespace ValidaZione.Rules
                 return this;
             }
 
-            if (values.Any(v => !this.Value.StartsWith(v)))
+            if (!values.Any(v => this.Value.StartsWith(v)))
             {
                 AddError(_lang.StartsWith(values.ToList()));
             }
