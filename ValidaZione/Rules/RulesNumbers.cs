@@ -296,7 +296,7 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesNumbers<TValue> In(List<TValue> values)
         {
-            if (values.All(v => v != null && !v.Equals(Value)))
+            if (!values.Any(v => v.ToString() == Value.ToString()))
             {
                 AddError(_lang.In());
             }
@@ -315,7 +315,7 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesNumbers<TValue> In(TValue[] values)
         {
-            if (!values.All(v => v != null && !v.Equals(Value)))
+            if (!values.Any(v => v.ToString() == Value.ToString()))
             {
                 AddError(_lang.In());
             }
@@ -496,7 +496,7 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesNumbers<TValue> NotIn(List<TValue> values)
         {
-            if (values.Any(v => v != null && v.Equals(Value)))
+            if (values.Any(v => v.ToString() == Value.ToString()))
             {
                 AddError(_lang.NotIn());
             }
@@ -515,7 +515,7 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesNumbers<TValue> NotIn(TValue[] values)
         {
-            if (!values.Any(v => v != null && v.Equals(Value)))
+            if (values.Any(v => v.ToString() == Value.ToString()))
             {
                 AddError(_lang.NotIn());
             }
@@ -537,7 +537,7 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesNumbers<TValue> Same(string name, TValue value)
         {
-            if (value != null && value.Equals(Value))
+            if (value.ToString() != Value.ToString())
             {
                 AddError(_lang.Same(name));
             }

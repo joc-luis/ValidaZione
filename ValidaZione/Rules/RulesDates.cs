@@ -115,6 +115,7 @@ namespace ValidaZione.Rules
             return this;
         }
 
+        
         /// <summary>
         /// The field under validation must be a value preceding the given date 
         /// </summary>
@@ -216,19 +217,9 @@ namespace ValidaZione.Rules
         /// <returns>
         /// This instance of the object.
         /// </returns>
-        public RulesDates Confirmed(DateTime value)
+        public RulesDates Confirmed(DateTime? value)
         {
-            if (Value == null)
-            {
-                if (!this.Null)
-                {
-                    this.AddError(_lang.Confirmed());
-                }
-
-                return this;
-            }
-
-            if (Convert.ToDateTime(this.Value) != value)
+            if (this.Value != value)
             {
                 this.AddError(_lang.Confirmed());
             }
@@ -248,19 +239,9 @@ namespace ValidaZione.Rules
         /// <returns>
         /// This instance of the object.
         /// </returns>
-        public RulesDates Different(String name, DateTime value)
+        public RulesDates Different(String name, DateTime? value)
         {
-            if (Value == null)
-            {
-                if (!this.Null)
-                {
-                    this.AddError(_lang.Different(name));
-                }
-
-                return this;
-            }
-
-            if (Convert.ToDateTime(this.Value) == value)
+            if (this.Value == value)
             {
                 this.AddError(_lang.Different(name));
             }
@@ -279,16 +260,6 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesDates In(List<DateTime> values)
         {
-            if (Value == null)
-            {
-                if (!this.Null)
-                {
-                    this.AddError(_lang.In());
-                }
-
-                return this;
-            }
-
             if (values.All(v => v != Convert.ToDateTime(Value)))
             {
                 this.AddError(_lang.In());
@@ -377,7 +348,7 @@ namespace ValidaZione.Rules
                 return this;
             }
 
-            if (Convert.ToDateTime(this.Value) > value)
+            if (Convert.ToDateTime(this.Value) < value)
             {
                 this.AddError(_lang.MinNumeric(value.ToString()));
             }
@@ -445,7 +416,8 @@ namespace ValidaZione.Rules
         
         
         /// <summary>
-        /// The field under validation may be null
+        /// The field under validation may be null.
+        /// This feature not works in Confirmed, Different and Same   rules.
         /// </summary>
         /// <returns>
         /// This instance of the object.
@@ -487,9 +459,9 @@ namespace ValidaZione.Rules
         /// <returns>
         /// This instance of the object.
         /// </returns>
-        public RulesDates Same(String name, DateTime value)
+        public RulesDates Same(String name, DateTime? value)
         {
-            if (!value.Equals(Value))
+            if (Value != value)
             {
                 this.AddError(_lang.Same(name));
             }
