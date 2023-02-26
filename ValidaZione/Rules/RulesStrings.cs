@@ -286,16 +286,6 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesStrings Confirmed(string value)
         {
-            if (this.Value == null)
-            {
-                if (!this.Null && this.Value != value)
-                {
-                    this.AddError(_lang.Confirmed());
-                }
-
-                return this;
-            }
-
             if (Value != value)
             {
                 this.AddError(_lang.Confirmed());
@@ -347,13 +337,6 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesStrings Different(String name, String value)
         {
-            if (this.Value == null && !this.Null)
-            {
-                this.AddError(_lang.Different(name));
-                return this;
-            }
-
-
             if (this.Value == value)
             {
                 this.AddError(_lang.Different(name));
@@ -845,7 +828,7 @@ namespace ValidaZione.Rules
         /// The field under validation must be less than or equal to a maximum value
         /// </summary>
         /// <param name="max">
-        /// Max lentgh allowed.
+        /// Max length allowed.
         /// </param>
         /// <returns>
         /// This instance of the object.
