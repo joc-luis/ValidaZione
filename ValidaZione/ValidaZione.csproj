@@ -12,6 +12,7 @@
         <PackageTags>Validation, Validator, Rules</PackageTags>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageReleaseNotes>The library is in testing mode, is not secure for production mode.
+Fixed bugs in rules strings.
 Fix bug in 'GreaterThan'.
 Fix bug in 'GreaterThanOrEqual'.
 Fix bug in 'Ip'.
