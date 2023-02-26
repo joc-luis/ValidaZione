@@ -111,7 +111,7 @@ public class MyCustomLang : ILang {
     
     public string Accepted(){
   
-        return "Debes aceptar cederme tu alma.";
+        return "Acepta las condiciones que evidentemente no leíste";
     }
  }
 ```
