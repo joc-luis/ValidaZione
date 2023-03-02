@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} har ein duplikatverdi.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"De {FieldName} slutter kanskje ikke med ett av følgende: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"De {FieldName} starter kanskje ikke med ett av følgende: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} format er ugyldig.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} må innehalde :size element.";
+            return $"{FieldName} må innehalde {size} element.";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} må vere :size teikn lang.";
+            return $"{FieldName} må vere {size} teikn lang.";
         }
 public string StartsWith(List<string> values)
         {

@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} 필드에 중복된 값이 있습니다.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName}은 다음 중 하나로 끝날 수 없습니다: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName}은 다음 중 하나로 시작할 수 없습니다: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName}은(는) 유효한 이메일 주소여야 합니다.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName}은(는) :size개의 항목을 포함해야 합니다.";
+            return $"{FieldName}은(는) {size}개의 항목을 포함해야 합니다.";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName}은(는) :size자여야 합니다.";
+            return $"{FieldName}은(는) {size}자여야 합니다.";
         }
 public string StartsWith(List<string> values)
         {

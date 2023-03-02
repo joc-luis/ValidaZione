@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"ಈ  {FieldName} ಕ್ಷೇತ್ರವು ನಕಲಿ ಮೌಲ್ಯವನ್ನು ಹೊಂದಿದೆ.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} ಕೆಳಗಿನವುಗಳಲ್ಲಿ ಒಂದರಲ್ಲಿ ಕೊನೆಗೊಳ್ಳದಿರಬಹುದು: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} ಕೆಳಗಿನವುಗಳಲ್ಲಿ ಒಂದರಿಂದ ಪ್ರಾರಂಭವಾಗಬಾರದು: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"ಈ  {FieldName} ಮಾನ್ಯವಾದ ಇಮೇಲ್ ವಿಳಾಸವಾಗಿರಬೇಕು.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"ಈ  {FieldName} ನಲ್ಲಿ   :size ಐಟಂಗಳಿರಲೇಬೇಕು.";
+            return $"ಈ  {FieldName} ನಲ್ಲಿ   {size} ಐಟಂಗಳಿರಲೇಬೇಕು.";
         }
     public string SizeString(int size)
         {
-            return $"ಈ  {FieldName} ನಲ್ಲಿ   :size ಅಕ್ಷರಗಳಿರಲೇಬೇಕು.";
+            return $"ಈ  {FieldName} ನಲ್ಲಿ   {size} ಅಕ್ಷರಗಳಿರಲೇಬೇಕು.";
         }
 public string StartsWith(List<string> values)
         {

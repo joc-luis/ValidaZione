@@ -178,7 +178,9 @@ namespace ValidaZione.Rules
                 return this;
             }
 
-            if (!this.Value.All(c => c >= 32 && c <= 127))
+            if (!this.Value.All(c => (c >= 48 && c <= 57) 
+                                     || Char.IsLetter(c)
+                                     || (c == 45 || c == 95)))
             {
                 this.AddError(_lang.AlphaDash());
             }
@@ -343,6 +345,89 @@ namespace ValidaZione.Rules
             }
 
             return this;
+        }
+        
+        
+        /// <summary>
+        /// The field under validation must not end with one of the given values.
+        /// </summary>
+        /// <param name="values">Not allowed values.</param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesStrings DoesNotEndWith(List<String> values)
+        {
+            if (this.Value == null)
+            {
+                if (!this.Null)
+                {
+                    AddError(_lang.DoesNotEndWith(values));
+                }
+
+                return this;
+            }
+
+
+            if (values.Any(v => this.Value.EndsWith(v)))
+            {
+                AddError(_lang.DoesNotEndWith(values));
+            }
+
+            return this;
+        }
+        
+        
+        /// <summary>
+        /// The field under validation must not end with one of the given values.
+        /// </summary>
+        /// <param name="values">Not allowed values.</param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesStrings DoesNotEndWith(String[] values)
+        {
+            return DoesNotEndWith(values.ToList());
+        }
+        
+        
+        /// <summary>
+        /// The field under validation must not start with one of the given values.
+        /// </summary>
+        /// <param name="values">Not allowed values.</param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesStrings DoesNotStartWith(List<String> values)
+        {
+            if (this.Value == null)
+            {
+                if (!this.Null)
+                {
+                    AddError(_lang.DoesNotStartWith(values));
+                }
+
+                return this;
+            }
+
+
+            if (values.Any(v => this.Value.StartsWith(v)))
+            {
+                AddError(_lang.DoesNotStartWith(values));
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// The field under validation must not start with one of the given values.
+        /// </summary>
+        /// <param name="values">Not allowed values.</param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesStrings DoesNotStartWith(String[] values)
+        {
+            return DoesNotStartWith(values.ToList());
         }
 
 

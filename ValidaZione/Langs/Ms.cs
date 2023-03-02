@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} adalah nilai yang berulang";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} mungkin tidak berakhir dengan salah satu daripada yang berikut: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} mungkin tidak bermula dengan salah satu daripada yang berikut: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} tidak sah.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"Saiz {FieldName} mesti mengandungi :size perkara.";
+            return $"Saiz {FieldName} mesti mengandungi {size} perkara.";
         }
     public string SizeString(int size)
         {
-            return $"Saiz {FieldName} mesti :size aksara.";
+            return $"Saiz {FieldName} mesti {size} aksara.";
         }
 public string StartsWith(List<string> values)
         {

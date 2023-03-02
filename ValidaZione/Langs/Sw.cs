@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"Sehemu ya kipengele ina thamani rudufu.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} inaweza isiishie na mojawapo ya yafuatayo: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} inaweza isianze na mojawapo ya yafuatayo: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"Kipengele lazima kiwe anuani halali ya barua pepe.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"Kipengele lazima kiwe chenye :size ya kipimo.";
+            return $"Kipengele lazima kiwe chenye {size} ya kipimo.";
         }
     public string SizeString(int size)
         {
-            return $"Kipengele lazima kiwe :size cha herufi.";
+            return $"Kipengele lazima kiwe {size} cha herufi.";
         }
 public string StartsWith(List<string> values)
         {

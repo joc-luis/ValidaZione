@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"Полето {FieldName} има вредност која е дупликат.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName}-ката не може да завршува со едно од следниве: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} не смее да започнува со едно од следниве: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"Полето {FieldName} не е во валиден формат.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"Полето {FieldName} мора да биде низа со :size број на елементи.";
+            return $"Полето {FieldName} мора да биде низа со {size} број на елементи.";
         }
     public string SizeString(int size)
         {
-            return $"Полето {FieldName} мора да биде текст со должина од :size број на карактери.";
+            return $"Полето {FieldName} мора да биде текст со должина од {size} број на карактери.";
         }
 public string StartsWith(List<string> values)
         {

@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} дорои қиммати такроршаванда мебошад.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} метавонад бо яке аз зерин хотима наёбад: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} метавонад бо яке аз инҳо оғоз нашавад: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"Қиммати {FieldName} бояд суроғаи электронии дуруст бошад.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"Миқдори элементҳо дар {FieldName} бояд :size бошад.";
+            return $"Миқдори элементҳо дар {FieldName} бояд {size} бошад.";
         }
     public string SizeString(int size)
         {
-            return $"Миқдори аломатҳо дар {FieldName} бояд :size бошад.";
+            return $"Миқдори аломатҳо дар {FieldName} бояд {size} бошад.";
         }
 public string StartsWith(List<string> values)
         {

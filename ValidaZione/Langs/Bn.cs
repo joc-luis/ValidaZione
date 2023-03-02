@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} এর স্থানে একটি নকল মান আছে।";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} নিম্নলিখিত: {String.Join(", ", values)} এর একটি দিয়ে শেষ নাও হতে পারে।";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} {String.Join(", ", values)} এর একটি দিয়ে শুরু হতে পারে না।";
+        }
 public string Email()
         {
             return $"{FieldName} একটি বৈধ ইমেইল ঠিকানা হতে হবে।";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} অবশ্যই :size আইটেম হতে হবে।";
+            return $"{FieldName} অবশ্যই {size} আইটেম হতে হবে।";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} অবশ্যই :size অক্ষর হতে হবে।";
+            return $"{FieldName} অবশ্যই {size} অক্ষর হতে হবে।";
         }
 public string StartsWith(List<string> values)
         {

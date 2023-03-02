@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} դաշտը ունի կրկնվող արժեք։";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName}-ը չի կարող ավարտվել հետևյալներից որևէ մեկով. {String.Join(", ", values)}:";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName}-ը չի կարող սկսվել հետևյալներից որևէ մեկով՝ {String.Join(", ", values)}։";
+        }
 public string Email()
         {
             return $"{FieldName} դաշտը պետք է լինի վավերական Էլ․ հասցե։";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} դաշտը պետք է պարունակի :size էլեմենտ։";
+            return $"{FieldName} դաշտը պետք է պարունակի {size} էլեմենտ։";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} դաշտը պետք է ունենա :size նիշ։";
+            return $"{FieldName} դաշտը պետք է ունենա {size} նիշ։";
         }
 public string StartsWith(List<string> values)
         {

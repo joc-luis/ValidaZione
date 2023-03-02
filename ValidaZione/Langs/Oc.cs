@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"Lo camp {FieldName} a un doblon.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"The {FieldName} may not end with one of the following: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"The {FieldName} may not start with one of the following: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} deu èsser una adreça de corrièl valida.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"Lo tablèu {FieldName} deu conténer :size elements.";
+            return $"Lo tablèu {FieldName} deu conténer {size} elements.";
         }
     public string SizeString(int size)
         {
-            return $"Lo tèxt {FieldName} deu fa :size caractèrs.";
+            return $"Lo tèxt {FieldName} deu fa {size} caractèrs.";
         }
 public string StartsWith(List<string> values)
         {

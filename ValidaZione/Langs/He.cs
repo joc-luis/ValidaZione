@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"שדה {FieldName} קיים ערך כפול.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"ייתכן שה-{FieldName} לא יסתיים באחת מהאפשרויות הבאות: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"ייתכן שה-{FieldName} לא יתחיל באחד מהבאים: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"שדה {FieldName} חייב להיות כתובת אימייל תקנית.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"שדה {FieldName} חייב להכיל :size פריטים.";
+            return $"שדה {FieldName} חייב להכיל {size} פריטים.";
         }
     public string SizeString(int size)
         {
-            return $"שדה {FieldName} חייב להיות :size תווים.";
+            return $"שדה {FieldName} חייב להיות {size} תווים.";
         }
 public string StartsWith(List<string> values)
         {

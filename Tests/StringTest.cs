@@ -136,19 +136,19 @@ public class StringsTest
     [Test]
     public void AlphaDash()
     {
-        RulesStrings right = new RulesStrings(Language.Bn, "Test", "asdfg1213-+*/");
+        RulesStrings right = new RulesStrings(Language.Bn, "Test", "asdfg1213-");
         right.AlphaDash();
         Assert.IsFalse(right.ErrorsByField().Errors.Any());
 
-        right = new RulesStrings(Language.Bn, "Test", "fasdddDDsadas.-+");
+        right = new RulesStrings(Language.Bn, "Test", "fasdddDDsadas-_");
         right.AlphaDash();
         Assert.IsFalse(right.ErrorsByField().Errors.Any());
 
-        right = new RulesStrings(Language.Bn, "Test", "AAAAAAAADDDFFFGGGGG85445/*-");
+        right = new RulesStrings(Language.Bn, "Test", "AAAAAAAADDDFFFGGGGG85445_-");
         right.AlphaDash();
         Assert.IsFalse(right.ErrorsByField().Errors.Any());
 
-        right = new RulesStrings(Language.Bn, "Test", "https//*55455");
+        right = new RulesStrings(Language.Bn, "Test", "https55455ñÇ");
         right.AlphaDash();
         Assert.IsFalse(right.ErrorsByField().Errors.Any());
 
@@ -157,19 +157,35 @@ public class StringsTest
         Assert.IsFalse(right.ErrorsByField().Errors.Any());
 
 
-        RulesStrings wrong = new RulesStrings(Language.Bn, "Test", "0nÑññ");
+        RulesStrings wrong = new RulesStrings(Language.Bn, "Test", "0*n");
         wrong.AlphaDash();
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
 
-        wrong = new RulesStrings(Language.Bn, "Test", "Tru3Ç");
+        wrong = new RulesStrings(Language.Bn, "Test", "Tru3+Ç");
         wrong.AlphaDash();
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
 
-        wrong = new RulesStrings(Language.Bn, "Test", "0Ç");
+        wrong = new RulesStrings(Language.Bn, "Test", "0+Ç");
         wrong.AlphaDash();
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
 
-        wrong = new RulesStrings(Language.Bn, "Test", "Ye5Ç");
+        wrong = new RulesStrings(Language.Bn, "Test", "Ye+5Ç");
+        wrong.AlphaDash();
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+        
+        wrong = new RulesStrings(Language.Bn, "Test", "/");
+        wrong.AlphaDash();
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+        
+        wrong = new RulesStrings(Language.Bn, "Test", "*");
+        wrong.AlphaDash();
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+        
+        wrong = new RulesStrings(Language.Bn, "Test", "*");
+        wrong.AlphaDash();
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+        
+        wrong = new RulesStrings(Language.Bn, "Test", "`");
         wrong.AlphaDash();
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
 
@@ -382,6 +398,68 @@ public class StringsTest
         wrong = new RulesStrings(Language.Et, "Test", null);
         wrong.Required().Different("another", null);
         Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+    }
+    
+    [Test]
+    public void DoesNotEndWith()
+    {
+        String[] allowed = new[] { "st", "ba", "y", "ss" };
+
+        RulesStrings wrong = new RulesStrings(Language.Gu, "Test", "test");
+        wrong.DoesNotEndWith(allowed);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+
+        wrong = new RulesStrings(Language.Gu, "Test", "prueba");
+        wrong.DoesNotEndWith(allowed.ToList());
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+
+        wrong = new RulesStrings(Language.Gu, "Test", "try");
+        wrong.DoesNotEndWith(allowed);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+
+        wrong = new RulesStrings(Language.Gu, "Test", "pass");
+        wrong.DoesNotEndWith(allowed);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+
+        wrong = new RulesStrings(Language.Gu, "Test", null);
+        wrong.DoesNotEndWith(allowed);
+        Assert.IsTrue(wrong.ErrorsByField().Errors.Any());
+
+
+        RulesStrings right = new RulesStrings(Language.Gu, "Test", "testing");
+        right.DoesNotEndWith(allowed);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+
+        right = new RulesStrings(Language.Gu, "Test", "pruebas");
+        right.DoesNotEndWith(allowed.ToList());
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+
+        right = new RulesStrings(Language.Gu, "Test", "tired");
+        right.DoesNotEndWith(allowed);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+
+        right = new RulesStrings(Language.Gu, "Test", "passenger");
+        right.DoesNotEndWith(allowed);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+
+        right = new RulesStrings(Language.Gu, "Test", null);
+        right.Nullable().DoesNotEndWith(allowed);
+        Assert.IsFalse(right.ErrorsByField().Errors.Any());
+    }
+    
+    
+    [Test]
+    [TestCase("End", ExpectedResult = true)]
+    [TestCase("Fin", ExpectedResult = true)]
+    [TestCase("Test", ExpectedResult = true)]
+    [TestCase("Prueba", ExpectedResult = true)]
+    [TestCase("Ninguna de las anteriores", ExpectedResult = false)]
+    public bool DoesNotStartWith(string value)
+    {
+        RulesStrings rules = new RulesStrings(Language.Ro, "Test", value);
+        rules.DoesNotStartWith(new[] { "En", "Fi", "Te", "Pr" });
+
+        return rules.ErrorsByField().Errors.Any();
     }
 
     [Test]

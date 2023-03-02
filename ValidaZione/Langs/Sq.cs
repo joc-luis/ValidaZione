@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} ka një vlerë të përsëritur.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} nuk mund të përfundojë me një nga sa vijon: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} nuk mund të fillojë me një nga sa vijon: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} formati është i pasaktë.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} duhet të ketë :size elemente.";
+            return $"{FieldName} duhet të ketë {size} elemente.";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} duhet të ketë :size karaktere.";
+            return $"{FieldName} duhet të ketë {size} karaktere.";
         }
 public string StartsWith(List<string> values)
         {

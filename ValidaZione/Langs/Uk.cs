@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"Поле {FieldName} містить значення, яке дублюється.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"Поле {FieldName} не може закінчуватися одним із таких: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"Поле {FieldName} не може починатися з одного з наступного: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"Поле {FieldName} повинне містити коректну електронну адресу.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"Поле {FieldName} повинне містити :size елементів.";
+            return $"Поле {FieldName} повинне містити {size} елементів.";
         }
     public string SizeString(int size)
         {
-            return $"Текст у полі {FieldName} повинен містити :size символів.";
+            return $"Текст у полі {FieldName} повинен містити {size} символів.";
         }
 public string StartsWith(List<string> values)
         {

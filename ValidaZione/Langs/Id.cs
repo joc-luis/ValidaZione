@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} memiliki nilai yang duplikat.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} tidak boleh diakhiri dengan salah satu dari berikut ini: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} tidak boleh dimulai dengan salah satu dari berikut ini: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} harus berupa alamat surel yang valid.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} harus mengandung :size anggota.";
+            return $"{FieldName} harus mengandung {size} anggota.";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} harus berukuran :size karakter.";
+            return $"{FieldName} harus berukuran {size} karakter.";
         }
 public string StartsWith(List<string> values)
         {

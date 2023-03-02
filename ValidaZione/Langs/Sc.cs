@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"The {FieldName} field has a duplicate value.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"The {FieldName} may not end with one of the following: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"The {FieldName} may not start with one of the following: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} no est bàlidu.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} depet cuntènnere :size elementos.";
+            return $"{FieldName} depet cuntènnere {size} elementos.";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} depet cuntènnere :size caràteres.";
+            return $"{FieldName} depet cuntènnere {size} caràteres.";
         }
 public string StartsWith(List<string> values)
         {

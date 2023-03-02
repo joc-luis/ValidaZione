@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"May duplicate na value ang field na {FieldName}.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"Ang {FieldName} ay maaaring hindi magtapos sa isa sa mga sumusunod: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"Ang {FieldName} ay maaaring hindi magsimula sa isa sa mga sumusunod: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"Dapat na valid na email address ang {FieldName}.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"Dapat na maglaman ang {FieldName} ng :size (na) item.";
+            return $"Dapat na maglaman ang {FieldName} ng {size} (na) item.";
         }
     public string SizeString(int size)
         {
-            return $"Ang {FieldName} ay dapat na :size (na) character.";
+            return $"Ang {FieldName} ay dapat na {size} (na) character.";
         }
 public string StartsWith(List<string> values)
         {

@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} वेगवेगळे असावेत.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} खालीलपैकी एकाने संपू शकत नाही: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} खालीलपैकी एकाने सुरू होऊ शकत नाही: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} एक वैध ईमेल पत्ता असणे आवश्यक आहे.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} में :size आइटम असावी.";
+            return $"{FieldName} में {size} आइटम असावी.";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName}, :size शब्द असावी.";
+            return $"{FieldName}, {size} शब्द असावी.";
         }
 public string StartsWith(List<string> values)
         {

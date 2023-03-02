@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName}の値が重複しています。";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName}は次のいずれかで終わってはいけません。: {String.Join(", ", values)}";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName}は次のうちいずれかで始まってはいけません。: {String.Join(", ", values)}";
+        }
 public string Email()
         {
             return $"{FieldName}は、有効なメールアドレス形式で指定してください。";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName}の項目数は、:size個にしてください。";
+            return $"{FieldName}の項目数は、{size}個にしてください。";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName}の文字数は、:size文字にしてください。";
+            return $"{FieldName}の文字数は、{size}文字にしてください。";
         }
 public string StartsWith(List<string> values)
         {

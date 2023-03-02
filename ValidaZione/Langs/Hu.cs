@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"A(z) {FieldName} értékének egyedinek kell lennie!";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"A {FieldName} nem végződhet a következők egyikével: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"A {FieldName} nem kezdődhet a következők egyikével: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"A(z) {FieldName} nem érvényes email formátum.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"A(z) {FieldName} :size elemet kell tartalmazzon!";
+            return $"A(z) {FieldName} {size} elemet kell tartalmazzon!";
         }
     public string SizeString(int size)
         {
-            return $"A(z) {FieldName} hossza :size karakter kell, hogy legyen!";
+            return $"A(z) {FieldName} hossza {size} karakter kell, hogy legyen!";
         }
 public string StartsWith(List<string> values)
         {

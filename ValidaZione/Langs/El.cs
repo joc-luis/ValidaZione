@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"Το πεδίο {FieldName} περιέχει δύο φορές την ίδια τιμή.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"Το {FieldName} δεν μπορεί να τελειώνει με ένα από τα ακόλουθα: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"Το {FieldName} δεν μπορεί να ξεκινά με ένα από τα ακόλουθα: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"Το πεδίο {FieldName} πρέπει να είναι μία έγκυρη διεύθυνση email.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"Το πεδίο {FieldName} πρέπει να περιέχει :size αντικείμενα.";
+            return $"Το πεδίο {FieldName} πρέπει να περιέχει {size} αντικείμενα.";
         }
     public string SizeString(int size)
         {
-            return $"Το πεδίο {FieldName} πρέπει να είναι :size χαρακτήρες.";
+            return $"Το πεδίο {FieldName} πρέπει να είναι {size} χαρακτήρες.";
         }
 public string StartsWith(List<string> values)
         {

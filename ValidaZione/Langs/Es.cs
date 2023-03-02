@@ -1,6 +1,6 @@
-﻿using System;
 using System.Collections.Generic;
 using ValidaZione.Interfaces;
+using System;
 
 namespace ValidaZione.Langs
 {
@@ -53,6 +53,11 @@ namespace ValidaZione.Langs
             return $"El campo {FieldName} debe ser una fecha anterior o igual a {date}.";
         }
 
+        public string BetweenArray(long min, long max)
+        {
+            return $"El campo {FieldName} tiene que tener entre {min} - {max} elementos.";
+        }
+
         public string BetweenNumeric(string min, string max)
         {
             return $"El campo {FieldName} tiene que estar entre {min} - {max}.";
@@ -61,11 +66,6 @@ namespace ValidaZione.Langs
         public string BetweenString(int min, int max)
         {
             return $"El campo {FieldName} tiene que tener entre {min} - {max} caracteres.";
-        }
-
-        public string BetweenArray(long min, long max)
-        {
-            return $"El campo {FieldName} tiene que tener entre {min} - {max} elementos.";
         }
 
         public string Boolean()
@@ -93,6 +93,16 @@ namespace ValidaZione.Langs
             return $"El campo {FieldName} contiene un valor duplicado.";
         }
 
+        public string DoesNotEndWith(List<string> values)
+        {
+            return $"El campo {FieldName} no debe finalizar con uno de los siguientes: {String.Join(", ", values)}.";
+        }
+
+        public string DoesNotStartWith(List<string> values)
+        {
+            return $"El campo {FieldName} no debe comenzar con uno de los siguientes: {String.Join(", ", values)}.";
+        }
+
         public string Email()
         {
             return $"El campo {FieldName} no es un correo válido.";
@@ -100,7 +110,8 @@ namespace ValidaZione.Langs
 
         public string EndsWith(List<string> values)
         {
-            return $"El campo {FieldName} debe finalizar con uno de los siguientes valores: {String.Join(", ", values)}";
+            return
+                $"El campo {FieldName} debe finalizar con uno de los siguientes valores: {String.Join(", ", values)}";
         }
 
         public string GreaterThanArray(long value)
@@ -125,7 +136,7 @@ namespace ValidaZione.Langs
 
         public string In()
         {
-            return $"El campo {FieldName} seleccionado no es válido.";
+            return $"The {FieldName} seleccionado no es válido.";
         }
 
         public string Integer()

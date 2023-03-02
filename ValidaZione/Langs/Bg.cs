@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"Данните в полето {FieldName} се дублират.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName}-те може да не завършват с едно от следните: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName}-те може да не започват с едно от следните: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"Полето {FieldName} е в невалиден формат.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"Полето {FieldName} трябва да има :size елемента.";
+            return $"Полето {FieldName} трябва да има {size} елемента.";
         }
     public string SizeString(int size)
         {
-            return $"Полето {FieldName} трябва да бъде :size знака.";
+            return $"Полето {FieldName} трябва да бъде {size} знака.";
         }
 public string StartsWith(List<string> values)
         {

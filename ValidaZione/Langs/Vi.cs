@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"Trường {FieldName} có giá trị trùng lặp.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"Trường {FieldName} không được kết thúc bằng một trong những điều kiện sau: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"Trường {FieldName} không được bắt đầu bằng một trong những điều sau: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"Trường {FieldName} phải là một địa chỉ email hợp lệ.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"Trường {FieldName} phải chứa :size phần tử.";
+            return $"Trường {FieldName} phải chứa {size} phần tử.";
         }
     public string SizeString(int size)
         {
-            return $"Trường {FieldName} phải chứa :size kí tự.";
+            return $"Trường {FieldName} phải chứa {size} kí tự.";
         }
 public string StartsWith(List<string> values)
         {

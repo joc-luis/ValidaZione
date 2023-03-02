@@ -22,7 +22,7 @@ Validazione validazione = new Validazione(Language.Es);
 
 ### Add like scoped
 ```csharp
-builder.Services.AddScopped<IValidazion>(v => new Validazione(Language.Fr));
+builder.Services.AddScoped<IValidazion>(v => new Validazione(Language.Fr));
 
 
 public PersonController(IValidazione validazione) : ControllerBase

@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"ข้อมูล {FieldName} มีค่าที่ซ้ำกัน";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"ข้อมูล {FieldName} ไม่ควรลงท้ายด้วยค่าดังต่อไปนี้: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"ข้อมูล {FieldName} ไม่ควรเริ่มต้นด้วยค่าดังต่อไปนี้: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"ข้อมูล {FieldName} ต้องเป็นอีเมล์";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"ข้อมูล {FieldName} ต้องเท่ากับ :size ค่า";
+            return $"ข้อมูล {FieldName} ต้องเท่ากับ {size} ค่า";
         }
     public string SizeString(int size)
         {
-            return $"ข้อมูล {FieldName} ต้องเท่ากับ :size ตัวอักษร";
+            return $"ข้อมูล {FieldName} ต้องเท่ากับ {size} ตัวอักษร";
         }
 public string StartsWith(List<string> values)
         {

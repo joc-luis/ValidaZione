@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} väljal on topeltväärtus.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} ei tohi lõppeda ühega järgmistest: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} ei pruugi alata ühega järgmistest: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} peab olema kehtiv e-posti aadress.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} peab sisaldama :size kirjet.";
+            return $"{FieldName} peab sisaldama {size} kirjet.";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} peab olema :size tähemärki.";
+            return $"{FieldName} peab olema {size} tähemärki.";
         }
 public string StartsWith(List<string> values)
         {

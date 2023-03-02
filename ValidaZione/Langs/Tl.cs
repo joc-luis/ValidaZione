@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"Ang {FieldName} ng attribute ay may katulad na balyu.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"Ang {FieldName} ay maaaring hindi magtapos sa isa sa mga sumusunod: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"Ang {FieldName} ay maaaring hindi magsimula sa isa sa mga sumusunod: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"Ang {FieldName} ay dapat balidong email address.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"Ang {FieldName} ay dapat magtaglay ng :size sa items.";
+            return $"Ang {FieldName} ay dapat magtaglay ng {size} sa items.";
         }
     public string SizeString(int size)
         {
-            return $"Ang {FieldName} ay dapat :size sukat sa characters.";
+            return $"Ang {FieldName} ay dapat {size} sukat sa characters.";
         }
 public string StartsWith(List<string> values)
         {

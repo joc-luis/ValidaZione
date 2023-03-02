@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"Polje {FieldName} ima dupliranu vrednost.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"The {FieldName} may not end with one of the following: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"The {FieldName} may not start with one of the following: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"Format polja {FieldName} nije validan.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"Polje {FieldName} mora sadržati :size stavki.";
+            return $"Polje {FieldName} mora sadržati {size} stavki.";
         }
     public string SizeString(int size)
         {
-            return $"Polje {FieldName} mora biti :size karaktera.";
+            return $"Polje {FieldName} mora biti {size} karaktera.";
         }
 public string StartsWith(List<string> values)
         {

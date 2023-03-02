@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} មានតម្លៃស្ទួន។";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} ប្រហែលជាមិនបញ្ចប់ដោយមួយក្នុងចំណោមដូចខាងក្រោម: {String.Join(", ", values)} ។";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} ប្រហែលជាមិនចាប់ផ្តើមជាមួយមួយក្នុងចំណោមដូចខាងក្រោម: {String.Join(", ", values)} ។";
+        }
 public string Email()
         {
             return $"{FieldName} ទម្រង់នេះមិនត្រឹមត្រូវ។";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} ត្រូវតែមានទំហំ :size។";
+            return $"{FieldName} ត្រូវតែមានទំហំ {size}។";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} ត្រូវតែ :size តួអក្សរ។";
+            return $"{FieldName} ត្រូវតែ {size} តួអក្សរ។";
         }
 public string StartsWith(List<string> values)
         {

@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} майдони такрорланувчи қийматлардан иборат.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} soni quyidagilardan biri bilan tugamasligi mumkin: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} quyidagidan biri bilan boshlanmasligi mumkin: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} ҳақиқий электрон почта манзили бўлиши керак.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} даги элементлар сони :size га тенг бўлиши керак.";
+            return $"{FieldName} даги элементлар сони {size} га тенг бўлиши керак.";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} даги белгилар сони :size га тенг бўлиши керак.";
+            return $"{FieldName} даги белгилар сони {size} га тенг бўлиши керак.";
         }
 public string StartsWith(List<string> values)
         {

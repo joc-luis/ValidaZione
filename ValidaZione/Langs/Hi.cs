@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} फील्ड का एक डुप्लिकेट मान होता है ।";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} निम्नलिखित में से किसी एक के साथ समाप्त नहीं हो सकता है: {String.Join(", ", values)} ।";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} निम्नलिखित में से किसी एक के साथ शुरू नहीं हो सकता है: {String.Join(", ", values)} ।";
+        }
 public string Email()
         {
             return $"{FieldName} एक मान्य ईमेल पता होना चाहिए ।";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} में :size आइटम होने चाहिए ।";
+            return $"{FieldName} में {size} आइटम होने चाहिए ।";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName}, :size वर्ण होना चाहिए ।";
+            return $"{FieldName}, {size} वर्ण होना चाहिए ।";
         }
 public string StartsWith(List<string> values)
         {

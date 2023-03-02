@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"මේ {FieldName} හි එකම අගයේ අනු පිටපත් ඇත.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} පහත සඳහන් එකකින් අවසන් නොවිය හැක: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} පහත සඳහන් එකකින් ආරම්භ නොවිය හැක: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"මෙම {FieldName} එක වලංගු විද්‍යුත් ලිපිනයක් විය යුතුය.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"මෙම {FieldName} යේ අයිතම :size ක් තිබිය යුතුය.";
+            return $"මෙම {FieldName} යේ අයිතම {size} ක් තිබිය යුතුය.";
         }
     public string SizeString(int size)
         {
-            return $"මෙම {FieldName} ය අකුරු :size විය යුතුය.";
+            return $"මෙම {FieldName} ය අකුරු {size} විය යුතුය.";
         }
 public string StartsWith(List<string> values)
         {

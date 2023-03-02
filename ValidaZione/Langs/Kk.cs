@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} жолында қосарланған мән бар.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} келесілердің бірімен аяқталмауы мүмкін: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} келесілердің бірінен басталмауы мүмкін: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} жарамды электрондық пошта мекенжайы болуы керек.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} жиымы :size элементтен тұруы керек.";
+            return $"{FieldName} жиымы {size} элементтен тұруы керек.";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} тармағы :size таңбадан тұруы керек.";
+            return $"{FieldName} тармағы {size} таңбадан тұруы керек.";
         }
 public string StartsWith(List<string> values)
         {

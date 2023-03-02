@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"Le champ {FieldName} a une valeur en double.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"Le champ {FieldName} ne doit pas finir avec une des valeurs suivantes : {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"Le champ {FieldName} ne doit pas commencer avec une des valeurs suivantes : {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"Le champ {FieldName} doit être une adresse e-mail valide.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"Le tableau {FieldName} doit contenir :size éléments.";
+            return $"Le tableau {FieldName} doit contenir {size} éléments.";
         }
     public string SizeString(int size)
         {
-            return $"Le texte de {FieldName} doit contenir :size caractères.";
+            return $"Le texte de {FieldName} doit contenir {size} caractères.";
         }
 public string StartsWith(List<string> values)
         {

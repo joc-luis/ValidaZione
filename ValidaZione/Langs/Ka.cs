@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName}-ის ველს აქვს დუბლირებული მნიშვნელობა.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} არ შეიძლება დასრულდეს ქვემოთ ჩამოთვლილიდან ერთით: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} არ შეიძლება დაიწყოს რომელიმე ქვემოთ ჩამოთვლილიდან: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} უნდა იყოს სწორი ელ.ფოსტა.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} უნდა შეიცავდეს :size ელემენტს.";
+            return $"{FieldName} უნდა შეიცავდეს {size} ელემენტს.";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} უნდა შედგებოდეს :size სიმბოლოსგან.";
+            return $"{FieldName} უნდა შედგებოდეს {size} სიმბოლოსგან.";
         }
 public string StartsWith(List<string> values)
         {

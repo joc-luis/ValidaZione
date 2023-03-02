@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} کی دہری ویلیو ہے۔";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} درج ذیل میں سے کسی ایک پر ختم نہیں ہو سکتا: {String.Join(", ", values)}۔";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} درج ذیل میں سے کسی ایک سے شروع نہیں ہو سکتا: {String.Join(", ", values)}۔";
+        }
 public string Email()
         {
             return $"{FieldName} لازماً قابلِ قبول ای میل ہو۔";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} میں لازماً :size آئٹمز شامل ہوں۔";
+            return $"{FieldName} میں لازماً {size} آئٹمز شامل ہوں۔";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} لازماً :size کریکٹرز پر مشتمل ہو۔";
+            return $"{FieldName} لازماً {size} کریکٹرز پر مشتمل ہو۔";
         }
 public string StartsWith(List<string> values)
         {

@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} innehåller fler än en repetition av samma element.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} får inte sluta med det följande värden: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} får inte börja med följande värden: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} måste innehålla en korrekt e-postadress.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} måste innehålla :size objekt.";
+            return $"{FieldName} måste innehålla {size} objekt.";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} måste innehålla :size tecken.";
+            return $"{FieldName} måste innehålla {size} tecken.";
         }
 public string StartsWith(List<string> values)
         {

@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} પ્રવૃત્તિ ક્ષેત્રનું નકલી મૂલ્ય છે.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} નીચેનામાંથી એક સાથે સમાપ્ત થઈ શકે નહીં: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} નીચેનામાંથી એકથી શરૂ ન થઈ શકે: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} માન્ય ઈમેઈલ એડ્રેસ હોવું જોઈએ.";
@@ -200,7 +208,7 @@ public string Ip()
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} હોવું જોઈએ :size અક્ષરો.";
+            return $"{FieldName} હોવું જોઈએ {size} અક્ષરો.";
         }
 public string StartsWith(List<string> values)
         {

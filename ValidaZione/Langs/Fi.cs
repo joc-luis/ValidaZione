@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"Kentän {FieldName} arvo ei ole uniikki.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} ei saa päättyä johonkin seuraavista: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} ei voi alkaa jollakin seuraavista: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"Kentän {FieldName} arvo ei ole validi sähköpostiosoite.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"Kentän {FieldName} tulee sisältää :size arvoa.";
+            return $"Kentän {FieldName} tulee sisältää {size} arvoa.";
         }
     public string SizeString(int size)
         {
-            return $"Kentän {FieldName} arvon tulee olla kokoa :size merkkiä.";
+            return $"Kentän {FieldName} arvon tulee olla kokoa {size} merkkiä.";
         }
 public string StartsWith(List<string> values)
         {

@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"Polje {FieldName} ima dvostruku vrijednost.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} se ne može završiti s jednim od sljedećih: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} možda ne počinje s jednim od sljedećih: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"Format polja {FieldName} mora biti validan e-mail.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"Polje {FieldName} mora biti :size znakova.";
+            return $"Polje {FieldName} mora biti {size} znakova.";
         }
     public string SizeString(int size)
         {
-            return $"Polje {FieldName} mora biti :size znakova.";
+            return $"Polje {FieldName} mora biti {size} znakova.";
         }
 public string StartsWith(List<string> values)
         {

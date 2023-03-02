@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"Câmpul {FieldName} are o valoare duplicat.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} nu se poate termina cu una dintre următoarele valori: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} trebuie să nu înceapă cu una dintre următoarele valori: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"Câmpul {FieldName} trebuie să fie o adresă de e-mail validă.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"Câmpul {FieldName} trebuie să aibă :size elemente.";
+            return $"Câmpul {FieldName} trebuie să aibă {size} elemente.";
         }
     public string SizeString(int size)
         {
-            return $"Câmpul {FieldName} trebuie să aibă :size caractere.";
+            return $"Câmpul {FieldName} trebuie să aibă {size} caractere.";
         }
 public string StartsWith(List<string> values)
         {

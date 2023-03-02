@@ -129,6 +129,24 @@ namespace ValidaZione.Interfaces
         /// </summary>
         /// <returns></returns>
         string Distinct();
+
+        /// <summary>
+        /// Set the error message for DoesNotEndWith rule.
+        /// </summary>
+        /// <param name="values">
+        /// List of values not allowed.
+        /// </param>
+        /// <returns></returns>
+        string DoesNotEndWith(List<string> values);
+        
+        /// <summary>
+        /// Set the error message for DoesNotStartWith rule.
+        /// </summary>
+        /// <param name="values">
+        /// List of values not allowed.
+        /// </param>
+        /// <returns></returns>
+        string DoesNotStartWith(List<string> values);
         
         /// <summary>
         /// Set the error message for Email rule.

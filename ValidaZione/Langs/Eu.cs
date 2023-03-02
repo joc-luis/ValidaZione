@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName}-(e)k bikoiztutako balioa dauka.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName}ekoa ezingo da honako hauetako batekin amaitu: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName}ekoa ezingo da honako hauetako batekin hasi: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} baliozko helbide elektronikoa izan behar da.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName}-(e)k :size elementu izan behar ditu.";
+            return $"{FieldName}-(e)k {size} elementu izan behar ditu.";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName}-(e)k :size karaktere izan behar ditu.";
+            return $"{FieldName}-(e)k {size} karaktere izan behar ditu.";
         }
 public string StartsWith(List<string> values)
         {

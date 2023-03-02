@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} 已經存在。";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} 不能以下列之一結尾：{String.Join(", ", values)}。";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} 不能以下列之一開頭：{String.Join(", ", values)}。";
+        }
 public string Email()
         {
             return $"{FieldName} 必須是有效的 E-mail。";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} 必須是 :size 個元素。";
+            return $"{FieldName} 必須是 {size} 個元素。";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} 必須是 :size 個字元。";
+            return $"{FieldName} 必須是 {size} 個字元。";
         }
 public string StartsWith(List<string> values)
         {

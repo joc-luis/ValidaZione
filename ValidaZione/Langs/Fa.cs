@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"فیلد {FieldName} مقدار تکراری دارد.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"مقدار {FieldName} نباید با این مقادیر تمام شود : {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"مقدار {FieldName} نباید با این مقادیر شروع شود : {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} باید یک ایمیل معتبر باشد.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} باید شامل :size آیتم باشد.";
+            return $"{FieldName} باید شامل {size} آیتم باشد.";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} باید برابر با :size کاراکتر باشد.";
+            return $"{FieldName} باید برابر با {size} کاراکتر باشد.";
         }
 public string StartsWith(List<string> values)
         {

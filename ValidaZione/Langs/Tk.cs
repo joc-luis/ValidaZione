@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} meýdanyň dublikat bahasy bar.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} aşakdakylaryň biri bilen gutarman biler: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} aşakdakylardan biri bilen başlamazlygy mümkin: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} formaty ýalňyş.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} :size madda eýe bolmalydyr.";
+            return $"{FieldName} {size} madda eýe bolmalydyr.";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} :size harp bolmalydyr.";
+            return $"{FieldName} {size} harp bolmalydyr.";
         }
 public string StartsWith(List<string> values)
         {

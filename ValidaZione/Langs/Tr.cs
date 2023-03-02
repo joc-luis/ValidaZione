@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} alanı yinelenen bir değere sahip.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} aşağıdakilerden biriyle bitemez: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} aşağıdakilerden biriyle başlamayabilir: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} mutlaka geçerli bir e-posta adresi olmalıdır.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} mutlaka :size ögeye sahip olmalıdır.";
+            return $"{FieldName} mutlaka {size} ögeye sahip olmalıdır.";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} mutlaka :size karakterli olmalıdır.";
+            return $"{FieldName} mutlaka {size} karakterli olmalıdır.";
         }
 public string StartsWith(List<string> values)
         {

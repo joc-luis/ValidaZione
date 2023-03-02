@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} je duplicitný.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} nemusí končiť jedným z nasledujúcich: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"Číslo {FieldName} nemusí začínať jednou z nasledujúcich možností: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} má neplatný formát.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} musí obsahovať :size prvkov.";
+            return $"{FieldName} musí obsahovať {size} prvkov.";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} musí mať :size znakov.";
+            return $"{FieldName} musí mať {size} znakov.";
         }
 public string StartsWith(List<string> values)
         {

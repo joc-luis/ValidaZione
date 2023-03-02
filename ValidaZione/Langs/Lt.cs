@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"Laukas {FieldName} pasikartoja.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"Laukas {FieldName} negali baigtis viena iš šių reikšmių: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"Laukas {FieldName} negali prasidėti viena iš šių reikšmių: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"Lauko {FieldName} reikšmė turi būti galiojantis el. pašto adresas.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"Elementų kiekis lauke {FieldName} turi būti :size.";
+            return $"Elementų kiekis lauke {FieldName} turi būti {size}.";
         }
     public string SizeString(int size)
         {
-            return $"Simbolių skaičius lauke {FieldName} turi būti :size.";
+            return $"Simbolių skaičius lauke {FieldName} turi būti {size}.";
         }
 public string StartsWith(List<string> values)
         {

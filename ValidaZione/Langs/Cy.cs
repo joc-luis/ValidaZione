@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"Y {FieldName} maes wedi dyblyg gwerth.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"Efallai na fydd y {FieldName} yn gorffen gydag un o’r canlynol: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"Efallai na fydd y {FieldName} yn dechrau gydag un o’r canlynol: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"Rhaid i {FieldName} fod yn gyfeiriad ebost dilys.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"Rhaid i {FieldName} fod yn :size eitem.";
+            return $"Rhaid i {FieldName} fod yn {size} eitem.";
         }
     public string SizeString(int size)
         {
-            return $"Rhaid i {FieldName} fod yn :size nodyn.";
+            return $"Rhaid i {FieldName} fod yn {size} nodyn.";
         }
 public string StartsWith(List<string> values)
         {

@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} ئاللابۇرۇن مەۋجۈت.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} تۆۋەندىكىلەرنىڭ بىرى بىلەن ئاخىرلاشماسلىقى مۇمكىن: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} تۆۋەندىكىلەرنىڭ بىرىدىن باشلانماسلىقى مۇمكىن: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} ئىناۋەتلىك تورخەت ئادىرىسى ئەمەس.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} چوقۇم :size بۆلەك.";
+            return $"{FieldName} چوقۇم {size} بۆلەك.";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} چوقۇم :size خەت.";
+            return $"{FieldName} چوقۇم {size} خەت.";
         }
 public string StartsWith(List<string> values)
         {

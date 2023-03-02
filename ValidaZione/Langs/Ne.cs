@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} फिल्ड फिल्डको नक्कल मान छ";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} निम्न मध्ये एक संग समाप्त नहुन सक्छ: {String.Join(", ", values)}।";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} निम्न मध्ये एकबाट सुरु नहुन सक्छ: {String.Join(", ", values)}।";
+        }
 public string Email()
         {
             return $"{FieldName} को इमेल ठेगाना मिलेन।";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} :sizeमा आइटम हुनुपर्छ।";
+            return $"{FieldName} {size}मा आइटम हुनुपर्छ।";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} :size वर्णको हुनुपर्छ।.";
+            return $"{FieldName} {size} वर्णको हुनुपर्छ।.";
         }
 public string StartsWith(List<string> values)
         {

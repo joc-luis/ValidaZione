@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} laukam ir dublikāts.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} nedrīkst beigties ar kādu no šiem: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} nedrīkst sākties ar kādu no šiem: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} ir jābūt derīgai e-pasta adresei.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} jāsatur :size vienības.";
+            return $"{FieldName} jāsatur {size} vienības.";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} jābūt :size rakstzīmēm.";
+            return $"{FieldName} jābūt {size} rakstzīmēm.";
         }
 public string StartsWith(List<string> values)
         {

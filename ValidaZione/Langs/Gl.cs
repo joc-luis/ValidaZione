@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"O eido {FieldName} ten un valor duplicado.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"O {FieldName} non pode rematar cun dos seguintes: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"O {FieldName} non pode comezar por un dos seguintes: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"O {FieldName} debe ser un enderezo de correo-e válido.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"O {FieldName} debe conter :size items.";
+            return $"O {FieldName} debe conter {size} items.";
         }
     public string SizeString(int size)
         {
-            return $"O {FieldName} debe ser :size caracteres.";
+            return $"O {FieldName} debe ser {size} caracteres.";
         }
 public string StartsWith(List<string> values)
         {

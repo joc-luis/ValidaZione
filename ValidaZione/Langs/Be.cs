@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"Поле {FieldName} мае паўтаральнае значэнне.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} не можа заканчвацца адным з наступнага: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} можа не пачынацца з аднаго з наступнага: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"Поле {FieldName} павінна быць сапраўдным электронным адрасам.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"Колькасць элементаў у поле {FieldName} павінна быць :size.";
+            return $"Колькасць элементаў у поле {FieldName} павінна быць {size}.";
         }
     public string SizeString(int size)
         {
-            return $"Колькасць сiмвалаў у поле {FieldName} павінна быць :size.";
+            return $"Колькасць сiмвалаў у поле {FieldName} павінна быць {size}.";
         }
 public string StartsWith(List<string> values)
         {

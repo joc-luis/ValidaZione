@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} beinhaltet einen bereits vorhandenen Wert.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} darf nicht mit einem der folgenden enden: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} darf nicht mit einem der folgenden beginnen: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} muss eine gültige E-Mail-Adresse sein.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} muss genau :size Elemente haben.";
+            return $"{FieldName} muss genau {size} Elemente haben.";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} muss :size Zeichen lang sein.";
+            return $"{FieldName} muss {size} Zeichen lang sein.";
         }
 public string StartsWith(List<string> values)
         {

@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"Pole {FieldName} ma zduplikowane wartości.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"Pole {FieldName} nie może kończyć się jednym z następujących wartości: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"Pole {FieldName} nie może zaczynać się od jednego z następujących wartości: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"Pole {FieldName} nie jest poprawnym adresem e-mail.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"Pole {FieldName} musi zawierać :size elementów.";
+            return $"Pole {FieldName} musi zawierać {size} elementów.";
         }
     public string SizeString(int size)
         {
-            return $"Pole {FieldName} musi mieć :size znaków.";
+            return $"Pole {FieldName} musi mieć {size} znaków.";
         }
 public string StartsWith(List<string> values)
         {

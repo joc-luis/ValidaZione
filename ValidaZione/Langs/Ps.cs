@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"د ساحې څخه {FieldName} د نقل ارزښت .";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} ممکن د لاندې څخه یو سره پای ته ونه رسیږي: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} ممکن د لاندې څخه یو سره پیل نشي: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"دا باید وي {FieldName} یو باوري بریښلیک پته جوړښت.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"شمیرې او متره {FieldName} په :size عنصر/عناصر په سمه توګه.";
+            return $"شمیرې او متره {FieldName} په {size} عنصر/عناصر په سمه توګه.";
         }
     public string SizeString(int size)
         {
-            return $"شمیرې او متره متن {FieldName} په :size توري/توري په سمه توګه.";
+            return $"شمیرې او متره متن {FieldName} په {size} توري/توري په سمه توګه.";
         }
 public string StartsWith(List<string> values)
         {

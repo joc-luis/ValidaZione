@@ -74,6 +74,14 @@ public string Distinct()
         {
             return $"{FieldName} талбарт ялгаатай утга оруулах шаардлагатай.";
         }
+public string DoesNotEndWith(List<string> values)
+        {
+            return $"{FieldName} нь дараахын аль нэгээр төгсөхгүй байж болно: {String.Join(", ", values)}.";
+        }
+public string DoesNotStartWith(List<string> values)
+        {
+            return $"{FieldName} нь дараахын аль нэгээр нь эхэлж болохгүй: {String.Join(", ", values)}.";
+        }
 public string Email()
         {
             return $"{FieldName} талбарт зөв и-мэйл хаяг оруулах шаардлагатай.";
@@ -196,11 +204,11 @@ public string Ip()
         }
        public string SizeArray(long size)
         {
-            return $"{FieldName} :size элемэнттэй байх шаардлагатай.";
+            return $"{FieldName} {size} элемэнттэй байх шаардлагатай.";
         }
     public string SizeString(int size)
         {
-            return $"{FieldName} :size тэмдэгтийн урттай байх шаардлагатай.";
+            return $"{FieldName} {size} тэмдэгтийн урттай байх шаардлагатай.";
         }
 public string StartsWith(List<string> values)
         {
