@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} muss ein Datum nach {date} oder gleich {date} sein.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} darf nur aus Buchstaben bestehen.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} muss mindestens {value} Zeichen lang sein.";
         }
-  public string In()
+public string In()
         {
             return $"Der gewählte Wert für {FieldName} ist ungültig.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} muss eine gültige IP-Adresse sein.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} muss eine gültige IPv4-Adresse sein.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} muss eine gültige IPv6-Adresse sein.";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName} muss ein gültiger JSON-String sein.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} muss in Kleinbuchstaben sein.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} muss weniger als {value} Elemente haben.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} muss kürzer als {value} Zeichen sein.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName} darf maximal {value} Elemente haben.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} darf maximal {value} Zeichen lang sein.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"Der Wert muss eine gültige MAC-Adresse sein.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName} darf maximal {max} Elemente haben.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} darf maximal {max} sein.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName} darf maximal {max} Zeichen haben.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName} muss mindestens {min} Elemente haben.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName} muss mindestens {min} sein.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName} muss mindestens {min} Zeichen lang sein.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Der gewählte Wert für {FieldName} ist ungültig.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"{FieldName} hat ein ungültiges Format.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} muss eine Zahl sein.";
         }
- public string Regex()
+public string Regex()
         {
             return $"{FieldName} Format ist ungültig.";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} muss ausgefüllt werden.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"{FieldName} muss ausgefüllt werden, wenn {name} den Wert {value} hat.";
+        }
+public string Same(string name)
         {
             return $"{FieldName} und {name} müssen übereinstimmen.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName} muss genau {size} Elemente haben.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName} muss {size} Zeichen lang sein.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} muss mit einem der folgenden Anfänge aufweisen: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} muss in Großbuchstaben sein.";
         }
-   public string Url()
+public string Url()
         {
             return $"{FieldName} muss eine URL sein.";
         }

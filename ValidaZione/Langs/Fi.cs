@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"Kentän {FieldName} päiväyksen tulee olla sama ja jälkeen {date}";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"Kenttä {FieldName} voi sisältää vain kirjaimia.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"Kentän {FieldName} arvo tulee olla pidempi tai yhtä pitkä kuin {value} merkkiä.";
         }
-  public string In()
+public string In()
         {
             return $"Kentän {FieldName} arvo on virheellinen.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"Kentän {FieldName} arvon tulee olla validi IP-osoite.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"Kentän {FieldName} arvon tulee olla validi IPv4-osoite.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"Kentän {FieldName} arvon tulee olla validi IPv6-osoite.";
         }
-      public string Json()
+public string Json()
         {
             return $"Kentän {FieldName} arvon tulee olla validia JSON:ia.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} on oltava pieniä kirjaimia.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"Kentän {FieldName} tulee sisältää vähemmän kuin {value} arvoa.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"Kentän {FieldName} arvo tulee olla lyhyempi kuin {value} merkkiä.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"Kentän {FieldName} tulee sisältää {value} arvoa tai vähemmän.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"Kentän {FieldName} arvo tulee olla lyhyempi tai yhtä pitkä kuin {value} merkkiä.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName}:n on oltava kelvollinen MAC-osoite.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"Kentän {FieldName} ei tule sisältää enempää kuin {max} arvoa.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"Kentän arvon {FieldName} tulee olla enintään {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"Kentän {FieldName} arvon tulee olla enintään {max} merkkiä pitkä.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"Kentän {FieldName} tulee sisältää vähintään {min} arvoa.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"Kentän {FieldName} arvon tulee olla vähintään {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"Kentän {FieldName} arvon tulee olla vähintään {min} merkkiä.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Kentän {FieldName} arvo on virheellinen.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Kentän {FieldName} formaatti on virheellinen.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"Kentän {FieldName} arvon tulee olla numero.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Kentän {FieldName} arvo on väärää muotoa.";
         }
-       public string Required()
+public string Required()
         {
             return $"Kenttä {FieldName} vaaditaan.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"Kenttä {FieldName} vaaditaan kun {name} on {value}.";
+        }
+public string Same(string name)
         {
             return $"Kenttien {FieldName} ja {name} on oltava samanarvoiset.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"Kentän {FieldName} tulee sisältää {size} arvoa.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"Kentän {FieldName} arvon tulee olla kokoa {size} merkkiä.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"Attribuutin {FieldName} tulee alkaa yhdellä seuraavista: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} on oltava isoilla kirjaimilla.";
         }
-   public string Url()
+public string Url()
         {
             return $"Kentän {FieldName} arvon tulee olla validi URL-osoite.";
         }

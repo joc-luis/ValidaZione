@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} måste vara ett datum senare eller samma dag som {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} får endast innehålla bokstäver.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} måste vara lika med eller längre än {value} tecken.";
         }
-  public string In()
+public string In()
         {
             return $"{FieldName} är ogiltigt.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} måste vara en giltig IP-adress.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} måste vara en giltig IPv4-adress.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} måste vara en giltig IPv6-adress.";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName} måste vara en giltig JSON-sträng.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} måste vara i små bokstäver.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} måste innehålla färre än {value} objekt.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} måste vara kortare än {value} tecken.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName} måste innehålla lika många eller färre än {value} objekt.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} måste vara lika med eller kortare än {value} tecken.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} måste vara en giltig MAC adress.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName} får inte innehålla mer än {max} objekt.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} får inte vara större än {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName} får max innehålla {max} tecken.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName} måste innehålla minst {min} objekt.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName} måste vara större än {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName} måste innehålla minst {min} tecken.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"{FieldName} är ogiltigt.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Formatet för {FieldName} är ogiltigt.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} måste vara en siffra.";
         }
- public string Regex()
+public string Regex()
         {
             return $"{FieldName} har ogiltigt format.";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} är obligatoriskt.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"{FieldName} är obligatoriskt när {name} är {value}.";
+        }
+public string Same(string name)
         {
             return $"{FieldName} och {name} måste vara lika.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName} måste innehålla {size} objekt.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName} måste innehålla {size} tecken.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} måste börja med en av följande: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} måste vara versaler.";
         }
-   public string Url()
+public string Url()
         {
             return $"{FieldName} har ett ogiltigt format.";
         }

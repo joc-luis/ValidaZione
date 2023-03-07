@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} ir jābūt ar datumu pēc vai vienādu ar {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} var saturēt tikai burtus.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} garumam jābūt lielākam vai vienādam ar {value} rakstzīmēm.";
         }
-  public string In()
+public string In()
         {
             return $"Izvēlētais {FieldName} ir nederīgs.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} jābūt derīgai IP adresei.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} jābūt derīgai IPv4 adresei.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} jābūt derīgai IPv6 adresei.";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName} jābūt derīgai JSON virknei.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} ir jābūt mazajiem burtiem.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} jābūt mazāk nekā {value} vienībām.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} nedrīkst pārsniegt {value} rakstzīmes.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName} nedrīkst būt vairāk par {value} vienībām.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} nedrīkst pārsniegt {value} rakstzīmes.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} ir jābūt derīgai MAC adresei.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName} nedrīkst pārsniegt {max} vienības.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} nedrīkst pārsniegt {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName} nedrīkst pārsniegt {max} rakstzīmes.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName} jāsatur vismaz {min} vienības.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName} jābūt vismaz {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName} jābūt vismaz {min} rakstzīmēm.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"izvēlētais {FieldName} ir nederīgs.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"{FieldName} formāts ir nederīgs.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} jābūt skaitlim.";
         }
- public string Regex()
+public string Regex()
         {
             return $"{FieldName} formāts ir nederīgs.";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} lauks ir obligāts.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"{FieldName} lauks ir obligāts, ja {name} ir value.";
+        }
+public string Same(string name)
         {
             return $"{FieldName} un {name} ir jāsakrīt.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName} jāsatur {size} vienības.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName} jābūt {size} rakstzīmēm.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} jāsākas ar kādu no šiem: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} ir jābūt lielajiem burtiem.";
         }
-   public string Url()
+public string Url()
         {
             return $"{FieldName} formāts ir nederīgs.";
         }

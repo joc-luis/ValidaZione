@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"මෙම {FieldName}, {date} දිනයම හෝ ඊට පසු දිනයක් විය යුතුය.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"මෙම {FieldName} ට අඩංගු විය හැක්කේ අකුරු පමණි.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"මෙම {FieldName} එක අකුරු {value} ට වඩා වැඩි හෝ සමාන විය යුතුයි.";
         }
-  public string In()
+public string In()
         {
             return $"මෙම තෝරා ඇති {FieldName} වලංගු නැත.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"මෙම {FieldName} වලංගු IP ලිපිනයක් විය යුතුය.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"මෙම {FieldName} වලංගු IPv4 ලිපිනය විය යුතුය.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"මෙම {FieldName} වලංගු IPv6 ලිපිනය විය යුතුය.";
         }
-      public string Json()
+public string Json()
         {
             return $"මෙම {FieldName} වලංගු JSON පේළියක් විය යුතුය.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} කුඩා අකුරු විය යුතුය.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"මෙම {FieldName} එක {value} ට වඩා අඩු අයිතම ගණනක් විය යුතුය.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"මෙම {FieldName} එක {value} ට වඩා අඩු අකුරු ගණනක් විය යුතුය.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"මෙම {FieldName} එක අයිතම {value} ට වඩා අඩු හෝ සමාන විය යුතුයි.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"මෙම {FieldName} එක අකුරු {value} ට වඩා අඩු හෝ සමාන විය යුතුයි.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} වලංගු MAC ලිපිනයක් විය යුතුය.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"මෙම {FieldName} එක {max} ට වඩා වැඩි නොවිය යුතුයි.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"මෙම {FieldName} එක අකුරු {max} ට වඩා වැඩි නොවිය යුතුයි.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"මෙම {FieldName} එක අයිතම {max} ට වඩා වැඩි නොවිය යුතුයි.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"මෙම {FieldName} එක {min} ට වඩා අඩු නොවිය යුතුයි.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"මෙම {FieldName} එක අකුරු {min} ට වඩා අඩු නොවිය යුතුයි.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"මෙම {FieldName} එක අයිතම {min} ට වඩා අඩු නොවිය යුතුයි.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"මෙම තෝරා ඇත {FieldName} වලංගු නැත.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"මෙම {FieldName} ආකෘතිය වලංගු නැත.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"මෙම {FieldName} අංකයක් විය යුතුය.";
         }
- public string Regex()
+public string Regex()
         {
             return $"මෙම {FieldName} ආකෘතිය වලංගු නැත.";
         }
-       public string Required()
+public string Required()
         {
             return $"මෙම {FieldName} ක්ෂේත්‍රයේ අවශ්‍යයි.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $":Other, {value} නම් පමණක් මෙම {FieldName} ක්ෂේත්‍රයේ අවශ්‍යයි.";
+        }
+public string Same(string name)
         {
             return $"මෙම {FieldName} සහ {name} ගැලපිය යුතුයි.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"මෙම {FieldName} යේ අයිතම {size} ක් තිබිය යුතුය.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"මෙම {FieldName} ය අකුරු {size} විය යුතුය.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"මෙම {FieldName} පහත සඳහන් එකක් සමඟ ආරම්භ කළ යුතුය: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} විශාල අකුරු විය යුතුය.";
         }
-   public string Url()
+public string Url()
         {
             return $"මෙම {FieldName} ආකෘතිය වලංගු නැත.";
         }

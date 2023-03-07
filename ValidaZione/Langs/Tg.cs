@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"Қиммати {FieldName} бояд санаи баъд ё баробари {date} бошад.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"Қиммати {FieldName} метавонад танҳо дорои ҳарфҳои алифо бошад.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} бояд аз {value} аломат зиёд ё баробар бошад.";
         }
-  public string In()
+public string In()
         {
             return $"Қиммати интихобкардаи {FieldName} нодуруст мебошад.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"Қиммати {FieldName} бояд суроғаи дурусти IP бошад.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} бояд дархост эътибор дорад IPv4-суроғаи.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} бояд дархост эътибор дорад IPv6-суроғаи.";
         }
-      public string Json()
+public string Json()
         {
             return $"Қиммати {FieldName} бояд сатри дурусти JSON бошад.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} бояд хурд бошад.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} бояд камтар аз {value} адад дошта бошад.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} бояд камтар аз {value} аломат бошад.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName} набояд аз {value} адад зиёд бошад.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} бояд камтар аз {value} аломат бошад.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} бояд суроғаи дурусти MAC бошад.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"Миқдори элементҳо дар {FieldName} бояд на зиёда аз {max} бошад.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"Қиммати {FieldName} набояд аз {max} зиёд бошад.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"Миқдори аломатҳо дар {FieldName} бояд на зиёда аз {max} бошад.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"Миқдори элементҳо дар {FieldName} бояд на кам аз {min} бошад.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"Қиммати {FieldName} набояд аз {min} хурд бошад.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"Миқдори аломатҳо дар {FieldName} бояд на кам аз {min} бошад.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Қиммати интихобкардаи {FieldName} нодуруст мебошад.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Формати {FieldName} недопустим.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"Қиммати {FieldName} бояд адад бошад.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Формати {FieldName} нодуруст мебошад.";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} бояд дорои қиммат бошад.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"{FieldName} бояд дорои қиммат бошад агар {name} ба {value} баробар бошад.";
+        }
+public string Same(string name)
         {
             return $"Қиммати {FieldName} ва {name} бояд баробар бошанд.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"Миқдори элементҳо дар {FieldName} бояд {size} бошад.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"Миқдори аломатҳо дар {FieldName} бояд {size} бошад.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} бояд оғоз бо яке аз арзишҳои зерин: {String.Join(", ", values)}.";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} бояд ҳарфи калон бошад.";
         }
-   public string Url()
+public string Url()
         {
             return $"Формати {FieldName} нодуруст мебошад.";
         }

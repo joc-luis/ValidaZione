@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} باید وروستی نیټه وي یا د نیټې سره سمون ولري {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"دا باید شامل نه وي {FieldName} یوازې په حرفو کې.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"د متن اوږدوالی باید وي {FieldName} لږترلږه {value} توري/توري.";
         }
-  public string In()
+public string In()
         {
             return $"{FieldName} غير موجود.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"دا باید وي{FieldName} عنوان IP ریښتیا.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"دا باید وي{FieldName} عنوان IPv4 ریښتیا.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"دا باید وي{FieldName} عنوان IPv6 ریښتیا.";
         }
-      public string Json()
+public string Json()
         {
             return $"دا باید وي{FieldName} د اوریدلو ډول JSON.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} باید کوچنی وي.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"شمیرې او متره {FieldName} له کم څخه {value} عناصر/عنصر.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"د متن اوږدوالی باید وي {FieldName} له کم څخه {value} توري/توري.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"دا باید شامل نه وي {FieldName} له زیاتو څخه {value} عناصر/عنصر.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"د متن اوږدوالی باید له زیاتوالی نه وي{FieldName} {value} توري/توري.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} باید د اعتبار وړ MAC پته وي.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"دا باید شامل نه وي {FieldName} له زیاتو څخه {max} عناصر/عنصر.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"دا باید ارزښت وي {FieldName} نسبت برابر یا کوچنی {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"د متن اوږدوالی باید له زیاتوالی نه وي{FieldName} {max} توري/توري.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"شمیرې او متره {FieldName} لږ تر لږه {min} عنصر / عناصر.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"دا باید ارزښت وي {FieldName} مساوی یا زیات {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"د متن اوږدوالی باید وي {FieldName} لږترلږه {min} توري/توري.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"{FieldName} موجود.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"فورمول {FieldName} غلط.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"باید{FieldName} یو شمېره.";
         }
- public string Regex()
+public string Regex()
         {
             return $"فورمول {FieldName} .غير صحيح.";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} اړینه ده.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"{FieldName} که چیرې د اړتیا په صورت کې اړتیا وي{name} مساو {value}.";
+        }
+public string Same(string name)
         {
             return $"اړینه ده {FieldName} سره {name}.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"شمیرې او متره {FieldName} په {size} عنصر/عناصر په سمه توګه.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"شمیرې او متره متن {FieldName} په {size} توري/توري په سمه توګه.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"دا باید پیل شي {FieldName} د لاندې ارزښتونو څخه یو: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} باید لوی وي.";
         }
-   public string Url()
+public string Url()
         {
             return $"د لینک بڼه {FieldName} غلط.";
         }

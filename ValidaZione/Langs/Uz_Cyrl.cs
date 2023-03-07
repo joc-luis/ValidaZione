@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} да сана {date} га тенг ёки ундан кейин бўлиши керак.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} фақат ҳарфларни қабул қилиши мумкин.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} даги белгилар сони {value} дан катта ёки тенг бўлиши керак.";
         }
-  public string In()
+public string In()
         {
             return $"{FieldName} учун танланган қиймат хато.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} ҳақиқий IP манзил бўлиши керак.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} ҳақиқий IPv4 манзил бўлиши керак.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} ҳақиқий IPv6 манзил бўлиши керак.";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName} JSON қатори бўлиши керак.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} kichik harf bo'lishi kerak.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} даги элементлар сони {value} дан кичик бўлиши керак.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} даги белгилар сони {value} дан кичик бўлиши керак.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName} даги элементлар сони {value} дан кичик ёки тенг бўлиши керак.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} даги белгилар сони {value} дан кичик ёки тенг бўлиши керак.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} haqiqiy MAC manzili bo'lishi kerak.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName} нинг элементлар сони {max} тадан ошмаслиги керак.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} нинг қиймати {max} дан ошмаслиги керак.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName} нинг белгилар сони {max} тадан ошмаслиги керак.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName} даги элементлар сони {min} тадан кам бўлмаслиги керак.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName} нинг қиймати {min} дан кам бўлмаслиги керак.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName} даги белгилар сони {min} тадан кам бўлмаслиги керак.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"{FieldName} учун танланган қиймат хато.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"{FieldName} учун танланган формат хато.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} майдони сон бўлиши керак.";
         }
- public string Regex()
+public string Regex()
         {
             return $"{FieldName} майдони хато форматда.";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} майдони тўлдирилиши шарт.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $":Other майдони {value} га тенг бўлса, {FieldName} майдони тўлдирилиши шарт.";
+        }
+public string Same(string name)
         {
             return $"{FieldName} нинг қиймати {name} билан бир хил бўлиши керак.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName} даги элементлар сони {size} га тенг бўлиши керак.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName} даги белгилар сони {size} га тенг бўлиши керак.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} қуйидаги қийматлардан бири билан бошланиши керак: {String.Join(", ", values)}.";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} katta harf bo'lishi kerak.";
         }
-   public string Url()
+public string Url()
         {
             return $"{FieldName} нотўғри форматга эга.";
         }

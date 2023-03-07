@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} ha de ser una data posterior o igual a {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} només pot contenir lletres.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"El {FieldName} ha de ser igual o superior a {value} caràcters.";
         }
-  public string In()
+public string In()
         {
             return $"{FieldName} és invàlid";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} ha de ser una adreça IP vàlida.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} ha de ser una adreça IPv4 vàlida.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} ha de ser una adreça IPv6 vàlida.";
         }
-      public string Json()
+public string Json()
         {
             return $"El camp {FieldName} ha de ser una cadena JSON vàlida.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"El {FieldName} ha d'anar en minúscula.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"El {FieldName} ha de tenir menys de {value} ítems.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"El {FieldName} no ha de superar els {value} caràcters.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"El {FieldName} no ha de tenir més de {value} ítems.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"El {FieldName} ha de ser igual o inferior a {value} caràcters.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"El {FieldName} ha de ser una adreça MAC vàlida.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName} no pot tenir més de {max} ítems.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} no pot ser més gran que {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName} no pot ser més gran que {max} caràcters.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName} ha de tenir almenys {min} ítems.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"El tamany de {FieldName} ha de ser d'almenys {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName} ha de contenir almenys {min} caràcters.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"{FieldName} és invàlid.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"El format de {FieldName} no és vàlid.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} ha de ser numèric.";
         }
- public string Regex()
+public string Regex()
         {
             return $"El format de {FieldName} és invàlid.";
         }
-       public string Required()
+public string Required()
         {
             return $"El camp {FieldName} és obligatori.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"El camp {FieldName} és obligatori quan {name} és {value}.";
+        }
+public string Same(string name)
         {
             return $"{FieldName} i {name} han de coincidir.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName} ha de contenir {size} ítems.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName} ha de contenir {size} caràcters.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"El {FieldName} ha de començar per un dels valors següents: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"El {FieldName} ha d'anar en majúscula.";
         }
-   public string Url()
+public string Url()
         {
             return $"{FieldName} no és una adreça web vàlida.";
         }

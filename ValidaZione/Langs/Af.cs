@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"Die {FieldName} moet 'n datum wees na of gelyk aan {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"Die {FieldName} mag slegs letters bevat.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"Die {FieldName} moet groter wees as of gelyk wees {value} characters.";
         }
-  public string In()
+public string In()
         {
             return $"Die geselketeerde {FieldName} is ongeldig.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"Die {FieldName} moet geldige IP adres wees.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"Die {FieldName} moet geldige IPv4 address wees.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"Die {FieldName} moet geldige IPv6 address wees.";
         }
-      public string Json()
+public string Json()
         {
             return $"Die {FieldName} moet geldige JSON string wees.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"Die {FieldName} moet kleinletters wees.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"Die {FieldName} moet minder as wees {value} items.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"Die {FieldName} moet minder as wees than {value} karakters.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"Die {FieldName} moet nie meer as {value} items wees.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"Die {FieldName} moet kleiner of gelyk wees aan {value} karakters.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"Die {FieldName} moet 'n geldige MAC-adres wees.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"Die {FieldName} mag nie groter as {max} items wees.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"Die {FieldName} mag nie groter as {max} wees.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"Die {FieldName} mag nie groter as {max} karakters wees.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"Die {FieldName} moet ten minste {min} items wees.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"Die {FieldName} moet ten minste {min} wees.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"Die {FieldName} moet ten minste {min} karakters wees.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Die geselketeerde {FieldName} is ongeldig.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Die {FieldName} formaat is ongeldig.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"Die {FieldName} moet 'n syfer wees.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Die {FieldName} formaat is ongeldig.";
         }
-       public string Required()
+public string Required()
         {
             return $"Die {FieldName} veld is verpligtend.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"Die {FieldName} veld is verpligtend wanneer {name} {value} is.";
+        }
+public string Same(string name)
         {
             return $"Die {FieldName} en {name} moet ooreenstem.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"Die {FieldName} moet {size} items bevat.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"Die {FieldName} moet{size} karakters wees.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"Die {FieldName} moet met een van die volgende begin: {String.Join(", ", values)}.";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"Die {FieldName} moet hoofletters wees.";
         }
-   public string Url()
+public string Url()
         {
             return $"Die {FieldName} formaat is ongeldig.";
         }

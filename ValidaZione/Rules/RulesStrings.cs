@@ -570,7 +570,7 @@ namespace ValidaZione.Rules
             {
                 if (!this.Null)
                 {
-                    AddError(_lang.GreaterThanString(length));
+                    AddError(_lang.GreaterThanOrEqualString(length));
                 }
 
                 return this;
@@ -578,7 +578,7 @@ namespace ValidaZione.Rules
 
             if (length > Value.Length)
             {
-                AddError(_lang.GreaterThanString(length));
+                AddError(_lang.GreaterThanOrEqualString(length));
             }
 
             return this;
@@ -1175,7 +1175,7 @@ namespace ValidaZione.Rules
 
 
         /// <summary>
-        /// The field under validation must be present in the input data and not empty
+        /// The field under validation must be present in the input data and not empty.
         /// </summary>
         /// <returns>
         /// This instance of the object.
@@ -1187,6 +1187,24 @@ namespace ValidaZione.Rules
             if (string.IsNullOrEmpty(this.Value))
             {
                 AddError(_lang.Required());
+            }
+
+            return this;
+        }
+
+
+        /// <summary>
+        /// The field under validation must be present and not empty if the another field is equal to any value
+        /// </summary>
+        /// <param name="name">Name of the field</param>
+        /// <param name="value">Value of the field</param>
+        /// <param name="equalValue">Value to compare.</param>
+        /// <returns></returns>
+        public RulesStrings RequiredIf(string name, string value, string equalValue)
+        {
+            if (string.IsNullOrEmpty(Value) && value == equalValue)
+            {
+                AddError(_lang.RequiredIf(name, value));
             }
 
             return this;

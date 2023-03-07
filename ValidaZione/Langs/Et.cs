@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} peab olema kuupäev pärast või samastuma {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} võib sisaldada vaid tähemärke.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} peab sisaldama rohkem kui {value} tähemärki või sama palju";
         }
-  public string In()
+public string In()
         {
             return $"Valitud {FieldName} on vigane.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} peab olema kehtiv IP aadress.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} peab olema kehtiv IPv4 aadress.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} peab olema kehtiv IPv6 aadress.";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName} peab olema kehtiv JSON string.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} peab olema väiketäht.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} peab sisaldama vähem kui {value} üksust";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} ei tohi ületada {value} tähemärki";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName} ei tohi sisaldada rohkem kui {value} üksust";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} peab sisaldama vähem või sama palju {value} tähemärke";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} peab olema kehtiv MAC-aadress.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName} ei tohi sisaldada rohkem kui {max} kirjet.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} ei tohi olla suurem kui {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName} ei tohi olla suurem kui {max} tähemärki.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName} peab olema vähemalt {min} kirjet.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName} peab olema vähemalt {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName} peab olema vähemalt {min} tähemärki.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Valitud {FieldName} on vigane.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"{FieldName} vorming on vale";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} peab olema number.";
         }
- public string Regex()
+public string Regex()
         {
             return $"{FieldName} vorming on vigane.";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} väli on nõutud.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"{FieldName} väli on nõutud, kui {name} on {value}.";
+        }
+public string Same(string name)
         {
             return $"{FieldName} ja {name} peavad sobima.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName} peab sisaldama {size} kirjet.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName} peab olema {size} tähemärki.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} peab algama ühega järgmistest: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} peab olema suurtäht.";
         }
-   public string Url()
+public string Url()
         {
             return $"{FieldName} vorming on vigane.";
         }

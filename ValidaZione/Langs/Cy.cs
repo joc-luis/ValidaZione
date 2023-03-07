@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"Y {FieldName} rhaid iddo fod yn ddyddiad ar ôl neu yn hafal i {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"Dim ond llythrennau'n unig gall {FieldName} gynnwys.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"Rhaid i'r {FieldName} fod yn fwy na neu'n hafal i {value} nod.";
         }
-  public string In()
+public string In()
         {
             return $"Nid yw {FieldName} yn ddilys.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"Rhaid i {FieldName} fod yn gyfeiriad IP dilys.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"Y {FieldName} rhaid iddo fod yn ddilys ar IPv4 cyfeiriad.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"Y {FieldName} rhaid iddo fod yn ddilys cyfeiriad IPv6.";
         }
-      public string Json()
+public string Json()
         {
             return $"Y {FieldName} rhaid iddo fod yn ddilys JSON llinyn.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"Rhaid i'r {FieldName} fod yn llythrennau bach.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"Rhaid i'r {FieldName} fod â llai na {value} o eitemau.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"Rhaid i'r {FieldName} fod yn llai na {value} nod.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"Ni ddylai'r {FieldName} fod â mwy na {value} o eitemau.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"Rhaid i'r {FieldName} fod yn llai na neu'n hafal i {value} nod.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"Rhaid i'r {FieldName} fod yn gyfeiriad MAC dilys.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"Ni chai {FieldName} fod yn fwy na {max} eitem.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"Ni chai {FieldName} fod yn fwy na {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"Ni chai {FieldName} fod yn fwy na {max} nodyn.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"Rhaid i {FieldName} fod o leiaf {min} eitem.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"Rhaid i {FieldName} fod o leiaf {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"Rhaid i {FieldName} fod o leiaf {min} nodyn.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Nid yw {FieldName} yn ddilys.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Y {FieldName} fformat annilys.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"Rhaid i {FieldName} fod yn rif.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Nid yw fformat {FieldName} yn ddilys.";
         }
-       public string Required()
+public string Required()
         {
             return $"Rhaid cynnwys {FieldName}.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"Rhaid cynnwys {FieldName} pan mae {name} yn {value}.";
+        }
+public string Same(string name)
         {
             return $"Rhaid i {FieldName} a {name} fod yn gyfwerth.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"Rhaid i {FieldName} fod yn {size} eitem.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"Rhaid i {FieldName} fod yn {size} nodyn.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"Y {FieldName} rhaid dechrau gydag un o'r canlynol: {String.Join(", ", values)}.";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"Rhaid i'r {FieldName} fod yn briflythrennau.";
         }
-   public string Url()
+public string Url()
         {
             return $"Nid yw fformat {FieldName} yn ddilys.";
         }

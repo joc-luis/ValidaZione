@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName}-den soň bir sene bolmaly ýa-da {date}-e deň bolmaly.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} dine harplardan durmalydyr.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} {value} simwoldan uly ýa-da deň bolmaly.";
         }
-  public string In()
+public string In()
         {
             return $"{FieldName} mukdary ýalňyş.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} dogry IP adres bolmalydyr.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} dogry IPv4 salgy bolmaly.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} dogry IPv6 salgy bolmaly.";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName} dogry JSON setiri bolmaly.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} kiçi harp bolmaly";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName}-de {value}-den az zat bolmaly.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} simwoldan {value} simwoldan az bolmaly.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName}-de {value}-den köp zat bolmaly däldir.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} {value} simwoldan az ýa-da deň bolmaly.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} dogry MAC salgysy bolmaly.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName} iň az {max} maddadan ybarat bolmalydyr.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} {max} den kiçi bolmalydyr.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName} {max} harpdan kiçi bolmalydyr.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName} iň az {min} harpdan bolmalydyr.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName} mukdary {min} dan köp bolmalydyr.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName} mukdary {min} harpdan köp bolmalydyr.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Saýlanan {FieldName} geçersiz.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"{FieldName} format nädogry.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} san bolmalydyr.";
         }
- public string Regex()
+public string Regex()
         {
             return $"{FieldName} formaty ýalňyş.";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} meýdany zerur.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"{FieldName} meýdany, {name} {value} hümmetine eýe bolanynda zerurdyr.";
+        }
+public string Same(string name)
         {
             return $"{FieldName} bilen {name} deň bolmalydyr.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName} {size} madda eýe bolmalydyr.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName} {size} harp bolmalydyr.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"The {FieldName} must start with one of the following: {String.Join(", ", values)}.";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} baş harp bolmaly.";
         }
-   public string Url()
+public string Url()
         {
             return $"{FieldName} formaty ýalňyş.";
         }

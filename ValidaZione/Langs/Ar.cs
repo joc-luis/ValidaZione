@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"حقل {FieldName} يجب أن يكون تاريخاً لاحقاً أو مطابقاً للتاريخ {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"يجب أن لا يحتوي حقل {FieldName} سوى على حروف.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"يجب أن يكون طول نص حقل {FieldName} على الأقل {value} حروفٍ/حرفًا.";
         }
-  public string In()
+public string In()
         {
             return $"حقل {FieldName} غير موجود.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"يجب أن يكون حقل {FieldName} عنوان IP صحيحًا.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"يجب أن يكون حقل {FieldName} عنوان IPv4 صحيحًا.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"يجب أن يكون حقل {FieldName} عنوان IPv6 صحيحًا.";
         }
-      public string Json()
+public string Json()
         {
             return $"يجب أن يكون حقل {FieldName} نصًا من نوع JSON.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"يجب أن يحتوي الحقل {FieldName} على حروف صغيرة.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"يجب أن يحتوي حقل {FieldName} على أقل من {value} عناصر/عنصر.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"يجب أن يكون طول نّص حقل {FieldName} أقل من {value} حروفٍ/حرفًا.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"يجب أن لا يحتوي حقل {FieldName} على أكثر من {value} عناصر/عنصر.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"يجب أن لا يتجاوز طول نّص حقل {FieldName} {value} حروفٍ/حرفًا.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"الحقل {FieldName} يجب أن يكون عنوان MAC صالحاً.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"يجب أن لا يحتوي حقل {FieldName} على أكثر من {max} عناصر/عنصر.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"يجب أن تكون قيمة حقل {FieldName} مساوية أو أصغر من {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"يجب أن لا يتجاوز طول نّص حقل {FieldName} {max} حروفٍ/حرفًا.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"يجب أن يحتوي حقل {FieldName} على الأقل على {min} عُنصرًا/عناصر.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"يجب أن تكون قيمة حقل {FieldName} مساوية أو أكبر من {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"يجب أن يكون طول نص حقل {FieldName} على الأقل {min} حروفٍ/حرفًا.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"عنصر الحقل {FieldName} غير صحيح.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"صيغة حقل {FieldName} غير صحيحة.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"يجب على حقل {FieldName} أن يكون رقمًا.";
         }
- public string Regex()
+public string Regex()
         {
             return $"صيغة حقل {FieldName} غير صحيحة.";
         }
-       public string Required()
+public string Required()
         {
             return $"حقل {FieldName} مطلوب.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"حقل {FieldName} مطلوب في حال ما إذا كان {name} يساوي {value}.";
+        }
+public string Same(string name)
         {
             return $"يجب أن يتطابق حقل {FieldName} مع {name}.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"يجب أن يحتوي حقل {FieldName} على {size} عنصرٍ/عناصر بالضبط.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"يجب أن يحتوي نص حقل {FieldName} على {size} حروفٍ/حرفًا بالضبط.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"يجب أن يبدأ حقل {FieldName} بأحد القيم التالية: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"يجب أن يحتوي الحقل {FieldName} على حروف كبيرة.";
         }
-   public string Url()
+public string Url()
         {
             return $"صيغة رابط حقل {FieldName} غير صحيحة.";
         }

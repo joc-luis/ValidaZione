@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"Ang {FieldName} ay dapat na isang petsa na pagkatapos o katumbas ng {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"Mga titik lang dapat ang nilalaman ng {FieldName}.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"Ang {FieldName} ay dapat na mas marami sa o katumbas ng {value} (na) character.";
         }
-  public string In()
+public string In()
         {
             return $"Hindi valid ang piniling {FieldName}.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"Dapat na valid na IP address ang {FieldName}.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"Dapat na valid na IPv4 address ang {FieldName}.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"Dapat na IPv6 address ang {FieldName}.";
         }
-      public string Json()
+public string Json()
         {
             return $"Dapat na valid na JSON string ang {FieldName}.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"Dapat lowercase ang {FieldName}.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"Ang {FieldName} ay dapat na may mas bababa sa {value} (na) item.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"Ang {FieldName} ay dapat na mas mababa sa {value} (na) character.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"Hindi dapat magkaroon ang {FieldName} ng higit sa {value} (na) item.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"Ang {FieldName} ay dapat na mas mababa sa o katumbas ng {value} (na) character.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"Ang {FieldName} ay dapat na isang wastong MAC address.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"Hindi dapat magkaroon ang {FieldName} ng mahigit sa {max} (na) item.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"Ang {FieldName} ay hindi dapat mas malaki sa {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"Ang {FieldName} ay hindi dapat mas malaki sa {max} (na) character.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"Ang {FieldName} ay dapat na may hindi bababa sa {min} (na) item.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"Ang {FieldName} ay dapat na hindi bababa sa {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"Ang {FieldName} ay dapat na hindi bababa sa {min} (na) character.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Hindi valid ang piniling {FieldName}.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Hindi valid ang format na {FieldName}.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"Dapat na numero ang {FieldName}.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Hindi valid ang format na {FieldName}.";
         }
-       public string Required()
+public string Required()
         {
             return $"Kinakailangan ang field na {FieldName}.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"Kinakailangan ang field na {FieldName} kapag ang {name} ay {value}.";
+        }
+public string Same(string name)
         {
             return $"Dapat na magtugma ang {FieldName} at {name}.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"Dapat na maglaman ang {FieldName} ng {size} (na) item.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"Ang {FieldName} ay dapat na {size} (na) character.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"Dapat na magsimula ang {FieldName} sa isa sa sumusunod: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"Ang {FieldName} ay dapat na uppercase.";
         }
-   public string Url()
+public string Url()
         {
             return $"Hindi valid ang format na {FieldName}.";
         }

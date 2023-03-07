@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} ត្រូវតែជាកាលបរិច្ឆេទ ក្រោយឬស្មើ {date}។";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} អាចមានអក្សរតែប៉ុណ្ណោះ។";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} ត្រូវតែធំជាងឬស្មើ {value} តួអក្សរ។";
         }
-  public string In()
+public string In()
         {
             return $"ការជ្រើសរើស {FieldName} មិនត្រឹមត្រូវ។";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} ត្រូវតែជា IP address ត្រឹមត្រូវ។";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} ត្រូវតែជា IPv4 address ត្រឹមត្រូវ។";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} ត្រូវតែជា IPv6 address ត្រឹមត្រូវ។";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName} ត្រូវតែជា JSON string ត្រឹមត្រូវ។";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"លេខ {FieldName} ត្រូវតែជាអក្សរតូច។";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} ត្រូវតែមានចំនួនតិចជាង {value}។";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} ត្រូវតែតិចជាង {value} តួអក្សរ។";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName} ត្រូវមានចំនួនតិចជាង {value}។";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} ត្រូវតែតិចជាងឬស្មើ {value} តួអក្សរ។";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} ត្រូវតែជាអាសយដ្ឋាន MAC ត្រឹមត្រូវ។";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName} មិនត្រូវច្រើនជាងធាតុនេះ {max}។";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} មិនត្រូវធំជាង {max}។";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName} មិនត្រូវធំជាង {max} តួអក្សរ។";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName} ត្រូវតែតិចជាងធាតុនេះ {min}។";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName} ត្រូវតែតូចជាង {min}។";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName} ត្រូវតែតូចជាង {min} តួអក្សរ។";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"ការជ្រើសរើស {FieldName} គឺមិនត្រឹមត្រូវ។";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"{FieldName} ទម្រង់ គឺមិនត្រឹមត្រូវ។";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} ត្រូវតែជាលេខ។";
         }
- public string Regex()
+public string Regex()
         {
             return $"{FieldName} ទម្រង់មិនត្រឹមត្រូវ។";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} នេះគឺទាមទារឲ្យមាន។";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"{FieldName} នេះគឺទាមទារនៅពេល {name} គឺ {value}។";
+        }
+public string Same(string name)
         {
             return $"{FieldName} និង {name} ត្រូវតែដូចគ្នា។";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName} ត្រូវតែមានទំហំ {size}។";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName} ត្រូវតែ {size} តួអក្សរ។";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} ត្រូវចាប់ផ្តើមដោយ {String.Join(", ", values)} ណាមួយ។";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"លេខ {FieldName} ត្រូវតែជាអក្សរធំ។";
         }
-   public string Url()
+public string Url()
         {
             return $"{FieldName} ទម្រង់ត្រឹមត្រូវ។";
         }

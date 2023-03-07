@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} 必須要等於 {date} 或更晚。";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} 只能以字母組成。";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} 必須多於或等於 {value} 個字符。";
         }
-  public string In()
+public string In()
         {
             return $"所揀選的 {FieldName} 選項無效。";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} 必須是一個有效的 IP 地址。";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} 必須是一個有效的 IPv4 地址。";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} 必須是一個有效的 IPv6 地址。";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName} 必須是正確的 JSON 格式。";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} 必须小写。";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} 必須少於 {value} 個項目。";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} 必須少於 {value} 個字符。";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName} 必須少於或等於 {value} 個項目。";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} 必須少於或等於 {value} 個字符。";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} 必須是一個有效的 MAC 地址。";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName} 不能多於 {max} 個項目。";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} 不能大於 {max}。";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName} 不能多於 {max} 個字符。";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName} 不能小於 {min} 個項目。";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName} 不能小於 {min}。";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName} 不能小於 {min} 個字符。";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"所揀選的 {FieldName} 選項無效。";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"{FieldName} 的格式錯誤。";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} 必須為一個數字。";
         }
- public string Regex()
+public string Regex()
         {
             return $"{FieldName} 的格式錯誤。";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} 不能留空。";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"當 {name} 是 {value} 時 {FieldName} 不能留空。";
+        }
+public string Same(string name)
         {
             return $"{FieldName} 與 {name} 必須相同。";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName} 必須是 {size} 個單元。";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName} 必須是 {size} 個字符。";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} 開頭必須包含下列之一：{String.Join(", ", values)}。";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} 必须大写。";
         }
-   public string Url()
+public string Url()
         {
             return $"{FieldName} 的格式錯誤。";
         }

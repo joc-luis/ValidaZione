@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} უნდა იყოს თარიღი {date}-ის შემდეგ ან მისი ტოლი.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} უნდა შეიცავდეს მხოლოდ ასოებს.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} უნდა შეიცავდეს მინიმუმ {value} სიმბოლოს.";
         }
-  public string In()
+public string In()
         {
             return $"არჩეული {FieldName} არასწორია.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} უნდა იყოს ვალიდური IP მისამართი.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} უნდა იყოს ვალიდური IPv4 მისამართი.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} უნდა იყოს ვალიდური IPv6 მისამართი.";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName} უნდა იყოს სწორი JSON ტიპის.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} უნდა იყოს პატარა.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} უნდა შეიცავდეს {value} ელემენტზე ნაკლებს.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} უნდა შეიცავდეს {value} სიმბოლოზე ნაკლებს.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName} უნდა შეიცავდეს მაქსიმუმ {value} ელემენტს.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} უნდა შეიცავდეს მაქსიმუმ {value} სიმბოლოს.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} უნდა იყოს სწორი MAC მისამართი.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName}-ს არ უნდა ჰქონდეს {max} ელემენტზე მეტი.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} არ უნდა აღემატებოდეს {max}-ს.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName} არ უნდა აღემატებოდეს {max} სიმბოლოს.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName}-ს უნდა ჰქონდეს მინიმუმ {min} ელემენტი.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName} უნდა იყოს მინიმუმ {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName} უნდა შეიცავდეს მინიმუმ {min} სიმბოლოს.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"არჩეული {FieldName} არასწორია.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"{FieldName}-ის ფორმატი არასწორია.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} უნდა იყოს რიცხვი.";
         }
- public string Regex()
+public string Regex()
         {
             return $"{FieldName}-ის ფორმატი არასწორია.";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName}-ის ველი აუცილებელია.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"{FieldName}-ის ველი აუცილებელია, თუ {name}-ის მნიშვნელობა ემთხვევა {value}-ს.";
+        }
+public string Same(string name)
         {
             return $"{FieldName} და {name} უნდა ემთხვეოდეს ერთმანეთს.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName} უნდა შეიცავდეს {size} ელემენტს.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName} უნდა შედგებოდეს {size} სიმბოლოსგან.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} უნდა იწყებოდეს შემდეგიდან ერთ-ერთით: {String.Join(", ", values)}.";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} უნდა იყოს დიდი.";
         }
-   public string Url()
+public string Url()
         {
             return $"{FieldName}-ის ფორმატი არასწორია.";
         }

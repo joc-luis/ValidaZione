@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"ข้อมูล {FieldName} ต้องเป็นวันที่ตั้งแต่วันที่ {date} หรือหลังจากนั้น";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"ข้อมูล {FieldName} ต้องเป็นตัวอักษรภาษาอังกฤษเท่านั้น";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"ข้อมูล {FieldName} ต้องมีความยาวตัวอักษรมากกว่าหรือเท่ากับ {value} ตัวอักษร";
         }
-  public string In()
+public string In()
         {
             return $"ข้อมูลที่ถูกเลือกใน {FieldName} ไม่ถูกต้อง";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"ข้อมูล {FieldName} ต้องเป็น IP";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"ข้อมูล {FieldName} ต้องตรงตามรูปแบบ IPv4 address.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"ข้อมูล {FieldName} ต้องตรงตามรูปแบบ IPv6 address.";
         }
-      public string Json()
+public string Json()
         {
             return $"ข้อมูล {FieldName} ต้องเป็นอักขระ JSON ที่สมบูรณ์";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} ต้องเป็นตัวพิมพ์เล็ก";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"ข้อมูล {FieldName} ต้องมีน้อยกว่า {value} ค่า.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"ข้อมูล {FieldName} ต้องมีความยาวตัวอักษรน้อยกว่า {value} ตัวอักษร.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"ข้อมูล {FieldName} ต้องมีไม่เกิน {value} ค่า.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"ข้อมูล {FieldName} ต้องมีความยาวตัวอักษรน้อยกว่าหรือเท่ากับ {value} ตัวอักษร.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} ต้องเป็นที่อยู่ MAC ที่ถูกต้อง";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"ข้อมูล {FieldName} ต้องมีไม่เกิน {max} ค่า";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"ข้อมูล {FieldName} ต้องมีค่าไม่เกิน {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"ข้อมูล {FieldName} ต้องมีความยาวตัวอักษรไม่เกิน {max} ตัวอักษร";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"ข้อมูล {FieldName} ต้องมีอย่างน้อย {min} ค่า";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"ข้อมูล {FieldName} ต้องมีค่าอย่างน้อย {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"ข้อมูล {FieldName} ต้องมีความยาวตัวอักษรอย่างน้อย {min} ตัวอักษร";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"ข้อมูล ที่เลือกจาก {FieldName} ไม่ถูกต้อง";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"ข้อมูล {FieldName} มีรูปแบบไม่ถูกต้อง.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"ข้อมูล {FieldName} ต้องเป็นตัวเลข";
         }
- public string Regex()
+public string Regex()
         {
             return $"ข้อมูล {FieldName} มีรูปแบบไม่ถูกต้อง";
         }
-       public string Required()
+public string Required()
         {
             return $"ข้อมูล {FieldName} จำเป็นต้องกรอก";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"ข้อมูล {FieldName} จำเป็นต้องกรอกเมื่อ {name} เป็น {value}.";
+        }
+public string Same(string name)
         {
             return $"ข้อมูล {FieldName} และ {name} ต้องถูกต้อง";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"ข้อมูล {FieldName} ต้องเท่ากับ {size} ค่า";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"ข้อมูล {FieldName} ต้องเท่ากับ {size} ตัวอักษร";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"ข้อมูล {FieldName} ต้องเริ่มด้วยค่าใดค่าหนึ่งต่อไปนี้: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} ต้องเป็นตัวพิมพ์ใหญ่";
         }
-   public string Url()
+public string Url()
         {
             return $"ข้อมูล {FieldName} ไม่ถูกต้อง";
         }

@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} {date} osteko data edo data bera izan behar da.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} hizkiak besterik ezin ditu izan.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName}-(e)k {value} karaktere edo gehiago izan behar ditu.";
         }
-  public string In()
+public string In()
         {
             return $"{FieldName} baliogabea da.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} baliozko IP helbidea izan behar da.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} baliozko IPv4 helbidea izan behar da.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} baliozko IPv6 helbidea izan behar da.";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName} baliozko JSON karaktere-katea izan behar da.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName}ak minuskula izan behar du.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName}-(e)k {value} elementu baino gutxiago izan behar ditu.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName}-(e)k {value} karaktere baino gutxiago izan behar ditu.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName}-(e)k {value} elementu edo gutxiago izan behar ditu.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName}-(e)k {value} karaktere edo gutxiago izan behar ditu.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName}ak baliozko MAC helbidea izan behar du.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName}-(e)k ezin du {max} elementu baino gehiago eduki.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} ezin da {max} baino handiagoa izan.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName}-(e)k ezin du {max} karaktere baino gehiago eduki.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName}-(e)k gutxienez {min} elementu izan behar ditu.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName}-(e)k gutxienez {min}-(e)ko tamaina izan behar du.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName}-(e)k gutxienez {min} karaktere izan behar ditu.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"{FieldName} baliogabea da.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"{FieldName} formatua baliogabea da.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} zenbakizkoa izan behar da.";
         }
- public string Regex()
+public string Regex()
         {
             return $"{FieldName} baliogabea da.";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} derrigorrezkoa da.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"{FieldName} derrigorrezkoa da {name} {value} denean.";
+        }
+public string Same(string name)
         {
             return $"{FieldName} eta {name} bat etorri behar dira.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName}-(e)k {size} elementu izan behar ditu.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName}-(e)k {size} karaktere izan behar ditu.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName}-(e)k ondorengo balioetako batekin hasi behar du {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName}ak maiuskulak izan behar ditu.";
         }
-   public string Url()
+public string Url()
         {
             return $"{FieldName}-(r)en formatua baliogabea da.";
         }

@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} musí byť dátum po alebo presne {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} môže obsahovať len písmená.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} musí mať rovnaký alebo väčší počet znakov ako {value}.";
         }
-  public string In()
+public string In()
         {
             return $"označený {FieldName} je neplatný.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} musí byť platná IP adresa.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} musí byť platná IPv4 adresa.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} musí byť platná IPv6 adresa.";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName} musí byť platný JSON reťazec.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"Číslo {FieldName} musí byť malé.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} musí mať menej prvkov ako {value}.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} musí mať menej znakov ako {value}.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName} musí mať rovnaký alebo menší počet prvkov ako {value}.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} musí mať rovnaký alebo menší počet znakov ako {value}.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} musí byť platná adresa MAC.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName} nemôže mať viac ako {max} prvkov.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} nemôže byť väčší ako {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName} nemôže byť väčší ako {max} znakov.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName} musí mať aspoň {min} prvkov.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName} musí mať aspoň {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName} musí mať aspoň {min} znakov.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"označený {FieldName} je neplatný.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"{FieldName} má neplatný formát.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} musí byť číslo.";
         }
- public string Regex()
+public string Regex()
         {
             return $"{FieldName} má neplatný formát.";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} je požadované.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"{FieldName} je požadované keď {name} je {value}.";
+        }
+public string Same(string name)
         {
             return $"{FieldName} a {name} sa musia zhodovať.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName} musí obsahovať {size} prvkov.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName} musí mať {size} znakov.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} musí začínať niektorou z hodnôt: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"Číslo {FieldName} musí byť veľké.";
         }
-   public string Url()
+public string Url()
         {
             return $"{FieldName} musí mať formát URL.";
         }

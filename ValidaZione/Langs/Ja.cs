@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName}には、{date}以降の日付を指定してください。";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName}には、アルファベッドのみ使用できます。";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName}は、{value}文字以上でなければいけません。";
         }
-  public string In()
+public string In()
         {
             return $"選択された{FieldName}は、有効ではありません。";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName}には、有効なIPアドレスを指定してください。";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName}はIPv4アドレスを指定してください。";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName}はIPv6アドレスを指定してください。";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName}には、有効なJSON文字列を指定してください。";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName}は、小文字で入力してください。";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName}の項目数は、{value}個より少なくなければいけません。";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName}は、{value}文字より小さくなければいけません。";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName}の項目数は、{value}個以下でなければいけません。";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName}は、{value}文字以下でなければいけません。";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName}は有効なMACアドレスである必要があります。";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName}の項目数は、{max}個以下でなければいけません。";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName}は、{max}以下の数字でなければいけません。";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName}の文字数は、{max}文字以下でなければいけません。";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName}の項目数は、{min}個以上にしてください。";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName}には、{min}以上の数字を指定してください。";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName}の文字数は、{min}文字以上でなければいけません。";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"選択された{FieldName}は、有効ではありません。";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"{FieldName}の形式が正しくありません。";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName}には、数字を指定してください。";
         }
- public string Regex()
+public string Regex()
         {
             return $"{FieldName}には、正しい形式を指定してください。";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName}は必須項目です。";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $":Otherが{value}の場合、{FieldName}を指定してください。";
+        }
+public string Same(string name)
         {
             return $"{FieldName}と{name}が一致しません。";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName}の項目数は、{size}個にしてください。";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName}の文字数は、{size}文字にしてください。";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName}は、次のいずれかで始まる必要があります。{String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName}は、大文字で入力してください。";
         }
-   public string Url()
+public string Url()
         {
             return $"{FieldName}は、有効なURL形式で指定してください。";
         }

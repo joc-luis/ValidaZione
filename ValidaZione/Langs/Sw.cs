@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} inapaswa kuwa tarehe baada au sawa na {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"Kipengele huenda kikawa tu chenye herufi.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} inapaswa kuwa kubwa kuliko au sawa na herufi {value}.";
         }
-  public string In()
+public string In()
         {
             return $"Kipengele kilichochaguliwa si halali.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"Kipengele lazima kiwe anuani halali ya Itifaki ya Intaneti.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} inapaswa kuwa anwani ya IPv4 sahihi.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} inapaswa kuwa anwani ya IPv6 sahihi.";
         }
-      public string Json()
+public string Json()
         {
             return $"Kipengele lazima kiwe kidwe halali cha Nukuu ya Java.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} ni lazima iwe na herufi ndogo..";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} inapaswa kuwa chini ya vitu {value}.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} inapaswa kuwa chini ya herufi {value}.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName} haipaswi kuwa na vitu ziadi ya {value}.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} inapaswa kuwa ndogo au sawa na herufi {value}.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"Kipengele {FieldName} kinapaswa kuwa anwani sahihi ya MAC.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"Kipengele huenda kisiwe na zaidi ya {max} cha vifungu.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"Kipengele huenda si kikubwa kuliko {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"Kipengele huenda si kikubwa kuliko {max} cha herufi.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"Kipengele lazima kiwe na angalau {min} cha vifungu.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"Kipengele lazima kiwe angalau {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"Kipengele lazima kiwe angalau {min} cha herufi.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Kipengele kilichochaguliwa si halali.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Muundo wa {FieldName} si sahihi.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"Kipengele lazima kiwe nambari.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Muundo wa kipengele si halali.";
         }
-       public string Required()
+public string Required()
         {
             return $"Sehemu ya kipengele inahitajika.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"Sehemu ya kipengele inahitajika wakati {name} ni {value}.";
+        }
+public string Same(string name)
         {
             return $"Kipengele na {name} lazima vilingane.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"Kipengele lazima kiwe chenye {size} ya kipimo.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"Kipengele lazima kiwe {size} cha herufi.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} inapaswa kuanza na moja kati ya hizi zifuatazo: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} ni lazima iwe ya herufi kubwa.";
         }
-   public string Url()
+public string Url()
         {
             return $"Muundo wa kipengele si halali.";
         }

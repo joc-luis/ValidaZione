@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"Câmpul {FieldName} trebuie să fie o dată ulterioară sau egală cu {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"Câmpul {FieldName} poate conține doar litere.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"Câmpul {FieldName} trebuie să fie mai mare sau egal cu {value} caractere.";
         }
-  public string In()
+public string In()
         {
             return $"Câmpul {FieldName} selectat nu este valid.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"Câmpul {FieldName} trebuie să fie o adresă IP validă.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"Câmpul {FieldName} trebuie să fie o adresă IPv4 validă.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"Câmpul {FieldName} trebuie să fie o adresă IPv6 validă.";
         }
-      public string Json()
+public string Json()
         {
             return $"Câmpul {FieldName} trebuie să fie un string JSON valid.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} trebuie să fie format doar din litere mici.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"Câmpul {FieldName} trebuie să aibă mai puțin de {value} elemente.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"Câmpul {FieldName} trebuie să fie mai mic de {value} caractere.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"Câmpul {FieldName} trebuie să aibă {value} elemente sau mai puține.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"Câmpul {FieldName} trebuie să fie mai mic sau egal cu {value} caractere.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"Câmpul {FieldName} trebuie să fie o adresă MAC validă.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"Câmpul {FieldName} nu poate avea mai mult de {max} elemente.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"Câmpul {FieldName} nu poate fi mai mare de {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"Câmpul {FieldName} nu poate avea mai mult de {max} caractere.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"Câmpul {FieldName} trebuie să aibă cel puțin {min} elemente.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"Câmpul {FieldName} nu poate fi mai mic de {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"Câmpul {FieldName} trebuie să aibă cel puțin {min} caractere.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Câmpul {FieldName} selectat nu este valid.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Câmpul {FieldName} nu are un format valid.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"Câmpul {FieldName} trebuie să fie un număr.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Câmpul {FieldName} nu are un format valid.";
         }
-       public string Required()
+public string Required()
         {
             return $"Câmpul {FieldName} este obligatoriu.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"Câmpul {FieldName} este necesar când {name} este {value}.";
+        }
+public string Same(string name)
         {
             return $"Câmpurile {FieldName} și {name} trebuie să fie identice.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"Câmpul {FieldName} trebuie să aibă {size} elemente.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"Câmpul {FieldName} trebuie să aibă {size} caractere.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"Câmpul {FieldName} trebuie să înceapă cu una din următoarele valori: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} trebuie să fie majuscule.";
         }
-   public string Url()
+public string Url()
         {
             return $"Câmpul {FieldName} nu este un URL valid.";
         }

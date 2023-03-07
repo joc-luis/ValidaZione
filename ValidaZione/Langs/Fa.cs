@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} باید تاریخی بعد از {date}، یا مطابق با آن باشد.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} باید فقط حروف الفبا باشد.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} باید بیشتر یا مساوی {value} کاراکتر داشته باشد.";
         }
-  public string In()
+public string In()
         {
             return $"{FieldName} انتخاب شده، معتبر نیست.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} باید آدرس IP معتبر باشد.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} باید یک آدرس معتبر از نوع IPv4 باشد.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} باید یک آدرس معتبر از نوع IPv6 باشد.";
         }
-      public string Json()
+public string Json()
         {
             return $"فیلد {FieldName} باید یک رشته از نوع JSON باشد.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"فیلد {FieldName} باید با حروف کوچک باشد.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} باید کمتر از {value} آیتم داشته باشد.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} باید کمتر از {value} کاراکتر داشته باشد.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName} باید کمتر یا مساوی {value} آیتم داشته باشد.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} باید کمتر یا مساوی {value} کاراکتر داشته باشد.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} باید یک مک آدرس صحیح باشد.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName} نباید بیشتر از {max} آیتم داشته باشد.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} نباید بزرگتر از {max} باشد.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName} نباید بیشتر از {max} کاراکتر داشته باشد.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName} نباید کمتر از {min} آیتم داشته باشد.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName} نباید کوچکتر از {min} باشد.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName} نباید کمتر از {min} کاراکتر داشته باشد.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"{FieldName} انتخاب شده، معتبر نیست.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"فرمت {FieldName} معتبر نیست.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} باید عدد یا رشته‌ای از اعداد باشد.";
         }
- public string Regex()
+public string Regex()
         {
             return $"فرمت {FieldName} معتبر نیست.";
         }
-       public string Required()
+public string Required()
         {
             return $"فیلد {FieldName} الزامی است.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"هنگامی که {name} برابر با {value} است، فیلد {FieldName} الزامی است.";
+        }
+public string Same(string name)
         {
             return $"{FieldName} و {name} باید همانند هم باشند.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName} باید شامل {size} آیتم باشد.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName} باید برابر با {size} کاراکتر باشد.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} باید با یکی از این ها شروع شود: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"فیلد {FieldName} باید با حروف بزرگ باشد.";
         }
-   public string Url()
+public string Url()
         {
             return $"{FieldName} معتبر نمی‌باشد.";
         }

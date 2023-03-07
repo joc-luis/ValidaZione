@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"O {FieldName} debe ser unha data posterior ou igual a {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"O {FieldName} só debe conter letras.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"O {FieldName} debe ser maior ou igual a {value} caracteres.";
         }
-  public string In()
+public string In()
         {
             return $"O {FieldName} seleccionado non é válido.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"O {FieldName} debe ser unha dirección IP válida.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"O {FieldName} debe ser unha dirección IPv4 válida.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"O {FieldName} debe ser unha dirección IPv6 válida.";
         }
-      public string Json()
+public string Json()
         {
             return $"O {FieldName} debe ser unha cadea JSON válida.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"O {FieldName} debe estar en minúscula.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"O {FieldName} debe ter menos de {value} items.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"O {FieldName} debe ser inferior a {value} caracteres.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"O {FieldName} non debe ter máis de {value} items.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"O {FieldName} debe ser inferior ou igual a {value} caracteres.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"O {FieldName} debe ser unha dirección MAC válida.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"O {FieldName} non debe ter máis de {max} items.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"O {FieldName} non debe ser maior que {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"O {FieldName} non debe ser maior que {max} caracteres.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"O {FieldName} debe ter polo menos {min} items.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"O {FieldName} debe ser polo menos {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"O {FieldName} deben ser polo menos {min} caracteres.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"O {FieldName} seleccionado non é válido.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"O formato de {FieldName} non é válido.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"O {FieldName} debe ser un número.";
         }
- public string Regex()
+public string Regex()
         {
             return $"O formato {FieldName} non é válido.";
         }
-       public string Required()
+public string Required()
         {
             return $"O eido {FieldName} é obrigatorio.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"O eido {FieldName} é requirido cando {name} é {value}.";
+        }
+public string Same(string name)
         {
             return $"O {FieldName} e o {name} deben coincidir.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"O {FieldName} debe conter {size} items.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"O {FieldName} debe ser {size} caracteres.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"O {FieldName} debe comezar por un dos seguintes: {String.Join(", ", values)}.";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"O {FieldName} debe estar en maiúscula.";
         }
-   public string Url()
+public string Url()
         {
             return $"O {FieldName} debe ser unha URL válida.";
         }

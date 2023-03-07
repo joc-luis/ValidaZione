@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} da sana {date} ga teng yoki undan keyin bo‘lishi kerak.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} faqat harflarni qabul qilishi mumkin.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} dagi belgilar soni {value} dan katta yoki teng bo‘lishi kerak.";
         }
-  public string In()
+public string In()
         {
             return $"{FieldName} uchun tanlangan qiymat xato.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} haqiqiy IP manzil bo‘lishi kerak.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} haqiqiy IPv4 manzil bo‘lishi kerak.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} haqiqiy IPv6 manzil bo‘lishi kerak.";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName} JSON qatori bo‘lishi kerak.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"The {FieldName} must be lowercase.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} dagi elementlar soni {value} dan kichik bo‘lishi kerak.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} dagi belgilar soni {value} dan kichik bo‘lishi kerak.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName} dagi elementlar soni {value} dan kichik yoki teng bo‘lishi kerak.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} dagi belgilar soni {value} dan kichik yoki teng bo‘lishi kerak.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"The {FieldName} must be a valid MAC address.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName} ning elementlar soni {max} tadan oshmasligi kerak.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} ning qiymati {max} dan oshmasligi kerak.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName} ning belgilar soni {max} tadan oshmasligi kerak.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName} dagi elementlar soni {min} tadan kam bo‘lmasligi kerak.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName} ning qiymati {min} dan kam bo‘lmasligi kerak.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName} dagi belgilar soni {min} tadan kam bo‘lmasligi kerak.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"{FieldName} uchun tanlangan qiymat xato.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"{FieldName} uchun tanlangan format xato.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} son bo‘lishi kerak.";
         }
- public string Regex()
+public string Regex()
         {
             return $"{FieldName} maydoni xato formatda.";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} maydoni to‘ldirilishi shart.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $":Other maydoni {value} ga teng bo‘lsa, {FieldName} maydoni to‘ldirilishi shart.";
+        }
+public string Same(string name)
         {
             return $"{FieldName} ning qiymati {name} bilan bir xil bo‘lishi kerak.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName} dagi elementlar soni {size} ga teng bo‘lishi kerak.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName} dagi belgilar soni {size} ga teng bo‘lishi kerak.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} quyidagi qiymatlardan biri bilan boshlanishi kerak: {String.Join(", ", values)}.";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"The {FieldName} must be uppercase.";
         }
-   public string Url()
+public string Url()
         {
             return $"{FieldName} noto‘g‘ri formatga ega.";
         }

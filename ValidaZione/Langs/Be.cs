@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} павінна быць датай пасля або роўнай {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"Поле {FieldName} можа мець толькі літары.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} павінна быць больш або роўна {value} сімвалам.";
         }
-  public string In()
+public string In()
         {
             return $"Выбранае значэнне для {FieldName} памылкова.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"Поле {FieldName} дпавінна быць сапраўдным IP-адрасам.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} павінен быць сапраўдным IPv4-адрасам.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} павінен быць сапраўдным IPv6-адрасам.";
         }
-      public string Json()
+public string Json()
         {
             return $"Поле {FieldName} павінна быць JSON радком.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} павінны быць малымі.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"У {FieldName} павінна быць менш за {value} элементаў.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} павінна быць менш за {value} сімвалаў.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"У {FieldName} не павінна быць больш за {value} элементаў.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} павінна быць менш або роўна {value} сімвалам.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} павінен быць сапраўдным MAC-адрасам.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"Колькасць элементаў у поле {FieldName} не можа перавышаць {max}.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"Поле {FieldName} не можа быць больш {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"Колькасць сiмвалаў у поле {FieldName} не можа перавышаць {max}.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"Колькасць элементаў у поле {FieldName} павінна быць не менш {min}.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"Поле {FieldName} павінна быць не менш {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"Колькасць сiмвалаў у поле {FieldName} павінна быць не менш {min}.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Выбранае значэнне для {FieldName} памылкова.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Фармат {FieldName} недапушчальны.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"Поле {FieldName} павінна быць лікам.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Поле {FieldName} мае памылковы фармат.";
         }
-       public string Required()
+public string Required()
         {
             return $"Поле {FieldName} абавязкова для запаўнення.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"Поле {FieldName} абавязкова для запаўнення, калі {name} раўняецца {value}.";
+        }
+public string Same(string name)
         {
             return $"Значэнне {FieldName} павінна супадаць з {name}.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"Колькасць элементаў у поле {FieldName} павінна быць {size}.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"Колькасць сiмвалаў у поле {FieldName} павінна быць {size}.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} павінен пачынацца з аднаго з наступных значэнняў: {String.Join(", ", values)}.";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} павінны быць вялікімі.";
         }
-   public string Url()
+public string Url()
         {
             return $"Поле {FieldName} мае памылковы фармат.";
         }

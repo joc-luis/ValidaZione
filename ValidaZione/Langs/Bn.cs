@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} টি অবশ্যই {date} এর সাথে মিল অথবা এর পরের একটি তারিখ হতে হবে।";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} শুধুমাত্র অক্ষর থাকতে পারে।";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} অবশ্যই {value} অক্ষরের চেয়ে বড় বা সমান হতে হবে।";
         }
-  public string In()
+public string In()
         {
             return $"নির্বাচিত {FieldName} টি অবৈধ।";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} একটি বৈধ  IP address হতে হবে।";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} টি একটি বৈধ IPv4 address হতে হবে।";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} টি একটি বৈধ IPv6 address হতে হবে।";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName} একটি বৈধ JSON স্ট্রিং হতে হবে।";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} অবশ্যই ছোট হাতের হতে হবে।";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} এর থেকে কম {value} আইটেম থাকতে হবে।";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} অবশ্যই {value} অক্ষরের চেয়ে কম হতে হবে।";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName} এ অবশ্যই {value} আইটেমের বেশি থাকা উচিত নয়৷";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} অবশ্যই {value} অক্ষরের চেয়ে কম বা সমান হতে হবে।";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} একটি বৈধ MAC ঠিকানা হতে হবে।";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName} এর মান {max} টি উপাদানের চেয়ে বড় হতে পারেনা।";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} এর মান {max} এর চেয়ে বড় হতে পারেনা।";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName} এর মান {max} অক্ষর এর চেয়ে বড় হতে পারেনা।";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName} অবশ্যই {min} উপাদানের চেয়ে ছোট হতে হবে।";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName} অবশ্যই {min} এর চেয়ে ছোট হতে হবে।";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName} অবশ্যই {min} অক্ষর এর চেয়ে ছোট হতে হবে।";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"নির্বাচিত {FieldName} অবৈধ।";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"{FieldName} বিন্যাস অবৈধ।";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} একটি সংখ্যা হতে হবে।";
         }
- public string Regex()
+public string Regex()
         {
             return $"{FieldName} বিন্যাস অবৈধ।";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} স্থানটি পূরণ করা বাধ্যতামূলক।";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"{FieldName} স্থানটি পূরণ করা বাধ্যতামূলক যেখানে {name} হল {value}।";
+        }
+public string Same(string name)
         {
             return $"{FieldName} এবং {name} অবশ্যই মিলতে হবে।";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName} অবশ্যই {size} আইটেম হতে হবে।";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName} অবশ্যই {size} অক্ষর হতে হবে।";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"এই {FieldName} নিম্নলিখিত এক সঙ্গে শুরু হবে: {String.Join(", ", values)}।";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"এই {FieldName} অবশ্যই বড় হাতের হতে হবে।";
         }
-   public string Url()
+public string Url()
         {
             return $"এই {FieldName} একটি বৈধ URL হতে হবে।";
         }

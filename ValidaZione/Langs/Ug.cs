@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} چوقۇم {date} غا تەڭ ياكى كىيىن بۇلىشى كېرەك.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} پەقەت ھەرىپلەردىن تۈزىلىشى كېرەك.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} چوقۇم {value} ھەرپتىن چوڭ ياكى تەڭ بولۇشى كېرەك.";
         }
-  public string In()
+public string In()
         {
             return $"تاللانغان قىممەت {FieldName} ئىناۋەتسىز";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} چوقۇم ئىناۋەتلىك IP ئادىرىسى بۇلىشى كېرەك.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} چوقۇم ئىناۋەتلىك IPv4 ئادىرىسى بۇلىشى كېرەك.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} چوقۇم ئىناۋەتلىك IPv6 ئادىرىسى بۇلىشى كېرەك.";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName} چوقۇم ئىناۋەتلىك JSON تىپى بۇلىشى كېرەك.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} چوقۇم كىچىك ھەرپ بولۇشى كېرەك.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} دە {value} دىن تۆۋەن تۈر بولۇشى كېرەك.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} ھەرپ {value} ھەرپتىن تۆۋەن بولۇشى كېرەك.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName} دە {value} دىن ئارتۇق نەرسە بولماسلىقى كېرەك.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} چوقۇم {value} ھەرپتىن تۆۋەن ياكى تەڭ بولۇشى كېرەك.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} چوقۇم ئىناۋەتلىك MAC ئادرېسى بولۇشى كېرەك.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName} ئەڭ كۆپ بولغاندا {max} بۆلەك";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} {max} دىن چوڭ بولماسلىكى كېرەك.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName} چوڭ-كىچىكلىكى {max} خەتتىن ئېشىپ كەتمەسلىكى كېرەك.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName} ئەڭ ئاز بولغاندا {min} بۆلەك بۇلىشى كېرەك.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName} چوقۇم {min} تەڭ ياكى چوڭ بۇلىشى كېرەك.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName} ئەڭ ئاز بولغاندا {min} خەت بۇلىشى كېرەك.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"تاللانغان قىممەت {FieldName} ئىناۋەتسىز.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"{FieldName} فورماتى ئىناۋەتسىز.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} چوقۇم سان-سىفىر بۇلىشى كېرەك.";
         }
- public string Regex()
+public string Regex()
         {
             return $"{FieldName} ھۆججەت تىپى ئىناۋەتسىز.";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} قۇرۇق بولسا بولمايدۇ.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $":Other {value} بولغاندا {FieldName} قۇرۇق بولسا بولمايدۇ.";
+        }
+public string Same(string name)
         {
             return $"{FieldName} بىلەن {name} چوقۇم ئوخشاش بۇلىشى كېرەك.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName} چوقۇم {size} بۆلەك.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName} چوقۇم {size} خەت.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"The {FieldName} must start with one of the following: {String.Join(", ", values)}.";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} چوقۇم چوڭ ھەرپ بولۇشى كېرەك.";
         }
-   public string Url()
+public string Url()
         {
             return $"{FieldName} ھۆججەت تىپى ئىناۋەتسىز.";
         }

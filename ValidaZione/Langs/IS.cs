@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} verður að vera dagsetning eftir eða sú sama og {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"Reiturinn {FieldName} má aðeins innihalda bókstafi.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} verður að vera lengri eða jafnlangur og {value} stafir.";
         }
-  public string In()
+public string In()
         {
             return $"Reiturinn {FieldName} er ekki réttur.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"Reiturinn {FieldName} verður að vera lögleg IP-tala.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} verður að vera gild IPv4-tala.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} verður að vera gild IPv6-tala.";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName} verður að vera gildur JSON-strengur.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} verða að vera lágstafir.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} verður að hafa færri en {value} atriði.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} verður að vera styttri en {value} stafir.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName} má ekki hafa fleiri en {value} atriði.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} verður að vera styttri eða jafnlangur og {value} stafir.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} verður að vera gilt MAC vistfang.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"Reiturinn {FieldName} verður að innihalda færri en {max} stök.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"Reiturinn {FieldName} verður að innihalda færri stafi en {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"Reiturinn {FieldName} verður að innihalda færri en {max} stafi.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"Reiturinn {FieldName} verður að vera að lágmarki {min} stök.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"Reiturinn {FieldName} verður að vera að lágmarki {min} tölustafir.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"Reiturinn {FieldName} verður að vera að lágmarki {min} stafir.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Reiturinn {FieldName} er ógildur.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"{FieldName} sniðið er ógilt.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"Reiturinn {FieldName} verður að vera tala.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Reiturinn {FieldName} er ekki á réttu formi.";
         }
-       public string Required()
+public string Required()
         {
             return $"Reiturinn {FieldName} er nauðsynlegur.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"Reiturinn {FieldName} er nauðsynlegur þegar {name} er {value}.";
+        }
+public string Same(string name)
         {
             return $"Reiturinn {FieldName} og {name} verða að stemma.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"Reiturinn {FieldName} verður að innihalda {size} hluti.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"Reiturinn {FieldName} verður að vera {size} stafir.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} verður að byrja á einu af eftirfarandi: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} verða að vera hástafir.";
         }
-   public string Url()
+public string Url()
         {
             return $"Reiturinn {FieldName} verður að vera netslóð.";
         }

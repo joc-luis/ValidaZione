@@ -337,6 +337,15 @@ namespace ValidaZione.Interfaces
         /// <returns></returns>
         string Required();
         
+         /// <summary>
+         /// Set the error message for Required rule.
+         /// </summary>
+         /// <param name="name">Name of the field.</param>
+         /// <param name="value">Value of the field.</param>
+         /// <returns></returns>
+        string RequiredIf(string name, string value);
+         
+        
         /// <summary>
         /// Set the error message for Same rule.
         /// <param name="name">Name of the field.</param>

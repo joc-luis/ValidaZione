@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"Το πεδίο {FieldName} πρέπει να είναι μία ημερομηνία ίδια ή μετά από {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"Το πεδίο {FieldName} μπορεί να περιέχει μόνο γράμματα.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"To πεδίο {FieldName} πρέπει να είναι μεγαλύτερο ή ίσο από {value} χαρακτήρες.";
         }
-  public string In()
+public string In()
         {
             return $"Το επιλεγμένο {FieldName} δεν είναι έγκυρο.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"Το πεδίο {FieldName} πρέπει να είναι μία έγκυρη διεύθυνση IP.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"Το πεδίο {FieldName} πρέπει να είναι μία έγκυρη διεύθυνση IPv4.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"Το πεδίο {FieldName} πρέπει να είναι μία έγκυρη διεύθυνση IPv6.";
         }
-      public string Json()
+public string Json()
         {
             return $"Το πεδίο {FieldName} πρέπει να είναι μία έγκυρη συμβολοσειρά JSON.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"Το {FieldName} πρέπει να είναι πεζό.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"To πεδίο {FieldName} πρέπει να έχει λιγότερα από {value} αντικείμενα.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"To πεδίο {FieldName} πρέπει να είναι μικρότερo από {value} χαρακτήρες.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"To πεδίο {FieldName} δεν πρέπει να υπερβαίνει τα {value} αντικείμενα.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"To πεδίο {FieldName} πρέπει να είναι μικρότερo ή ίσο από  {value} χαρακτήρες.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"Το {FieldName} πρέπει να είναι έγκυρη διεύθυνση MAC.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"Το πεδίο {FieldName} δεν μπορεί να έχει περισσότερα από {max} αντικείμενα.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"Το πεδίο {FieldName} δεν μπορεί να είναι μεγαλύτερο από {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"Το πεδίο {FieldName} δεν μπορεί να έχει περισσότερους από {max} χαρακτήρες.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"Το πεδίο {FieldName} πρέπει να έχει τουλάχιστον {min} αντικείμενα.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"Το πεδίο {FieldName} πρέπει να είναι τουλάχιστον {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"Το πεδίο {FieldName} πρέπει να έχει τουλάχιστον {min} χαρακτήρες.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Το επιλεγμένο {FieldName} δεν είναι αποδεκτό.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Η μορφή του πεδίου {FieldName} δεν είναι αποδεκτή.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"Το πεδίο {FieldName} πρέπει να είναι αριθμός.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Η μορφή του πεδίου {FieldName} δεν είναι αποδεκτή.";
         }
-       public string Required()
+public string Required()
         {
             return $"Το πεδίο {FieldName} είναι απαραίτητο.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"Το πεδίο {FieldName} είναι απαραίτητο όταν το πεδίο {name} είναι {value}.";
+        }
+public string Same(string name)
         {
             return $"Τα πεδία {FieldName} και {name} πρέπει να είναι ίδια.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"Το πεδίο {FieldName} πρέπει να περιέχει {size} αντικείμενα.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"Το πεδίο {FieldName} πρέπει να είναι {size} χαρακτήρες.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"Το στοιχείο {FieldName} πρέπει να ξεκινά με ένα από τα παρακάτω: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"Το {FieldName} πρέπει να είναι κεφαλαίο.";
         }
-   public string Url()
+public string Url()
         {
             return $"Το πεδίο {FieldName} δεν είναι έγκυρη διεύθυνση URL.";
         }

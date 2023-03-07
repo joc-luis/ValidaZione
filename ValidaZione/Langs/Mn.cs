@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} талбарт {date} эсвэл түүнээс хойш огноо оруулна уу.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} талбарт латин үсэг оруулна уу.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} нь {value} тэмдэгтээс их буюу тэнцүү байх ёстой.";
         }
-  public string In()
+public string In()
         {
             return $"Сонгогдсон {FieldName} буруу байна.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} талбарт зөв IP хаяг оруулах шаардлагатай.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} нь хүчинтэй ЦТ 4-р хаяг байх естой.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} нь хүчин төгөлдөр Атв6 хаяг байх естой.";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName} талбарт зөв JSON тэмдэгт мөр оруулах шаардлагатай.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} нь жижиг үсгээр бичигдсэн байх ёстой.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} нь {value}-аас бага зүйлтэй байх ёстой.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} нь {value} тэмдэгтээс бага байх ёстой.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName}-д ​​{value}-аас илүү зүйл байх ёсгүй.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} нь {value} тэмдэгтээс бага буюу тэнцүү байх ёстой.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} нь хүчинтэй MAC хаяг байх ёстой.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName} талбарт хамгийн ихдээ {max} элемэнт оруулах боломжтой.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} талбарт {max} буюу түүнээс бага утга оруулна уу.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName} талбарт {max}-с бага урттай текст оруулна уу.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName} талбарт хамгийн багадаа {min} элемэнт оруулах боломжтой.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName} талбарт {min} буюу түүнээс их тоо оруулна уу.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName} талбарт {min} буюу түүнээс их үсэг бүхий текст оруулна уу.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Буруу {FieldName} сонгогдсон байна.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"{FieldName} хэлбэр нь хүчин төгөлдөр бус байна.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} талбарт тоон утга оруулна уу.";
         }
- public string Regex()
+public string Regex()
         {
             return $"{FieldName} талбарт оруулсан утга буруу байна.";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} талбар шаардлагатай.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"Хэрэв {name} {value} бол {FieldName} табларт утга оруулах шаардлагатай.";
+        }
+public string Same(string name)
         {
             return $"{FieldName} болон {name} тохирох естой.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName} {size} элемэнттэй байх шаардлагатай.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName} {size} тэмдэгтийн урттай байх шаардлагатай.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} дараах аль нэг нь эхлэх естой: {String.Join(", ", values)}.";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} нь том үсгээр бичигдсэн байх ёстой.";
         }
-   public string Url()
+public string Url()
         {
             return $"{FieldName} зөв url хаяг оруулна уу.";
         }

@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} moet een datum na of gelijk aan {date} zijn.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} mag alleen letters bevatten.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} moet minimaal {value} tekens bevatten.";
         }
-  public string In()
+public string In()
         {
             return $"{FieldName} is ongeldig.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} moet een geldig IP-adres zijn.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} moet een geldig IPv4-adres zijn.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} moet een geldig IPv6-adres zijn.";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName} moet een geldige JSON-string zijn.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} mag alleen kleine letters bevatten.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} moet minder dan {value} waardes bevatten.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} moet minder dan {value} tekens bevatten.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName} moet {value} of minder waardes bevatten.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} moet maximaal {value} tekens bevatten.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} moet een geldig MAC-adres zijn.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName} mag niet meer dan {max} waardes bevatten.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} mag niet hoger dan {max} zijn.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName} mag niet uit meer dan {max} tekens bestaan.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName} moet minimaal {min} waardes bevatten.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName} moet minimaal {min} zijn.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName} moet minimaal {min} tekens zijn.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"{FieldName} is ongeldig.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Het formaat van {FieldName} is ongeldig.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} moet een getal zijn.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Het formaat van {FieldName} is ongeldig.";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} is verplicht.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"{FieldName} is verplicht indien {name} gelijk is aan {value}.";
+        }
+public string Same(string name)
         {
             return $"{FieldName} en {name} moeten overeenkomen.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName} moet {size} waardes bevatten.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName} moet {size} tekens zijn.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} moet beginnen met een van de volgende: {String.Join(", ", values)}.";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} mag alleen hoofdletters bevatten.";
         }
-   public string Url()
+public string Url()
         {
             return $"{FieldName} moet een geldige URL zijn.";
         }

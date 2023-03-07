@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"שדה {FieldName} חייב להיות תאריך מאוחר או שווה ל {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"שדה {FieldName} יכול להכיל אותיות בלבד.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"על ה {FieldName} להיות גדול יותר או שווה ל- {value} תווים.";
         }
-  public string In()
+public string In()
         {
             return $"בחירת ה-{FieldName} אינה תקפה.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"שדה {FieldName} חייב להיות כתובת IP תקנית.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"שדה {FieldName} חייב להיות כתובת IPv4 תקנית.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"שדה {FieldName} חייב להיות כתובת IPv6 תקנית.";
         }
-      public string Json()
+public string Json()
         {
             return $"שדה {FieldName} חייב להיות מחרוזת JSON תקנית.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"ה-{FieldName} חייב להיות באותיות קטנות.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"על ה {FieldName} לכלול פחות מ- {value} פריטים.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"על ה {FieldName} להכיל פחות מ- {value} תווים.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"ה {FieldName} לא יכול לכלול יותר מאשר {value} פריטים.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"על ה {FieldName} להכיל {value} תווים או פחות.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"ה-{FieldName} חייבת להיות כתובת MAC חוקית.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"שדה {FieldName} לא יכול להכיל יותר מ-{max} פריטים.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"שדה {FieldName} אינו יכול להיות גדול מ-{max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"שדה {FieldName} לא יכול להיות גדול מ-{max} characters.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"שדה {FieldName} חייב להיות לפחות {min} פריטים.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"שדה {FieldName} חייב להיות לפחות {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"שדה {FieldName} חייב להיות לפחות {min} תווים.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"בחירת ה-{FieldName} אינה תקפה.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"הפורמט של {FieldName} איננו חוקי.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"שדה {FieldName} חייב להיות מספר.";
         }
- public string Regex()
+public string Regex()
         {
             return $"שדה {FieldName} בעל פורמט שאינו תקין.";
         }
-       public string Required()
+public string Required()
         {
             return $"שדה {FieldName} הוא חובה.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"שדה {FieldName} נחוץ כאשר {name} הוא {value}.";
+        }
+public string Same(string name)
         {
             return $"שדה {FieldName} ו-{name} חייבים להיות זהים.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"שדה {FieldName} חייב להכיל {size} פריטים.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"שדה {FieldName} חייב להיות {size} תווים.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"ה {FieldName} חייב להתחיל עם אחד מהבאים: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"ה-{FieldName} חייב להיות רישיות.";
         }
-   public string Url()
+public string Url()
         {
             return $"שדה {FieldName} בעל פורמט שאינו תקין.";
         }

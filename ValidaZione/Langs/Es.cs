@@ -136,7 +136,7 @@ namespace ValidaZione.Langs
 
         public string In()
         {
-            return $"The {FieldName} seleccionado no es válido.";
+            return $"El campo {FieldName} seleccionado no es válido.";
         }
 
         public string Integer()
@@ -247,6 +247,11 @@ namespace ValidaZione.Langs
         public string Required()
         {
             return $"El campo {FieldName} es obligatorio.";
+        }
+
+        public string RequiredIf(string name, string value)
+        {
+            return $"El campo {FieldName} es obligatorio cuando {name} es {value}.";
         }
 
         public string Same(string name)

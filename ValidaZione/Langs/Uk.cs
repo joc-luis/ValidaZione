@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"Поле {FieldName} має містити дату не раніше, або дорівнюватися {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"Поле {FieldName} має містити лише літери.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"Поле {FieldName} має дорівнювати чи бути більше ніж {value} символів.";
         }
-  public string In()
+public string In()
         {
             return $"Вибране для {FieldName} значення не коректне.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"Поле {FieldName} має містити IP адресу.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"Поле {FieldName} має містити IPv4 адресу.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"Поле {FieldName} має містити IPv6 адресу.";
         }
-      public string Json()
+public string Json()
         {
             return $"Дані поля {FieldName} мають бути у форматі JSON.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"Поле {FieldName} має бути рядком у нижньому регістрі";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"Поле {FieldName} має містити менше ніж {value} items.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"Поле {FieldName} має бути менше ніж {value} символів.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"Поле {FieldName} має містити не більше ніж {value} елементів.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"Поле {FieldName} має дорівнювати чи бути менше ніж {value} символів.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"Поле {FieldName} має містити MAC адресу.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"Поле {FieldName} повинне містити не більше {max} елементів.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"Поле {FieldName} має бути не більше {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"Текст в полі {FieldName} повинен мати довжину не більшу за {max}.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"Поле {FieldName} повинне містити не менше {min} елементів.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"Поле {FieldName} повинне бути не менше {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"Текст у полі {FieldName} повинен містити не менше {min} символів.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Вибране для {FieldName} значення не коректне.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Формат поля {FieldName} не вірний.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"Поле {FieldName} повинно містити число.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Поле {FieldName} має хибний формат.";
         }
-       public string Required()
+public string Required()
         {
             return $"Поле {FieldName} є обов'язковим для заповнення.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"Поле {FieldName} є обов'язковим для заповнення, коли {name} є рівним {value}.";
+        }
+public string Same(string name)
         {
             return $"Поля {FieldName} та {name} мають збігатися.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"Поле {FieldName} повинне містити {size} елементів.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"Текст у полі {FieldName} повинен містити {size} символів.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"Поле {FieldName} повинне починатися з одного з наступних значень: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"Поле {FieldName} має бути рядком у верхньому регістрі.";
         }
-   public string Url()
+public string Url()
         {
             return $"Формат поля {FieldName} хибний.";
         }

@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"Ang {FieldName} ay dapat na isang petsa pagkatapos o katumbas ng {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"Ang {FieldName} ay maaaring magtaglay ng mga letra lang.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"Ang {FieldName} ay dapat na mas malaki sa o katumbas ng {value} character.";
         }
-  public string In()
+public string In()
         {
             return $"Ang piniling {FieldName} ay imbalido.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"Ang {FieldName} ay dapat isang balidong IP address.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"Ang {FieldName} ay dapat na isang wastong Ipbagong address.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"Ang {FieldName} ay dapat na isang balidong Ipbagong address.";
         }
-      public string Json()
+public string Json()
         {
             return $"Ang {FieldName} ay dapat isang balidong JSON string.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"Dapat lowercase ang {FieldName}.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"Ang {FieldName} ay dapat magkaroon ng mas mababa sa {value} na mga item.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"Dapat mas mababa sa {value} character ang {FieldName}.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"Ang {FieldName} ay hindi dapat magkaroon ng higit sa {value} mga item.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"Ang {FieldName} ay dapat mas mababa sa o katumbas ng {value} character.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"Ang {FieldName} ay dapat na isang wastong MAC address.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"Ang {FieldName} ay hindi maaaring higit sa {max} items.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"Ang {FieldName} ay hindi maaaring higit sa  {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"Ang {FieldName} ay hindi maaaring higit sa {max} characters.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"Ang {FieldName} ay dapat di-kukulangin sa {min} items.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"Ang {FieldName} ay dapat di-kukulangin sa {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"Ang {FieldName} ay dapat di-kukulangin sa {min} characters.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Ang piniling {FieldName} ay imbalido.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Hindi tanggap ang {FieldName} na anyo.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"Ang {FieldName} ay dapat isang numero.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Ang {FieldName} ng attribute ay imbalido.";
         }
-       public string Required()
+public string Required()
         {
             return $"Ang {FieldName} ng attribute ay kailangan.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"Ang {FieldName} ng attribute ay kailangan kapag {name} iba ay {value}.";
+        }
+public string Same(string name)
         {
             return $"Ang {FieldName} at {name} pa ay dapat magtugma.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"Ang {FieldName} ay dapat magtaglay ng {size} sa items.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"Ang {FieldName} ay dapat {size} sukat sa characters.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"Ang {FieldName} ay dapat magsimula sa isa sa mga sumusunod: {String.Join(", ", values)}.";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"Ang {FieldName} ay dapat na uppercase.";
         }
-   public string Url()
+public string Url()
         {
             return $"Ang {FieldName} ng attribute ay imbalido.";
         }

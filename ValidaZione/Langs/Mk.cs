@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"Полето {FieldName} мора да биде датум кој е после или еднаков на {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"Полето {FieldName} може да содржи само букви.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"Полето {FieldName} мора да биде текст со повеќе или еднаков на {value} број на карактери.";
         }
-  public string In()
+public string In()
         {
             return $"Избраното поле {FieldName} е невалидно.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"Полето {FieldName} мора да биде валидна IP адреса.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"Полето {FieldName} мора да биде валидна IPv4 адреса.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"Полето {FieldName} мора да биде валидна IPv6 адреса.";
         }
-      public string Json()
+public string Json()
         {
             return $"Полето {FieldName} мора да биде валиден JSON објект.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName}-ката мора да биде мала.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"Полето {FieldName} мора да има помалку од {value} елементи.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"Полето {FieldName} мора да биде текст помал од {value} број на карактери.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"Полето {FieldName} мора да има {value} елементи или помалку.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"Полето {FieldName} мора да биде текст со помалку или еднаков на {value} број на карактери.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} мора да биде валидна MAC адреса.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"Полето {FieldName} не може да има повеќе од {max} елементи.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"Полето {FieldName} мора да биде број не поголем од {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"Полето {FieldName} мора да има не повеќе од {max} карактери.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"Полето {FieldName} мора да има минимум {min} елементи.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"Полето {FieldName} мора да биде број не помал од {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"Полето {FieldName} мора да има не помалку од {min} карактери.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Избраното поле {FieldName} е невалидно.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Полето {FieldName} има невалиден формат.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"Полето {FieldName} мора да биде број.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Полето {FieldName} има невалиден формат.";
         }
-       public string Required()
+public string Required()
         {
             return $"Полето {FieldName} е задолжително.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"Полето {FieldName} е задолжително кога {name} е {value}.";
+        }
+public string Same(string name)
         {
             return $"Полињата {FieldName} и {name} треба да совпаѓаат.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"Полето {FieldName} мора да биде низа со {size} број на елементи.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"Полето {FieldName} мора да биде текст со должина од {size} број на карактери.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"Полето {FieldName} мора да започнува со една од следните вредности: {String.Join(", ", values)}.";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName}-ката мора да биде голема.";
         }
-   public string Url()
+public string Url()
         {
             return $"Полето {FieldName} не е во валиден формат.";
         }

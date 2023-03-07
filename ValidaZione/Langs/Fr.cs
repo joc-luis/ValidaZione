@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"Le champ {FieldName} doit être une date postérieure ou égale au {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"Le champ {FieldName} doit contenir uniquement des lettres.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"Le texte {FieldName} doit contenir au moins {value} caractères.";
         }
-  public string In()
+public string In()
         {
             return $"Le champ {FieldName} est invalide.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"Le champ {FieldName} doit être une adresse IP valide.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"Le champ {FieldName} doit être une adresse IPv4 valide.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"Le champ {FieldName} doit être une adresse IPv6 valide.";
         }
-      public string Json()
+public string Json()
         {
             return $"Le champ {FieldName} doit être un document JSON valide.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"Le champ {FieldName} doit être en minuscules.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"Le tableau {FieldName} doit contenir moins de {value} éléments.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"Le texte {FieldName} doit contenir moins de {value} caractères.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"Le tableau {FieldName} doit contenir au plus {value} éléments.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"Le texte {FieldName} doit contenir au plus {value} caractères.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"Le champ {FieldName} doit être une adresse MAC valide.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"Le tableau {FieldName} ne peut pas contenir plus que {max} éléments.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"La valeur de {FieldName} ne peut pas être supérieure à {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"Le texte de {FieldName} ne peut pas contenir plus de {max} caractères.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"Le tableau {FieldName} doit contenir au moins {min} éléments.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"La valeur de {FieldName} doit être supérieure ou égale à {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"Le texte de {FieldName} doit contenir au moins {min} caractères.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Le champ {FieldName} sélectionné n'est pas valide.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Le format du champ {FieldName} n'est pas valide.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"Le champ {FieldName} doit contenir un nombre.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Le format du champ {FieldName} est invalide.";
         }
-       public string Required()
+public string Required()
         {
             return $"Le champ {FieldName} est obligatoire.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"Le champ {FieldName} est obligatoire quand la valeur de {name} est {value}.";
+        }
+public string Same(string name)
         {
             return $"Les champs {FieldName} et {name} doivent être identiques.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"Le tableau {FieldName} doit contenir {size} éléments.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"Le texte de {FieldName} doit contenir {size} caractères.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"Le champ {FieldName} doit commencer avec une des valeurs suivantes : {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"Le champ {FieldName} doit être en majuscules.";
         }
-   public string Url()
+public string Url()
         {
             return $"Le format de l'URL de {FieldName} n'est pas valide.";
         }

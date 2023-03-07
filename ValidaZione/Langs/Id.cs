@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} harus berisi tanggal setelah atau sama dengan {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} hanya boleh berisi huruf.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} harus berisi lebih besar dari atau sama dengan {value} karakter.";
         }
-  public string In()
+public string In()
         {
             return $"{FieldName} yang dipilih tidak valid.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} harus berupa alamat IP yang valid.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} harus berupa alamat IPv4 yang valid.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} harus berupa alamat IPv6 yang valid.";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName} harus berupa JSON string yang valid.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} harus berupa huruf kecil.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} harus memiliki kurang dari {value} anggota.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} harus berisi kurang dari {value} karakter.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName} harus tidak lebih dari {value} anggota.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} harus berisi kurang dari atau sama dengan {value} karakter.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} harus berupa alamat MAC yang valid.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName} maksimal terdiri dari {max} anggota.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} maksimal bernilai {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName} maksimal berisi {max} karakter.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName} minimal terdiri dari {min} anggota.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName} minimal bernilai {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName} minimal berisi {min} karakter.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"{FieldName} yang dipilih tidak valid.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Format {FieldName} tidak valid.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} harus berupa angka.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Format {FieldName} tidak valid.";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} wajib diisi.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"{FieldName} wajib diisi bila {name} adalah {value}.";
+        }
+public string Same(string name)
         {
             return $"{FieldName} dan {name} harus sama.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName} harus mengandung {size} anggota.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName} harus berukuran {size} karakter.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} harus diawali salah satu dari berikut: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} harus berupa huruf kapital.";
         }
-   public string Url()
+public string Url()
         {
             return $"Format {FieldName} tidak valid.";
         }

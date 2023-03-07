@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"Lo camp {FieldName} deu èsser una data posteriora o egala a {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"Lo camp {FieldName} a de conténer solament de letras.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"Lo tèxt {FieldName} deu conténer almens {value} caractèrs.";
         }
-  public string In()
+public string In()
         {
             return $"Lo camp {FieldName} selecionnat es invalid.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"Lo camp {FieldName} deu èsser una adreça IP valida.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"Lo camp {FieldName} deu èsser una adreça IPv4 valida.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"Lo camp {FieldName} deu èsser una adreça IPv6 valida.";
         }
-      public string Json()
+public string Json()
         {
             return $"Lo camp {FieldName} deu èsser una cadena JSON valida.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"The {FieldName} must be lowercase.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"Lo tablèu {FieldName} deu conténer almens {value} elements.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"Lo tèxt {FieldName} deu conténer almens {value} caractèrs.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"Lo tablèu {FieldName} deu conténer al pus mai {value} elements.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"Lo tèxt {FieldName} deu conténer al pus mai {value} caractèrs.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"The {FieldName} must be a valid MAC address.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"Lo tablèu {FieldName} deu pas conténer mai de {max} elements.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"La valor de {FieldName} deu pas èsser superiora a {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"Lo tèxt {FieldName} deu èsser superior a {max} caractèrs.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"Lo tablèu {FieldName} deu conténer almens {min} elements.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"La valor de {FieldName} deu fa almens {min} o mai.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"Lo tèxt {FieldName} deu fa almens {min} caractèrs.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Lo camp {FieldName} seleccionat es invalid.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Lo format {FieldName} es invalid.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"Lo camp {FieldName} deu èsser un nombre.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Lo format {FieldName} es invalid.";
         }
-       public string Required()
+public string Required()
         {
             return $"Lo camp {FieldName} es obligatòri.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"Lo camp {FieldName} es obligatòri quand {name} es {value}.";
+        }
+public string Same(string name)
         {
             return $"Los camps {FieldName} e {name} devon correspondre.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"Lo tablèu {FieldName} deu conténer {size} elements.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"Lo tèxt {FieldName} deu fa {size} caractèrs.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"Lo camp {FieldName} deu començar amb una de las valors seguentas : {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"The {FieldName} must be uppercase.";
         }
-   public string Url()
+public string Url()
         {
             return $"Lo format de {FieldName} es invalid.";
         }

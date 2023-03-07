@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName}은(는) {date} 이후 날짜이거나 같은 날짜여야 합니다.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName}은(는) 문자만 포함할 수 있습니다.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName}의 길이는 {value}보다 같거나 길어야 합니다.";
         }
-  public string In()
+public string In()
         {
             return $"선택된 {FieldName}은(는) 올바르지 않습니다.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName}은(는) 유효한 IP 주소여야 합니다.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName}은(는) 유효한 IPv4 주소여야 합니다.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName}은(는) 유효한 IPv6 주소여야 합니다.";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName}은(는) JSON 문자열이어야 합니다.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName}은 소문자여야 합니다.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName}의 항목 수는 {value}개 보다 작아야 합니다.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName}의 길이는 {value}보다 짧아야 합니다.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName}의 항목 수는 {value}개 보다 같거나 작아야 합니다.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName}의 길이는 {value}보다 같거나 짧아야 합니다.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName}은(는) 올바른 MAC 주소가 아닙니다.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName}은(는) {max}개보다 많을 수 없습니다.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName}은(는) {max}보다 클 수 없습니다.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName}은(는) {max}자보다 클 수 없습니다.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName}은(는) 최소한 {min}개의 항목이 있어야 합니다.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName}은(는) 최소한 {min}이어야 합니다.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName}은(는) 최소한 {min}자이어야 합니다.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"선택된 {FieldName}이(가) 올바르지 않습니다.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"{FieldName}의 형식이 올바르지 않습니다.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName}은(는) 숫자여야 합니다.";
         }
- public string Regex()
+public string Regex()
         {
             return $"{FieldName} 형식이 올바르지 않습니다.";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} 필드는 필수입니다.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $":Other이(가) {value} 일 때 {FieldName} 필드는 필수입니다.";
+        }
+public string Same(string name)
         {
             return $"{FieldName}와(과) {name}은(는) 일치해야 합니다.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName}은(는) {size}개의 항목을 포함해야 합니다.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName}은(는) {size}자여야 합니다.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName}은(는) {String.Join(", ", values)} 중 하나로 시작해야 합니다.";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName}은 대문자여야 합니다.";
         }
-   public string Url()
+public string Url()
         {
             return $"{FieldName}은(는) 형식은 올바르지 않습니다.";
         }

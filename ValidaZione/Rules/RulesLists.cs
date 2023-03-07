@@ -298,7 +298,7 @@ namespace ValidaZione.Rules
             {
                 if (!this.Null)
                 {
-                    this.AddError(_lang.GreaterThanArray(length));
+                    this.AddError(_lang.GreaterThanOrEqualArray(length));
                 }
 
                 return this;
@@ -306,7 +306,7 @@ namespace ValidaZione.Rules
 
             if (this.Values.LongCount() < length)
             {
-                this.AddError(_lang.GreaterThanArray(length));
+                this.AddError(_lang.GreaterThanOrEqualArray(length));
             }
 
             return this;

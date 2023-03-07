@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} मिति पछाडि वा बराबर मिति हुनुपर्दछ।";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} मा अक्षरहरु मात्र हुनसक्छ।";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} {value} क्यारेक्टर भन्दा बढि हुनुपर्दछ।";
         }
-  public string In()
+public string In()
         {
             return $"छानिएको {FieldName} अमान्य छ।";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} मा दिइएको मान्य IP ठेगाना हुनुपर्छ।";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} एक मान्य IPv4 ठेगाना हुनुपर्दछ.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} एक मान्य IPv6 ठेगाना हुनुपर्दछ.";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName} मा दिइएको मान्य JSON स्ट्रिङ्ग हुनुपर्छ।";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} लोअरकेस हुनुपर्छ।";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} {value} आईटमहरू भन्दा बढि हुनुपर्दछ।";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} {value} क्यारेक्टर भन्दा बढि हुनुपर्दछ।";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName} {value} आईटमहरू भन्दा बढि हुनुपर्दछ।";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} {value} क्यारेक्टर भन्दा बढि हुनुपर्दछ।";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} मान्य MAC ठेगाना हुनुपर्छ।";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName} मा {max} आईटमहरू भन्दा बढि हुनुपर्दछ।";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} {max} भन्दा बढि हुनुपर्दछ।";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName} {max} क्यारेक्टर भन्दा बढि हुनुपर्दछ।";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName} मा कम्तिमा {min} आइटम हुनुपर्छ।";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName} कम्तिमा {min} हुनुपर्छ।";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName} कम्तिमा {min} वर्णको हुनुपर्छ।";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"छानिएको {FieldName} अमान्य छ।";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"{FieldName} ढाँचा अवैध छ.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} संख्या हुनुपर्छ।";
         }
- public string Regex()
+public string Regex()
         {
             return $"{FieldName} को ढाँचा मिलेन।";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} दिइएको हुनुपर्छ।";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"{FieldName} चाहिन्छ जब {name} {value} हुन्छ।";
+        }
+public string Same(string name)
         {
             return $"{FieldName} र {name} मिल्नुपर्छ।";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName} {size}मा आइटम हुनुपर्छ।";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName} {size} वर्णको हुनुपर्छ।.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} निम्न मध्ये एकसँग सुरू हुनुपर्दछ {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"१०० अपरकेस हुनुपर्छ।";
         }
-   public string Url()
+public string Url()
         {
             return $"{FieldName} को ढांचा मिलेन।";
         }

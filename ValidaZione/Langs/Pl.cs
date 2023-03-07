@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"Pole {FieldName} musi być datą nie wcześniejszą niż {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"Pole {FieldName} może zawierać jedynie litery.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"Pole {FieldName} musi być dłuższe lub równe {value} znaków.";
         }
-  public string In()
+public string In()
         {
             return $"Zaznaczony element {FieldName} jest nieprawidłowy.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"Pole {FieldName} musi być prawidłowym adresem IP.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"Pole {FieldName} musi być prawidłowym adresem IPv4.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"Pole {FieldName} musi być prawidłowym adresem IPv6.";
         }
-      public string Json()
+public string Json()
         {
             return $"Pole {FieldName} musi być poprawnym ciągiem znaków JSON.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} musi być pisany małymi literami.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"Pole {FieldName} musi mieć mniej niż {value} elementów.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"Pole {FieldName} musi być krótsze niż {value} znaków.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"Pole {FieldName} musi mieć {value} lub mniej elementów.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"Pole {FieldName} musi być krótsze lub równe {value} znaków.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"Pole {FieldName} musi być prawidłowym adresem MAC.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"Pole {FieldName} nie może mieć więcej niż {max} elementów.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"Pole {FieldName} nie może być większe niż {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"Pole {FieldName} nie może być dłuższe niż {max} znaków.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"Pole {FieldName} musi mieć przynajmniej {min} elementów.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"Pole {FieldName} musi być nie mniejsze od {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"Pole {FieldName} musi mieć przynajmniej {min} znaków.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Zaznaczony {FieldName} jest nieprawidłowy.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Format pola {FieldName} jest nieprawidłowy.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"Pole {FieldName} musi być liczbą.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Format pola {FieldName} jest nieprawidłowy.";
         }
-       public string Required()
+public string Required()
         {
             return $"Pole {FieldName} jest wymagane.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"Pole {FieldName} jest wymagane gdy {name} ma wartość {value}.";
+        }
+public string Same(string name)
         {
             return $"Pole {FieldName} i {name} muszą być takie same.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"Pole {FieldName} musi zawierać {size} elementów.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"Pole {FieldName} musi mieć {size} znaków.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"Pole {FieldName} musi zaczynać się jedną z następujących wartości: {String.Join(", ", values)}.";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} musi być pisany wielkimi literami.";
         }
-   public string Url()
+public string Url()
         {
             return $"Format pola {FieldName} jest nieprawidłowy.";
         }

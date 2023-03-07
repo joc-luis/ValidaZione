@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"Lauko {FieldName} reikšmė privalo būti data lygi arba vėlesnė negu {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"Laukas {FieldName} gali turėti tik raides.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"Lauko {FieldName} reikšmė turi būti didesnė arba lygi {value} simboliams.";
         }
-  public string In()
+public string In()
         {
             return $"Pasirinkta negaliojanti {FieldName} reikšmė.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"Lauko {FieldName} reikšmė turi būti galiojantis IP adresas.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"Lauko {FieldName} reikšmė turi būti galiojantis IPv4 adresas.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"Lauko {FieldName} reikšmė turi būti galiojantis IPv6 adresas.";
         }
-      public string Json()
+public string Json()
         {
             return $"Lauko {FieldName} reikšmė turi būti JSON tekstas.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} turi būti mažosios raidės.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"Laukas {FieldName} turi turėti mažiau negu {value} elementus.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"Lauko {FieldName} reikšmė turi būti mažesnė negu {value} simboliai.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"Laukas {FieldName} turi turėti mažiau arba lygiai {value} elementus.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"Lauko {FieldName} reikšmė turi būti mažesnė arba lygi {value} simboliams.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"Lauko {FieldName} reikšmė turi būti galiojantis MAC adresas.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"Elementų kiekis lauke {FieldName} negali turėti daugiau nei {max} elementų.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"Lauko {FieldName} reikšmė negali būti didesnė nei {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"Simbolių kiekis lauke {FieldName} reikšmė negali būti didesnė nei {max} simbolių.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"Elementų kiekis lauke {FieldName} turi būti ne mažiau nei {min}.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"Lauko {FieldName} reikšmė turi būti ne mažesnė nei {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"Simbolių kiekis lauke {FieldName} turi būti ne mažiau nei {min}.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Pasirinkta negaliojanti reikšmė {FieldName}.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Lauko {FieldName} formatas yra neteisingas.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"Lauko {FieldName} reikšmė turi būti skaičius.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Negaliojantis lauko {FieldName} formatas.";
         }
-       public string Required()
+public string Required()
         {
             return $"Privaloma užpildyti lauką {FieldName}.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"Privaloma užpildyti lauką {FieldName}, kai {name} yra {value}.";
+        }
+public string Same(string name)
         {
             return $"Laukai {FieldName} ir {name} turi sutapti.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"Elementų kiekis lauke {FieldName} turi būti {size}.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"Simbolių skaičius lauke {FieldName} turi būti {size}.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"Laukas {FieldName} turi prasidėti vienu iš: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} turi būti didžiosios raidės.";
         }
-   public string Url()
+public string Url()
         {
             return $"Negaliojantis lauko {FieldName} formatas.";
         }

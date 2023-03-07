@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"Polje {FieldName} mora biti datum nakon ili jednak {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"Polje {FieldName} može sadržati samo slova.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"Polje {FieldName} mora sadržati {value} znakova ili više.";
         }
-  public string In()
+public string In()
         {
             return $"Odabrano polje {FieldName} nije validno.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"Polje {FieldName} mora biti validna IP adresa.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"Polje {FieldName} mora biti validna IPv4 adresa.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"Polje {FieldName} mora biti validna IPv6 adresa.";
         }
-      public string Json()
+public string Json()
         {
             return $"Polje {FieldName} mora biti validan JSON string.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} mora biti malim slovima.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"Polje {FieldName} mora sadržati manje od {value} stavki.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"Polje {FieldName} mora sadržati manje od {value} znakova.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"Polje {FieldName} ne može sadržati više od {value} stavki.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"Polje {FieldName} ne može sadržati više od {value} znakova.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} mora biti važeća MAC adresa.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"Polje {FieldName} mora sadržati manje od {max} stavki.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"Polje {FieldName} mora imati vrijednost manju od {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"Polje {FieldName} mora sadržati manje od {max} znakova.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"Polje {FieldName} mora sadržati najmanje {min} stavki.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"Polje {FieldName} mora biti najmanje {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"Polje {FieldName} mora sadržati najmanje {min} znakova.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Odabrani element polja {FieldName} nije validan.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Format polja {FieldName} nije ispravan.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"Polje {FieldName} mora biti broj.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Format polja {FieldName} nije ispravan.";
         }
-       public string Required()
+public string Required()
         {
             return $"Polje {FieldName} je obavezno.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"Polje {FieldName} je obavezno kada {name} ima vrijednost {value}.";
+        }
+public string Same(string name)
         {
             return $"Polja {FieldName} i {name} se moraju poklapati.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"Polje {FieldName} mora biti {size} znakova.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"Polje {FieldName} mora biti {size} znakova.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"Polje {FieldName} mora početi s jednom od sljedećih vrijednosti: {String.Join(", ", values)}.";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} mora biti velikim slovima.";
         }
-   public string Url()
+public string Url()
         {
             return $"Format polja {FieldName} nije validan.";
         }

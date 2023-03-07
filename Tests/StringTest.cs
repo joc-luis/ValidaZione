@@ -1019,6 +1019,19 @@ public class StringsTest
     }
 
     [Test]
+    [TestCase(null, "", "", ExpectedResult = true)]
+    [TestCase("", "", "", ExpectedResult = true)]
+    [TestCase("aaa", "", "", ExpectedResult = false)]
+    [TestCase(null, null, "", ExpectedResult = false)]
+    public bool RequiredIf(string value, string another, string equal)
+    {
+        RulesStrings rules = new RulesStrings(Language.Cs, "Test", value);
+        rules.RequiredIf("Another", another, equal);
+
+        return rules.ErrorsByField().Errors.Any();
+    }
+
+    [Test]
     [TestCase("same", "same", ExpectedResult = false)]
     [TestCase("different", "differentt", ExpectedResult = true)]
     [TestCase(null, "", ExpectedResult = true)]

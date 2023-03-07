@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} դաշտի ամսաթիվը պետք է լինի {date} կամ դրանից հետո։";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} դաշտը պետք է պարունակի միայն տառեր։";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} դաշտի նիշերի քանակը պետք է մեծ կամ հավասար լինի {value}-ից։";
         }
-  public string In()
+public string In()
         {
             return $"{FieldName} դաշտի ընտրված արժեքն անվավեր է։";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} դաշտը պետք է լինի վավեր IP հասցե.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} դաշտը պետք է լինի վավեր IPv4 հասցե։";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} դաշտը պետք է լինի վավեր IPv6 հասցե։";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName} դաշտը պետք է լինի վավեր JSON տեքստ։";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName}-ը պետք է լինի փոքրատառ:";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} դաշտում էլեմենտների քանակը պետք է փոքր լինի {value}-ից։";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} դաշտը պետք է ունենա {value}-ից պակաս նիշեր։";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName} դաշտում էլեմենտների քանակը պետք է փոքր կամ հավասար լինի {value}-ից։";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} դաշտի նիշերի քանակը պետք է փոքր կամ հավասար լինի {value}-ից։";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName}-ը պետք է լինի վավեր MAC հասցե:";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName} դաշտում էլեմենտների քանակը չպետք է գերազանցի {max}-ը։";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} դաշտը չի կարող լինել {max}-ից մեծ։";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName} դաշտի նիշերի քանակը չի կարող լինել {max}-ց մեծ։";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName} դաշտում էլեմենտների քանակը պետք է լինի առնվազն {min}։";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName} դաշտը պետք է լինի առնվազն {min}։";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName} դաշտի նիշերի քանակը պետք է լինի առնվազն {min}։";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"{FieldName} դաշտի ընտրված արժեքն անվավեր է։";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"{FieldName} դաշտի ձևաչափը սխալ է։";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} դաշտը պետք է լինի թիվ։";
         }
- public string Regex()
+public string Regex()
         {
             return $"{FieldName} դաշտի ձևաչափը սխալ է։";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} դաշտը պարտադիր է։";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"{FieldName} դաշտը պարտադիր է երբ {name}-ը հավասար է {value}։";
+        }
+public string Same(string name)
         {
             return $"{FieldName} և {name} դաշտերը պետք է համընկնեն։";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName} դաշտը պետք է պարունակի {size} էլեմենտ։";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName} դաշտը պետք է ունենա {size} նիշ։";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} դաշտը պետք է սկսվի հետևյալ արժեքներից մեկով․ {String.Join(", ", values)}։";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName}-ը պետք է լինի մեծատառ:";
         }
-   public string Url()
+public string Url()
         {
             return $"{FieldName} դաշտի ձևաչափը սխալ է։";
         }

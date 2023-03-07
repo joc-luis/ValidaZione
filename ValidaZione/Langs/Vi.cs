@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"Trường {FieldName} phải là thời gian bắt đầu sau hoặc đúng bằng {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"Trường {FieldName} chỉ có thể chứa các chữ cái.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"Độ dài trường {FieldName} phải lớn hơn hoặc bằng {value} kí tự.";
         }
-  public string In()
+public string In()
         {
             return $"Giá trị đã chọn trong trường {FieldName} không hợp lệ.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"Trường {FieldName} phải là một địa chỉ IP.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"Trường {FieldName} phải là một địa chỉ IPv4.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"Trường {FieldName} phải là một địa chỉ IPv6.";
         }
-      public string Json()
+public string Json()
         {
             return $"Trường {FieldName} phải là một chuỗi JSON.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"Trường {FieldName} phải là chữ thường.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"Mảng {FieldName} phải có ít hơn {value} phần tử.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"Độ dài trường {FieldName} phải nhỏ hơn {value} kí tự.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"Mảng {FieldName} không được có nhiều hơn {value} phần tử.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"Độ dài trường {FieldName} phải nhỏ hơn hoặc bằng {value} kí tự.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"Trường {FieldName} phải là một địa chỉ MAC hợp lệ.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"Trường {FieldName} không được lớn hơn {max} phần tử.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"Trường {FieldName} không được lớn hơn {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"Trường {FieldName} không được lớn hơn {max} kí tự.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"Trường {FieldName} phải có tối thiểu {min} phần tử.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"Trường {FieldName} phải tối thiểu là {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"Trường {FieldName} phải có tối thiểu {min} kí tự.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Giá trị đã chọn trong trường {FieldName} không hợp lệ.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Trường {FieldName} có định dạng không hợp lệ.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"Trường {FieldName} phải là một số.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Trường {FieldName} có định dạng không hợp lệ.";
         }
-       public string Required()
+public string Required()
         {
             return $"Trường {FieldName} không được bỏ trống.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"Trường {FieldName} không được bỏ trống khi trường {name} là {value}.";
+        }
+public string Same(string name)
         {
             return $"Trường {FieldName} và {name} phải giống nhau.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"Trường {FieldName} phải chứa {size} phần tử.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"Trường {FieldName} phải chứa {size} kí tự.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"Trường {FieldName} phải được bắt đầu bằng một trong những giá trị sau: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"Trường {FieldName} phải là chữ in hoa.";
         }
-   public string Url()
+public string Url()
         {
             return $"Trường {FieldName} không giống với định dạng một URL.";
         }

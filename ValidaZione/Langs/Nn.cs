@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"{FieldName} må vere ein dato etter eller lik {date}.";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"{FieldName} må berre vere av bokstavar.";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"{FieldName} må vere lengre enn eller lik {value} teikn.";
         }
-  public string In()
+public string In()
         {
             return $"Det valde {FieldName} er ugyldig.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"{FieldName} skal vere ei gyldig IP-adresse.";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"{FieldName} skal vere ei gyldig IPv4-adresse.";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"{FieldName} skal vere ei gyldig IPv6-adresse.";
         }
-      public string Json()
+public string Json()
         {
             return $"{FieldName} må vere på JSON-format.";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"{FieldName} må være små bokstaver.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"{FieldName} må ha færre enn {value} element.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"{FieldName} må vere kortare enn {value} teikn.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"{FieldName} må ikkje ha fleire enn {value} element.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"{FieldName} må vere kortare enn eller lik {value} teikn.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"{FieldName} må være en gyldig MAC-adresse.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"{FieldName} skal ikkje ha fleire enn {max} element.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"{FieldName} skal vere mindre enn {max}.";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"{FieldName} skal vere kortare enn {max} teikn.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"{FieldName} må vere minst {min} element.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"{FieldName} skal vere større enn {min}.";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"{FieldName} skal vere lengre enn {min} teikn.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"Den valgte {FieldName} er ugyldig.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"Formatet på {FieldName} er ugyldig.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"{FieldName} skal vere eit tal.";
         }
- public string Regex()
+public string Regex()
         {
             return $"Formatet på {FieldName} er ugyldig.";
         }
-       public string Required()
+public string Required()
         {
             return $"{FieldName} må fyllast ut.";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"{FieldName} må fyllast ut når {name} er {value}.";
+        }
+public string Same(string name)
         {
             return $"{FieldName} og {name} må vere like.";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"{FieldName} må innehalde {size} element.";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"{FieldName} må vere {size} teikn lang.";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} må starte med ein av følgande: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"{FieldName} må være store bokstaver.";
         }
-   public string Url()
+public string Url()
         {
             return $"Formatet på {FieldName} er ugyldig.";
         }

@@ -22,7 +22,7 @@ public string AfterOrEqual(string date)
         {
             return $"A(z) {FieldName} nem lehet korábbi dátum, mint {date}!";
         }
- public string Alpha()
+public string Alpha()
         {
             return $"A(z) {FieldName} kizárólag betűket tartalmazhat!";
         }
@@ -106,7 +106,7 @@ public string GreaterThanOrEqualString(int value)
         {
             return $"A(z) {FieldName} hossza nem lehet kevesebb, mint {value} karakter.";
         }
-  public string In()
+public string In()
         {
             return $"A kiválasztott {FieldName} érvénytelen.";
         }
@@ -118,95 +118,99 @@ public string Ip()
         {
             return $"A(z) {FieldName} érvényes IP cím kell, hogy legyen!";
         }
- public string Ipv4()
+public string Ipv4()
         {
             return $"A(z) {FieldName} érvényes IPv4 cím kell, hogy legyen!";
         }
-        public string Ipv6()
+public string Ipv6()
         {
             return $"A(z) {FieldName} érvényes IPv6 cím kell, hogy legyen!";
         }
-      public string Json()
+public string Json()
         {
             return $"A(z) {FieldName} érvényes JSON szöveg kell, hogy legyen!";
         }
-        public string Lowercase()
+public string Lowercase()
         {
             return $"A {FieldName}-nak kisbetűnek kell lennie.";
         }
-        public string LessThanArray(long value)
+public string LessThanArray(long value)
         {
             return $"A(z) {FieldName} kevesebb, mint {value} elemet kell, hogy tartalmazzon.";
         }
-    public string LessThanString(int value)
+public string LessThanString(int value)
         {
             return $"A(z) {FieldName} rövidebb kell, hogy legyen, mint {value} karakter.";
         }
-        public string LessThanOrEqualArray(long value)
+public string LessThanOrEqualArray(long value)
         {
             return $"A(z) {FieldName} legfeljebb {value} elemet kell, hogy tartalmazzon.";
         }
-    public string LessThanOrEqualString(int value)
+public string LessThanOrEqualString(int value)
         {
             return $"A(z) {FieldName} hossza nem lehet több, mint {value} karakter.";
         }
-   public string MacAddress()
+public string MacAddress()
         {
             return $"A {FieldName}-nak érvényes MAC-címnek kell lennie.";
         }
-      public string MaxArray(long max)
+public string MaxArray(long max)
         {
             return $"A(z) {FieldName} legfeljebb {max} elemet kell, hogy tartalmazzon.";
         }
-      public string MaxNumeric(string max)
+public string MaxNumeric(string max)
         {
             return $"A(z) {FieldName} értéke nem lehet nagyobb, mint {max}!";
         }
-        public string MaxString(int max)
+public string MaxString(int max)
         {
             return $"A(z) {FieldName} hossza nem lehet több, mint {max} karakter.";
         }
-    public string MinArray(long min)
+public string MinArray(long min)
         {
             return $"A(z) {FieldName} legalább {min} elemet kell, hogy tartalmazzon.";
         }
-   public string MinNumeric(string min)
+public string MinNumeric(string min)
         {
             return $"A(z) {FieldName} értéke nem lehet kisebb, mint {min}!";
         }
-      public string MinString(int min)
+public string MinString(int min)
         {
             return $"A(z) {FieldName} hossza nem lehet kevesebb, mint {min} karakter.";
         }
-      public string NotIn()
+public string NotIn()
         {
             return $"A(z) {FieldName} értéke érvénytelen.";
         }
-       public string NotRegex()
+public string NotRegex()
         {
             return $"A(z) {FieldName} formátuma érvénytelen.";
         }
-      public string Numeric()
+public string Numeric()
         {
             return $"A(z) {FieldName} szám kell, hogy legyen!";
         }
- public string Regex()
+public string Regex()
         {
             return $"A(z) {FieldName} formátuma érvénytelen.";
         }
-       public string Required()
+public string Required()
         {
             return $"A(z) {FieldName} megadása kötelező!";
         }
-    public string Same(string name)
+public string RequiredIf(string name, string value)
+        {
+            return $"A(z) {FieldName} megadása kötelező, ha a(z) {name} értéke {value}!";
+        }
+public string Same(string name)
         {
             return $"A(z) {FieldName} és {name} mezőknek egyezniük kell!";
         }
-       public string SizeArray(long size)
+public string SizeArray(long size)
         {
             return $"A(z) {FieldName} {size} elemet kell tartalmazzon!";
         }
-    public string SizeString(int size)
+public string SizeString(int size)
         {
             return $"A(z) {FieldName} hossza {size} karakter kell, hogy legyen!";
         }
@@ -214,11 +218,11 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} a következővel kell kezdődjön: {String.Join(", ", values)}";
         }
- public string Uppercase()
+public string Uppercase()
         {
             return $"A {FieldName}-nak nagybetűnek kell lennie.";
         }
-   public string Url()
+public string Url()
         {
             return $"A(z) {FieldName} érvénytelen link.";
         }
