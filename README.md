@@ -25,7 +25,7 @@ Validazione validazione = new Validazione(Language.Es);
 builder.Services.AddScoped<IValidazion>(v => new Validazione(Language.Fr));
 
 
-public PersonController(IValidazione validazione) : ControllerBase
+public PersonController(IValidazione validazione)
 {
     _validazione = validazione;
 }
