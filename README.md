@@ -24,6 +24,8 @@ Validazione validazione = new Validazione(Language.Es);
 ```csharp
 builder.Services.AddScoped<IValidazion>(v => new Validazione(Language.Fr));
 
+// In the controller
+private readonly IValidazione _valizazion;
 
 public PersonController(IValidazione validazione)
 {
@@ -31,6 +33,7 @@ public PersonController(IValidazione validazione)
 }
 
 
+[HttpPost]
 public async Task<ActionResult> Store(Person person){
 
     _validazione.Field("name", person.Name).Between(3, 20);
