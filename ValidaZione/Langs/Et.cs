@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} peab algama ühega järgmistest: {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"{FieldName} on juba hõivatud.";
+                }
 public string Uppercase()
         {
             return $"{FieldName} peab olema suurtäht.";

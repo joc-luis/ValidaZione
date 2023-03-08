@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} mesti bermula dengan salah satu dari: {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"{FieldName} telah wujud.";
+                }
 public string Uppercase()
         {
             return $"{FieldName} mestilah huruf besar.";

@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"Lo camp {FieldName} deu començar amb una de las valors seguentas : {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"La valor del camp {FieldName} es ja presa.";
+                }
 public string Uppercase()
         {
             return $"The {FieldName} must be uppercase.";

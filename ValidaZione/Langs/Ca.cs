@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"El {FieldName} ha de començar per un dels valors següents: {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"{FieldName} ja està registrat i no es pot repetir.";
+                }
 public string Uppercase()
         {
             return $"El {FieldName} ha d'anar en majúscula.";

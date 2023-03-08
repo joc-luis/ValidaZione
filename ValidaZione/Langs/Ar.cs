@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"يجب أن يبدأ حقل {FieldName} بأحد القيم التالية: {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"قيمة حقل {FieldName} مُستخدمة من قبل.";
+                }
 public string Uppercase()
         {
             return $"يجب أن يحتوي الحقل {FieldName} على حروف كبيرة.";

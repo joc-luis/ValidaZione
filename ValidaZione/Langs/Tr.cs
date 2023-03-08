@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} sadece şu değerlerden biriyle başlayabilir: {String.Join(", ", values)}.";
         }
+public string Unique()
+                {
+                    return $"{FieldName} zaten alınmış.";
+                }
 public string Uppercase()
         {
             return $"{FieldName} büyük harf olmalıdır.";

@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} келесі мәндердің біреуінен басталуы керек: {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"{FieldName} бұрын алынған.";
+                }
 public string Uppercase()
         {
             return $"{FieldName} бас әріп болуы керек.";

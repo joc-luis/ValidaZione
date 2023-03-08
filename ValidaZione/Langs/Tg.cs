@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} бояд оғоз бо яке аз арзишҳои зерин: {String.Join(", ", values)}.";
         }
+public string Unique()
+                {
+                    return $"Қиммати {FieldName} қаблан интихоб шудааст.";
+                }
 public string Uppercase()
         {
             return $"{FieldName} бояд ҳарфи калон бошад.";

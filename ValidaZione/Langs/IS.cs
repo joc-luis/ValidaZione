@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} verður að byrja á einu af eftirfarandi: {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"Reiturinn {FieldName} er því miður ekki leyfilegur. Það er annar eins.";
+                }
 public string Uppercase()
         {
             return $"{FieldName} verða að vera hástafir.";

@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"Το στοιχείο {FieldName} πρέπει να ξεκινά με ένα από τα παρακάτω: {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"Το πεδίο {FieldName} έχει ήδη εκχωρηθεί.";
+                }
 public string Uppercase()
         {
             return $"Το {FieldName} πρέπει να είναι κεφαλαίο.";

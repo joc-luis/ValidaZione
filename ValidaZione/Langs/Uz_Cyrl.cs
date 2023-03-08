@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} қуйидаги қийматлардан бири билан бошланиши керак: {String.Join(", ", values)}.";
         }
+public string Unique()
+                {
+                    return $"{FieldName} майдонининг бундай қиймати мавжуд. Илтимос бошқа қиймат киритинг.";
+                }
 public string Uppercase()
         {
             return $"{FieldName} katta harf bo'lishi kerak.";

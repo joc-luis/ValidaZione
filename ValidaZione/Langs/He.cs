@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"ה {FieldName} חייב להתחיל עם אחד מהבאים: {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"שדה {FieldName} כבר תפוס.";
+                }
 public string Uppercase()
         {
             return $"ה-{FieldName} חייב להיות רישיות.";

@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"Trường {FieldName} phải được bắt đầu bằng một trong những giá trị sau: {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"Trường {FieldName} đã có trong cơ sở dữ liệu.";
+                }
 public string Uppercase()
         {
             return $"Trường {FieldName} phải là chữ in hoa.";

@@ -200,7 +200,7 @@ public string Required()
         }
 public string RequiredIf(string name, string value)
         {
-            return $"{FieldName} lauks ir obligāts, ja {name} ir value.";
+            return $"{FieldName} lauks ir obligāts, ja {name} ir {value}.";
         }
 public string Same(string name)
         {
@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} jāsākas ar kādu no šiem: {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"{FieldName} jau ir aizņemts.";
+                }
 public string Uppercase()
         {
             return $"{FieldName} ir jābūt lielajiem burtiem.";

@@ -544,5 +544,43 @@ namespace ValidaZione.Rules
 
             return this;
         }
+        
+        /// <summary>
+        /// The field under validation must not exist within the given list.
+        /// </summary>
+        /// <param name="values">
+        /// List of values not allowed.
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesNumbers<TValue> Unique(List<TValue> values)
+        {
+            if (values.Any(v => this.Value.ToString() == v.ToString()))
+            {
+                AddError(_lang.Unique());
+            }
+
+            return this;
+        }
+        
+        /// <summary>
+        /// The field under validation must not exist within the given array.
+        /// </summary>
+        /// <param name="values">
+        /// Array of values not allowed.
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesNumbers<TValue> Unique(TValue[] values)
+        {
+            if (values.Any(v => this.Value.ToString() == v.ToString()))
+            {
+                AddError(_lang.Unique());
+            }
+
+            return this;
+        }
     }
 }

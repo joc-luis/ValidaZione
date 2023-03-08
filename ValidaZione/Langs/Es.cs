@@ -226,7 +226,7 @@ namespace ValidaZione.Langs
 
         public string NotIn()
         {
-            return $"El {FieldName} seleccionado no es válido.";
+            return $"El campo {FieldName} seleccionado no es válido.";
         }
 
         public string NotRegex()
@@ -272,6 +272,11 @@ namespace ValidaZione.Langs
         public string StartsWith(List<string> values)
         {
             return $"El campo {FieldName} debe comenzar con uno de los siguientes valores: {String.Join(", ", values)}";
+        }
+
+        public string Unique()
+        {
+            return $"El campo {FieldName} ya ha sido registrado.";
         }
 
         public string Uppercase()

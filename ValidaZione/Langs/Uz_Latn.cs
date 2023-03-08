@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} quyidagi qiymatlardan biri bilan boshlanishi kerak: {String.Join(", ", values)}.";
         }
+public string Unique()
+                {
+                    return $"{FieldName} maydonining bunday qiymati mavjud. Iltimos boshqa qiymat kiriting.";
+                }
 public string Uppercase()
         {
             return $"The {FieldName} must be uppercase.";

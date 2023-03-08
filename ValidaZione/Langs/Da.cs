@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} skal starte med én af følgende: {String.Join(", ", values)}.";
         }
+public string Unique()
+                {
+                    return $"{FieldName} er allerede taget.";
+                }
 public string Uppercase()
         {
             return $"De {FieldName} skal være store bogstaver.";

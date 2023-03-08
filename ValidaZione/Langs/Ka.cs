@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} უნდა იწყებოდეს შემდეგიდან ერთ-ერთით: {String.Join(", ", values)}.";
         }
+public string Unique()
+                {
+                    return $"ასეთი {FieldName} უკვე არსებობს.";
+                }
 public string Uppercase()
         {
             return $"{FieldName} უნდა იყოს დიდი.";

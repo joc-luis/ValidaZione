@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"اس {FieldName} کے ساتھ شروع ہونا چاہئے مندرجہ ذیل میں سے ایک: {String.Join(", ", values)}.";
         }
+public string Unique()
+                {
+                    return $"{FieldName} کو پہلے ہی کسی نے حاصل کر لیا ہے۔";
+                }
 public string Uppercase()
         {
             return $"{FieldName} کا بڑا ہونا ضروری ہے۔";

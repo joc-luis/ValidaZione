@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"The {FieldName} must start with one of the following: {String.Join(", ", values)}.";
         }
+public string Unique()
+                {
+                    return $"{FieldName} ئاللابۇرۇن مەۋجۈت.";
+                }
 public string Uppercase()
         {
             return $"{FieldName} چوقۇم چوڭ ھەرپ بولۇشى كېرەك.";

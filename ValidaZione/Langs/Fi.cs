@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"Attribuutin {FieldName} tulee alkaa yhdellä seuraavista: {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"Kentän {FieldName} arvo ei ole uniikki.";
+                }
 public string Uppercase()
         {
             return $"{FieldName} on oltava isoilla kirjaimilla.";

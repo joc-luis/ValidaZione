@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} moet beginnen met een van de volgende: {String.Join(", ", values)}.";
         }
+public string Unique()
+                {
+                    return $"{FieldName} is al in gebruik.";
+                }
 public string Uppercase()
         {
             return $"{FieldName} mag alleen hoofdletters bevatten.";

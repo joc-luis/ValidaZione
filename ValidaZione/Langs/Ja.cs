@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName}は、次のいずれかで始まる必要があります。{String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"指定の{FieldName}は既に使用されています。";
+                }
 public string Uppercase()
         {
             return $"{FieldName}は、大文字で入力してください。";

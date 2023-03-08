@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} inapaswa kuanza na moja kati ya hizi zifuatazo: {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"Kipengele tayari kimechukuliwa.";
+                }
 public string Uppercase()
         {
             return $"{FieldName} ni lazima iwe ya herufi kubwa.";

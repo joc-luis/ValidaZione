@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} дараах аль нэг нь эхлэх естой: {String.Join(", ", values)}.";
         }
+public string Unique()
+                {
+                    return $"Оруулсан {FieldName} аль хэдий нь бүртгэгдсэн байна.";
+                }
 public string Uppercase()
         {
             return $"{FieldName} нь том үсгээр бичигдсэн байх ёстой.";

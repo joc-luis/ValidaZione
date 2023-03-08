@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"Полето {FieldName} мора да започнува со една од следните вредности: {String.Join(", ", values)}.";
         }
+public string Unique()
+                {
+                    return $"Полето {FieldName} веќе постои.";
+                }
 public string Uppercase()
         {
             return $"{FieldName}-ката мора да биде голема.";

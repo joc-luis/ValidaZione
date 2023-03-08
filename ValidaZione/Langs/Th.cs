@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"ข้อมูล {FieldName} ต้องเริ่มด้วยค่าใดค่าหนึ่งต่อไปนี้: {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"ข้อมูล {FieldName} ไม่สามารถใช้ได้";
+                }
 public string Uppercase()
         {
             return $"{FieldName} ต้องเป็นตัวพิมพ์ใหญ่";

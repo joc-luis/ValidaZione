@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"Laukas {FieldName} turi prasidėti vienu iš: {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"Tokia {FieldName} reikšmė jau pasirinkta.";
+                }
 public string Uppercase()
         {
             return $"{FieldName} turi būti didžiosios raidės.";

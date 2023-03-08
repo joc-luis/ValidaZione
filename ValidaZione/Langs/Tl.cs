@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"Ang {FieldName} ay dapat magsimula sa isa sa mga sumusunod: {String.Join(", ", values)}.";
         }
+public string Unique()
+                {
+                    return $"Ang {FieldName} ay nakuha na.";
+                }
 public string Uppercase()
         {
             return $"Ang {FieldName} ay dapat na uppercase.";

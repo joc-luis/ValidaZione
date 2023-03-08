@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"Câmpul {FieldName} trebuie să înceapă cu una din următoarele valori: {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"Câmpul {FieldName} a fost deja folosit.";
+                }
 public string Uppercase()
         {
             return $"{FieldName} trebuie să fie majuscule.";

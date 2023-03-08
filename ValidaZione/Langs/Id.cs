@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} harus diawali salah satu dari berikut: {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"{FieldName} sudah ada sebelumnya.";
+                }
 public string Uppercase()
         {
             return $"{FieldName} harus berupa huruf kapital.";

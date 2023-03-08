@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName}-(e)k ondorengo balioetako batekin hasi behar du {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"{FieldName} jadanik erregistratua izan da.";
+                }
 public string Uppercase()
         {
             return $"{FieldName}ak maiuskulak izan behar ditu.";

@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} muss einen der folgenden Anfänge aufweisen: {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"{FieldName} ist schon vergeben.";
+                }
 public string Uppercase()
         {
             return $"Die {FieldName} muss in Großbuchstaben geschrieben werden.";

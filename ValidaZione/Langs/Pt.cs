@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"O campo {FieldName} tem de começar com um dos valores seguintes: {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"O valor indicado para o campo {FieldName} já se encontra registado.";
+                }
 public string Uppercase()
         {
             return $"O campo {FieldName} deve ser em maiúsculas.";

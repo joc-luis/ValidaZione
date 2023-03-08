@@ -375,6 +375,13 @@ namespace ValidaZione.Interfaces
         string StartsWith(List<String> values);
         
         /// <summary>
+        /// Set the error message for Unique rule.
+        /// </summary>
+        /// <returns></returns>
+        string Unique();
+
+        
+        /// <summary>
         /// Set the error message for Uppercase rule.
         /// </summary>
         /// <returns></returns>

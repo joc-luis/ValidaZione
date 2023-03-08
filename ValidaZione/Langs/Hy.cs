@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} դաշտը պետք է սկսվի հետևյալ արժեքներից մեկով․ {String.Join(", ", values)}։";
         }
+public string Unique()
+                {
+                    return $"{FieldName}-ի տվյալ արժեքն արդեն գոյություն ունի։";
+                }
 public string Uppercase()
         {
             return $"{FieldName}-ը պետք է լինի մեծատառ:";

@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"Y {FieldName} rhaid dechrau gydag un o'r canlynol: {String.Join(", ", values)}.";
         }
+public string Unique()
+                {
+                    return $"Mae {FieldName} eisoes yn bodoli.";
+                }
 public string Uppercase()
         {
             return $"Rhaid i'r {FieldName} fod yn briflythrennau.";

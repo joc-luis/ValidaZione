@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} a következővel kell kezdődjön: {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"A(z) {FieldName} már foglalt.";
+                }
 public string Uppercase()
         {
             return $"A {FieldName}-nak nagybetűnek kell lennie.";

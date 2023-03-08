@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} 必须以 {String.Join(", ", values)} 为开头。";
         }
+public string Unique()
+                {
+                    return $"{FieldName} 已经存在。";
+                }
 public string Uppercase()
         {
             return $"{FieldName} 必须大写";

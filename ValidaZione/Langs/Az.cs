@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"{FieldName} göstərilən dəyərlərdən biri ilə başlamalıdır: {String.Join(", ", values)}.";
         }
+public string Unique()
+                {
+                    return $"Belə bir {FieldName} artıq mövcuddur.";
+                }
 public string Uppercase()
         {
             return $"{FieldName} böyük hərf olmalıdır.";

@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"Поле {FieldName} должно начинаться с одного из следующих значений: {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"Такое значение поля {FieldName} уже существует.";
+                }
 public string Uppercase()
         {
             return $"Значение поля {FieldName} должно быть в верхнем регистре.";

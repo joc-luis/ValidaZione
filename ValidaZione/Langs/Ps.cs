@@ -218,6 +218,10 @@ public string StartsWith(List<string> values)
         {
             return $"دا باید پیل شي {FieldName} د لاندې ارزښتونو څخه یو: {String.Join(", ", values)}";
         }
+public string Unique()
+                {
+                    return $"ارزښتونه {FieldName} کارول شوی.";
+                }
 public string Uppercase()
         {
             return $"{FieldName} باید لوی وي.";
