@@ -389,6 +389,19 @@ namespace ValidaZione.Rules
             return DoesNotEndWith(values.ToList());
         }
         
+        /// <summary>
+        /// The field under validation must not end with one of the given values.
+        /// </summary>
+        /// <param name="values">Not allowed values.</param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesStrings DoesNotEndWith(IEnumerable<String> values)
+        {
+            return DoesNotEndWith(values.ToList());
+        }
+
+        
         
         /// <summary>
         /// The field under validation must not start with one of the given values.
@@ -426,6 +439,18 @@ namespace ValidaZione.Rules
         /// This instance of the object.
         /// </returns>
         public RulesStrings DoesNotStartWith(String[] values)
+        {
+            return DoesNotStartWith(values.ToList());
+        }
+        
+        /// <summary>
+        /// The field under validation must not start with one of the given values.
+        /// </summary>
+        /// <param name="values">Not allowed values.</param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesStrings DoesNotStartWith(IEnumerable<String> values)
         {
             return DoesNotStartWith(values.ToList());
         }
@@ -504,22 +529,21 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesStrings EndsWith(String[] values)
         {
-            if (this.Value == null)
-            {
-                if (!this.Null)
-                {
-                    AddError(_lang.EndsWith(values.ToList()));
-                }
-
-                return this;
-            }
-
-            if (!values.Any(v => this.Value.EndsWith(v)))
-            {
-                AddError(_lang.EndsWith(values.ToList()));
-            }
-
-            return this;
+            return EndsWith(values.ToList());
+        }
+        
+        /// <summary>
+        /// The field under validation must end with one of the given values.
+        /// </summary>
+        /// <param name="values">
+        /// Values allowed.
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesStrings EndsWith(IEnumerable<String> values)
+        {
+            return EndsWith(values.ToList());
         }
 
 
@@ -615,12 +639,21 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesStrings In(String[] values)
         {
-            if (values.All(v => this.Value != v))
-            {
-                AddError(_lang.In());
-            }
-
-            return this;
+            return In(values.ToList());
+        }
+        
+        /// <summary>
+        /// The field under validation must be included in the given array of values.
+        /// </summary>
+        /// <param name="values">
+        /// Array of the allowed values.
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesStrings In(IEnumerable<String> values)
+        {
+            return In(values.ToList());
         }
 
         /// <summary>
@@ -997,12 +1030,21 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesStrings NotIn(String[] values)
         {
-            if (values.Any(v => this.Value == v))
-            {
-                AddError(_lang.NotIn());
-            }
-
-            return this;
+            return NotIn(values.ToList());
+        }
+        
+        /// <summary>
+        /// The field under validation must not be included in the given array of values
+        /// </summary>
+        /// <param name="values">
+        /// Array of values not allowed
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesStrings NotIn(IEnumerable<String> values)
+        {
+            return NotIn(values.ToList());
         }
 
         /// <summary>
@@ -1285,7 +1327,7 @@ namespace ValidaZione.Rules
                 return this;
             }
 
-            if (values.Any(v => !this.Value.StartsWith(v)))
+            if (values.All(v => !this.Value.StartsWith(v)))
             {
                 AddError(_lang.StartsWith(values));
             }
@@ -1305,24 +1347,23 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesStrings StartsWith(String[] values)
         {
-            if (this.Value == null)
-            {
-                if (!this.Null)
-                {
-                    AddError(_lang.StartsWith(values.ToList()));
-                }
-
-                return this;
-            }
-
-            if (!values.Any(v => this.Value.StartsWith(v)))
-            {
-                AddError(_lang.StartsWith(values.ToList()));
-            }
-
-            return this;
+            return StartsWith(values.ToList());
         }
         
+        
+        /// <summary>
+        /// The field under validation must start with one of the given values.
+        /// </summary>
+        /// <param name="values">
+        /// Allowed values.
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesStrings StartsWith(IEnumerable<String> values)
+        {
+            return StartsWith(values.ToList());
+        }
         
         /// <summary>
         /// The field under validation must not exist within the given list.
@@ -1354,12 +1395,21 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesStrings Unique(String[] values)
         {
-            if (values.Any(v => this.Value == v))
-            {
-                AddError(_lang.Unique());
-            }
-
-            return this;
+            return Unique(values.ToList());
+        }
+        
+        /// <summary>
+        /// The field under validation must not exist within the given array.
+        /// </summary>
+        /// <param name="values">
+        /// Array of values not allowed.
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesStrings Unique(IEnumerable<String> values)
+        {
+            return Unique(values.ToList());
         }
 
         /// <summary>

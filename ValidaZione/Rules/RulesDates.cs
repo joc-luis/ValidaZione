@@ -279,22 +279,21 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesDates In(DateTime[] values)
         {
-            if (Value == null)
-            {
-                if (!this.Null)
-                {
-                    this.AddError(_lang.In());
-                }
-
-                return this;
-            }
-
-            if (values.All(v => v != Convert.ToDateTime(Value)))
-            {
-                this.AddError(_lang.In());
-            }
-
-            return this;
+            return In(values.ToList());
+        }
+        
+        /// <summary>
+        /// The field under validation must be included in the given array of values
+        /// </summary>
+        /// <param name="values">
+        /// List of the allowed dates.
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesDates In(IEnumerable<DateTime> values)
+        {
+            return In(values.ToList());
         }
         
         
@@ -396,22 +395,22 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesDates NotIn(DateTime[] values)
         {
-            if (Value == null)
-            {
-                if (!this.Null)
-                {
-                    this.AddError(_lang.NotIn());
-                }
-
-                return this;
-            }
-
-            if (values.Any(v => v == Convert.ToDateTime(Value)))
-            {
-                this.AddError(_lang.NotIn());
-            }
-
-            return this;
+            return NotIn(values.ToList());
+        }
+        
+        
+        /// <summary>
+        /// The field under validation must not be included in the given array of values
+        /// </summary>
+        /// <param name="values">
+        /// Array of values not allowed
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesDates NotIn(IEnumerable<DateTime> values)
+        {
+            return NotIn(values.ToList());
         }
         
         
@@ -499,12 +498,22 @@ namespace ValidaZione.Rules
         /// </returns>
         public RulesDates Unique(DateTime[] values)
         {
-            if (values.Any(v => this.Value == v))
-            {
-                AddError(_lang.Unique());
-            }
-
-            return this;
+            return Unique(values.ToList());
+        }
+        
+        
+        /// <summary>
+        /// The field under validation must not exist within the given array.
+        /// </summary>
+        /// <param name="values">
+        /// Array of values not allowed.
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesDates Unique(IEnumerable<DateTime> values)
+        {
+            return Unique(values.ToList());
         }
     }
 }

@@ -1,5 +1,6 @@
 using Newtonsoft.Json;
 using ValidaZione;
+using ValidaZione.Interfaces;
 using ValidaZione.Langs;
 using ValidaZione.Rules;
 
@@ -10,6 +11,7 @@ public class StringsTest
     [SetUp]
     public void Setup()
     {
+        
     }
 
     [Test]

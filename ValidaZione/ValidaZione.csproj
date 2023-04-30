@@ -11,10 +11,10 @@
         <RepositoryType>git</RepositoryType>
         <PackageTags>Validation, Validator, Rules</PackageTags>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageReleaseNotes>Rule 'unique' added.
-Add bugs to fix later.</PackageReleaseNotes>
+        <PackageReleaseNotes>Fix bug in StartsWith rule.
+Support for IEnumerable.</PackageReleaseNotes>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
-        <Version>2.16.0</Version>
+        <Version>2.31.0</Version>
         <PackageProjectUrl>https://github.com/joc-luis/ValidaZione</PackageProjectUrl>
     </PropertyGroup>
 
@@ -33,7 +33,6 @@ Add bugs to fix later.</PackageReleaseNotes>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="MimeTypesMap" Version="1.0.8" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     </ItemGroup>
 

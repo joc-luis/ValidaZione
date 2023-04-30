@@ -15,6 +15,7 @@ namespace ValidaZione.Interfaces
         /// </summary>
         string FieldName { get; set; }
         
+        
         /// <summary>
         /// Error message for Accepted rule.
         /// </summary>
