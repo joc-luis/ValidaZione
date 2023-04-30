@@ -984,7 +984,7 @@ public class StringsTest
         };
 
         RulesStrings rules = new RulesStrings(Language.Sq, "Test", "five");
-        rules.NotIn(values);
+        rules.NotIn(values.AsEnumerable());  
         Assert.IsFalse(rules.ErrorsByField().Errors.Any());
         
         
