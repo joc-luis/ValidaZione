@@ -88,12 +88,16 @@ public class NumericTest
     }
     
     [Test]
-    public void Nullable()
+    [TestCase(10, 10, ExpectedResult = false)]
+    [TestCase(11, 10, ExpectedResult = false)]
+    [TestCase(5, 10, ExpectedResult = true)]
+    [TestCase(1, 10, ExpectedResult = true)]
+    [TestCase(0, 0, ExpectedResult = false)]
+    public Boolean MinNullable(double? value, double min)
     {
-        double min = 0;
-        RulesNumbers<double?> rules = new RulesNumbers<double?>(Language.He, "Test", null);
+        RulesNumbers<double?> rules = new RulesNumbers<double?>(Language.He, "Test", value);
         rules.Min(min);
-        Assert.IsFalse(rules.ErrorsByField().Errors.Any());
+        return rules.ErrorsByField().Errors.Any();
     }
     
     [Test]
