@@ -15,12 +15,29 @@ namespace ValidaZione
 
         private ILang Lang;
 
+        /// <summary>
+        /// Initialize a new instance of <see cref="Validazione"/>.
+        /// </summary>
+        /// <param name="lang">
+        /// Language for error messages.
+        /// </param>
         public Validazione(ILang lang)
         {
             Lang = lang;
         }
-        
 
+        /// <summary>
+        /// Rules for boolean fields
+        /// </summary>
+        /// <param name="name">
+        /// Name of the field.
+        /// </param>
+        /// <param name="value">
+        /// Value of the field
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
         public RulesBooleans Field(string name, bool value)
         {
             RulesBooleans rules = new RulesBooleans(Lang, name, value);
@@ -29,6 +46,18 @@ namespace ValidaZione
             return rules;
         }
 
+        /// <summary>
+        /// Rules for DateTime fields
+        /// </summary>
+        /// <param name="name">
+        /// Name of the field.
+        /// </param>
+        /// <param name="value">
+        /// Value of the field
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
         public RulesDates Field(string name, DateTime value)
         {
             RulesDates rules = new RulesDates(Lang, name, value);
@@ -37,6 +66,39 @@ namespace ValidaZione
             return rules;
         }
 
+        /// <summary>
+        /// Rules for DateTime? fields
+        /// </summary>
+        /// <param name="name">
+        /// Name of the field.
+        /// </param>
+        /// <param name="value">
+        /// Value of the field
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesDates Field(string name, DateTime? value)
+        {
+            RulesDates rules = new RulesDates(Lang, name, value);
+            Rules.Add(rules);
+
+            return rules;
+        }
+
+
+        /// <summary>
+        /// Rules for List fields.
+        /// </summary>
+        /// <param name="name">
+        /// Name of the field.
+        /// </param>
+        /// <param name="values">
+        /// Value of the field
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
         public RulesLists<TValue> Field<TValue>(string name, List<TValue> values)
         {
             RulesLists<TValue> rules = new RulesLists<TValue>(Lang, name, values);
@@ -45,6 +107,18 @@ namespace ValidaZione
             return rules;
         }
 
+        /// <summary>
+        /// Rules for Array fields.
+        /// </summary>
+        /// <param name="name">
+        /// Name of the field.
+        /// </param>
+        /// <param name="values">
+        /// Value of the field
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
         public RulesLists<TValue> Field<TValue>(string name, TValue[] values)
         {
             RulesLists<TValue> rules = new RulesLists<TValue>(Lang, name, values);
@@ -53,6 +127,43 @@ namespace ValidaZione
             return rules;
         }
 
+        /// <summary>
+        /// Rules for IEnumerable fields.
+        /// </summary>
+        /// <param name="name">
+        /// Name of the field.
+        /// </param>
+        /// <param name="values">
+        /// Value of the field
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesLists<TValue> Field<TValue>(string name, IEnumerable<TValue> values)
+        {
+            RulesLists<TValue> rules = new RulesLists<TValue>(Lang, name, values);
+            Rules.Add(rules);
+
+            return rules;
+        }
+
+        /// <summary>
+        /// Rules for number fields.
+        /// <see cref="UInt16"/> <see cref="UInt32"/>
+        /// <see cref="UInt64"/> <see cref="Int16"/>
+        /// <see cref="Int32"/> <see cref="Int64"/>
+        /// <see cref="Single"/> <see cref="Double"/>
+        /// <see cref="Decimal"/>
+        /// </summary>
+        /// <param name="name">
+        /// Name of the field.
+        /// </param>
+        /// <param name="value">
+        /// Value of the field
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
         public RulesNumbers<TValue> Field<TValue>(string name, TValue value)
         {
             RulesNumbers<TValue> rules = new RulesNumbers<TValue>(Lang, name, value);
@@ -61,7 +172,20 @@ namespace ValidaZione
             return rules;
         }
 
-        public RulesStrings Field(string name, string value)
+        
+        /// <summary>
+        /// Rules for String fields.
+        /// </summary>
+        /// <param name="name">
+        /// Name of the field.
+        /// </param>
+        /// <param name="value">
+        /// Value of the field
+        /// </param>
+        /// <returns>
+        /// This instance of the object.
+        /// </returns>
+        public RulesStrings Field(string name, string? value)
         {
             RulesStrings rules = new RulesStrings(Lang, name, value);
             Rules.Add(rules);
@@ -69,7 +193,7 @@ namespace ValidaZione
             return rules;
         }
 
-        
+
         /// <summary>
         /// Change the language for the error messages.
         /// </summary>
@@ -137,13 +261,10 @@ namespace ValidaZione
         {
             List<String> errors = new List<string>();
             List<Field> fields = ErrorsByField();
-                
+
             foreach (var field in fields)
             {
-                field.Errors.ForEach(e =>
-                {
-                    errors.Add(e);
-                });
+                field.Errors.ForEach(e => { errors.Add(e); });
             }
 
             return errors;

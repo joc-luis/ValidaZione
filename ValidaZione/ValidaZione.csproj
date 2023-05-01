@@ -11,10 +11,10 @@
         <RepositoryType>git</RepositoryType>
         <PackageTags>Validation, Validator, Rules</PackageTags>
         <PackageReadmeFile>README.md</PackageReadmeFile>
-        <PackageReleaseNotes>Fix bug in StartsWith rule.
-Support for IEnumerable.</PackageReleaseNotes>
+        <PackageReleaseNotes>Support for DateTime? fields.
+Support for IEnumerable fields.</PackageReleaseNotes>
         <GenerateDocumentationFile>True</GenerateDocumentationFile>
-        <Version>2.31.0</Version>
+        <Version>2.33.0</Version>
         <PackageProjectUrl>https://github.com/joc-luis/ValidaZione</PackageProjectUrl>
     </PropertyGroup>
 

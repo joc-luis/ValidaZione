@@ -1,4 +1,5 @@
-﻿using ValidaZione.Langs;
+﻿using ValidaZione;
+using ValidaZione.Langs;
 using ValidaZione.Rules;
 
 namespace Tests;
@@ -187,6 +188,22 @@ public class DateTimeTest
         rules = new RulesDates(Language.Zh_CN, "Test", value.AddDays(-7));
         rules.NotIn(allowed);
         Assert.IsTrue(rules.ErrorsByField().Errors.Any());
+    }
+    
+    
+    [Test]
+    public void Nullable()
+    {
+        DateTime? value = null;
+
+        RulesDates rules = new RulesDates(Language.Cs, "Test", value);
+        rules.Nullable().Min(DateTime.Now.AddDays(1));
+        Assert.IsFalse(rules.ErrorsByField().Errors.Any());
+        
+        rules = new RulesDates(Language.Cs, "Test", value);
+        rules.Nullable().Min(DateTime.Now);
+        rules.Nullable().Min(DateTime.Now.AddMinutes(-1));
+        Assert.IsFalse(rules.ErrorsByField().Errors.Any());
     }
 
     [Test]
