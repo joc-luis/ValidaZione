@@ -88,6 +88,15 @@ public class NumericTest
     }
     
     [Test]
+    public void Nullable()
+    {
+        double min = 0;
+        RulesNumbers<double?> rules = new RulesNumbers<double?>(Language.He, "Test", null);
+        rules.Min(min);
+        Assert.IsFalse(rules.ErrorsByField().Errors.Any());
+    }
+    
+    [Test]
     [TestCase(10.5, ExpectedResult = true)]
     [TestCase(90, ExpectedResult = true)]
     [TestCase(45, ExpectedResult = true)]
